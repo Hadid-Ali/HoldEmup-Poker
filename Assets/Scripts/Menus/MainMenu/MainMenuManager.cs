@@ -21,6 +21,6 @@ public class MainMenuManager : MenusController
     
     private void ShowRoomCreationScreen()
     {
-        SetMenuState(MenuName.CreateRoom);
+       // SetMenuState(MenuName.CreateRoom);
     }
 }

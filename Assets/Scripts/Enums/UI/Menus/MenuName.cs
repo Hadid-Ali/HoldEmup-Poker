@@ -5,7 +5,7 @@ public enum MenuName
     LoginScreen,
     RegionSelectionScreen,
     ConnectionScreen,
-    CreateRoom,
+    //CreateRoom,
     LoadingScreen,
     RoundCompleteMenu,
     ErrorWindow,

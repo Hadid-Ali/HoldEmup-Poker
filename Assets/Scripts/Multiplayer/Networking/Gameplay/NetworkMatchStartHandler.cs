@@ -25,21 +25,21 @@ public class NetworkMatchStartHandler : MonoBehaviour
         if (m_IsAutoStartRequestSent)
             return;
         
-        if (CurrentPlayersCount >= GameData.MetaData.MinimumRequiredPlayers)
-        {
-            print("Match could be started");
-            
-            GameEvents.TimerEvents.ExecuteActionRequest.Raise(new TimerDataObject()
-            {
-                Title = "Starting The Match",
-                TimeDuration = GameData.MetaData.WaitBeforeAutomaticMatchStart,
-                ActionToExecute =  StartMatchInternal,
-                IsNetworkGlobal = true
-            });
-            m_IsAutoStartRequestSent = true;
-            
-            print("Match started");
-        }
+        // if (CurrentPlayersCount >= GameData.MetaData.MinimumRequiredPlayers)
+        // {
+        //     print("Match could be started");
+        //     
+        //     GameEvents.TimerEvents.ExecuteActionRequest.Raise(new TimerDataObject()
+        //     {
+        //         Title = "Starting The Match",
+        //         TimeDuration = GameData.MetaData.WaitBeforeAutomaticMatchStart,
+        //         ActionToExecute =  StartMatchInternal,
+        //         IsNetworkGlobal = true
+        //     });
+        //     m_IsAutoStartRequestSent = true;
+        //     
+        //     print("Match started");
+        // }
     }
 
     private void CheckForMaximumPlayersCount()
