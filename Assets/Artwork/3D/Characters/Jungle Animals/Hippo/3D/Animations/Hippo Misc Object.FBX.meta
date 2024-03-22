@@ -1,0 +1,1365 @@
+fileFormatVersion: 2
+guid: 04c165270c377064fb2f03e765439bb0
+timeCreated: 1553731355
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Eye Left
+    100002: Eye Right
+    100004: Hippo
+    100006: Hippo Head
+    100008: Hippo Jaw
+    100010: Hippo L Calf
+    100012: Hippo L Clavicle
+    100014: Hippo L Eyebrow
+    100016: Hippo L Finger0
+    100018: Hippo L Finger1
+    100020: Hippo L Foot
+    100022: Hippo L Forearm
+    100024: Hippo L Hand
+    100026: Hippo L Lip
+    100028: Hippo L LowerEyelid
+    100030: Hippo L LowerLip
+    100032: Hippo L Thigh
+    100034: Hippo L Toe0
+    100036: Hippo L UpperArm
+    100038: Hippo L UpperEyelid
+    100040: Hippo L UpperLip
+    100042: //RootNode
+    100044: Hippo Neck
+    100046: Hippo Nose
+    100048: Hippo Pelvis
+    100050: Hippo Ponytail1
+    100052: Hippo Ponytail11
+    100054: Hippo Ponytail2
+    100056: Hippo Ponytail21
+    100058: Hippo R Calf
+    100060: Hippo R Clavicle
+    100062: Hippo R Eyebrow
+    100064: Hippo R Finger0
+    100066: Hippo R Finger1
+    100068: Hippo R Foot
+    100070: Hippo R Forearm
+    100072: Hippo R Hand
+    100074: Hippo R Lip
+    100076: Hippo R LowerEyelid
+    100078: Hippo R LowerLip
+    100080: Hippo R Thigh
+    100082: Hippo R Toe0
+    100084: Hippo R UpperArm
+    100086: Hippo R UpperEyelid
+    100088: Hippo R UpperLip
+    100090: Hippo Spine
+    100092: Hippo Spine1
+    100094: Hippo Spine2
+    100096: Hippo Tail
+    100098: Hippo Tail02
+    100100: Hippo Tongue
+    100102: Hippo Tongue02
+    100104: Hippo Tongue03
+    400000: Eye Left
+    400002: Eye Right
+    400004: Hippo
+    400006: Hippo Head
+    400008: Hippo Jaw
+    400010: Hippo L Calf
+    400012: Hippo L Clavicle
+    400014: Hippo L Eyebrow
+    400016: Hippo L Finger0
+    400018: Hippo L Finger1
+    400020: Hippo L Foot
+    400022: Hippo L Forearm
+    400024: Hippo L Hand
+    400026: Hippo L Lip
+    400028: Hippo L LowerEyelid
+    400030: Hippo L LowerLip
+    400032: Hippo L Thigh
+    400034: Hippo L Toe0
+    400036: Hippo L UpperArm
+    400038: Hippo L UpperEyelid
+    400040: Hippo L UpperLip
+    400042: //RootNode
+    400044: Hippo Neck
+    400046: Hippo Nose
+    400048: Hippo Pelvis
+    400050: Hippo Ponytail1
+    400052: Hippo Ponytail11
+    400054: Hippo Ponytail2
+    400056: Hippo Ponytail21
+    400058: Hippo R Calf
+    400060: Hippo R Clavicle
+    400062: Hippo R Eyebrow
+    400064: Hippo R Finger0
+    400066: Hippo R Finger1
+    400068: Hippo R Foot
+    400070: Hippo R Forearm
+    400072: Hippo R Hand
+    400074: Hippo R Lip
+    400076: Hippo R LowerEyelid
+    400078: Hippo R LowerLip
+    400080: Hippo R Thigh
+    400082: Hippo R Toe0
+    400084: Hippo R UpperArm
+    400086: Hippo R UpperEyelid
+    400088: Hippo R UpperLip
+    400090: Hippo Spine
+    400092: Hippo Spine1
+    400094: Hippo Spine2
+    400096: Hippo Tail
+    400098: Hippo Tail02
+    400100: Hippo Tongue
+    400102: Hippo Tongue02
+    400104: Hippo Tongue03
+    2100000: Eye
+    2100002: Eye Shine
+    2300000: Eye Left
+    2300002: Eye Right
+    3300000: Eye Left
+    3300002: Eye Right
+    4300000: Eye Left
+    4300002: Eye Right
+    7400000: Hippo Pick Up
+    7400002: Hippo Carry Idle
+    7400004: Hippo Carry Move
+    7400006: Hippo Throw
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Hippo Pick Up
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hippo
+        weight: 1
+      - path: Hippo/Hippo Pelvis
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot/Hippo L Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot/Hippo R Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Left
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Right
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo L LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo R LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02/Hippo Tongue03
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Nose
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1/Hippo Ponytail11
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2/Hippo Ponytail21
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail/Hippo Tail02
+        weight: 1
+      - path: Hippo Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 9310bbbc8b1204548b145464180899bb, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hippo Carry Idle
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hippo
+        weight: 1
+      - path: Hippo/Hippo Pelvis
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot/Hippo L Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot/Hippo R Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Left
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Right
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo L LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo R LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02/Hippo Tongue03
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Nose
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1/Hippo Ponytail11
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2/Hippo Ponytail21
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail/Hippo Tail02
+        weight: 1
+      - path: Hippo Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 9310bbbc8b1204548b145464180899bb, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hippo Carry Move
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hippo
+        weight: 1
+      - path: Hippo/Hippo Pelvis
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot/Hippo L Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot/Hippo R Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Left
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Right
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo L LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo R LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02/Hippo Tongue03
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Nose
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1/Hippo Ponytail11
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2/Hippo Ponytail21
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail/Hippo Tail02
+        weight: 1
+      - path: Hippo Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 9310bbbc8b1204548b145464180899bb, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hippo Throw
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hippo
+        weight: 1
+      - path: Hippo/Hippo Pelvis
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo L Thigh/Hippo L Calf/Hippo L Foot/Hippo L Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo R Thigh/Hippo R Calf/Hippo R Foot/Hippo R Toe0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo L Clavicle/Hippo
+          L UpperArm/Hippo L Forearm/Hippo L Hand/Hippo L Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Left
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Eye Right
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo L LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo R LowerLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Jaw/Hippo Tongue/Hippo Tongue02/Hippo Tongue03
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo L UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Nose
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail1/Hippo Ponytail11
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo Ponytail2/Hippo Ponytail21
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Eyebrow
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R Lip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R LowerEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperEyelid
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo Neck/Hippo
+          Head/Hippo R UpperLip
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger0
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Spine/Hippo Spine1/Hippo Spine2/Hippo R Clavicle/Hippo
+          R UpperArm/Hippo R Forearm/Hippo R Hand/Hippo R Finger1
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail
+        weight: 1
+      - path: Hippo/Hippo Pelvis/Hippo Tail/Hippo Tail02
+        weight: 1
+      - path: Hippo Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 9310bbbc8b1204548b145464180899bb, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Hippo Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Hippo Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Hippo(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.0000005812453, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hippo
+      parentName: Hippo(Clone)
+      position: {x: 8.379433e-10, y: 0.2658857, z: -0.0008300862}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Hippo Pelvis
+      parentName: Hippo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: Hippo Spine
+      parentName: Hippo Pelvis
+      position: {x: -0.08797487, y: -0.0001531753, z: 0.00000012221601}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999994, y: 0.9999997, z: 0.9999996}
+    - name: Hippo Spine1
+      parentName: Hippo Spine
+      position: {x: -0.19240245, y: -0.00015237025, z: -4.2219453e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1}
+    - name: Hippo Spine2
+      parentName: Hippo Spine1
+      position: {x: -0.19238365, y: -0.00015316486, z: -4.244248e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1}
+    - name: Hippo L Clavicle
+      parentName: Hippo Spine2
+      position: {x: -0.13577232, y: -0.043128155, z: 0.07915693}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hippo L UpperArm
+      parentName: Hippo L Clavicle
+      position: {x: -0.1627501, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000011, z: 1.0000007}
+    - name: Hippo L Forearm
+      parentName: Hippo L UpperArm
+      position: {x: -0.17394345, y: 0.0000000023841857, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 0.9999999, z: 1.0000006}
+    - name: Hippo L Hand
+      parentName: Hippo L Forearm
+      position: {x: -0.15109126, y: 0.0000000047683715, z: 0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 1, y: 1.0000019, z: 1.0000024}
+    - name: Hippo L Finger0
+      parentName: Hippo L Hand
+      position: {x: -0.06507935, y: 0.012253265, z: -0.056595817}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 1, y: 1.0000004, z: 1.0000004}
+    - name: Hippo L Finger1
+      parentName: Hippo L Hand
+      position: {x: -0.112560004, y: 0.0060474393, z: -0.007125863}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000013, z: 1.0000015}
+    - name: Hippo Neck
+      parentName: Hippo Spine2
+      position: {x: -0.1332174, y: -0.0026890372, z: -0.0000000024994642}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Hippo Head
+      parentName: Hippo Neck
+      position: {x: -0.09017196, y: 0.036838513, z: 0.00000006987644}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000006, z: 1}
+    - name: Eye Left
+      parentName: Hippo Head
+      position: {x: -0.34892073, y: 0.10045837, z: 0.042042248}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.1161001, y: 1.1160996, z: 1.1160997}
+    - name: Eye Right
+      parentName: Hippo Head
+      position: {x: -0.34892073, y: 0.10045849, z: -0.042039942}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.1161001, y: 1.1160996, z: 1.1160997}
+    - name: Hippo Nose
+      parentName: Hippo Head
+      position: {x: -0.17087974, y: 0.1989382, z: 0.00000015851433}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999946, y: 0.9999999, z: 0.99999946}
+    - name: Hippo L UpperLip
+      parentName: Hippo Head
+      position: {x: -0.054829787, y: 0.5557935, z: 0.24117064}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000006}
+    - name: Hippo L Lip
+      parentName: Hippo Head
+      position: {x: -0.20308052, y: 0.06268663, z: 0.21319954}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000005, z: 1.0000004}
+    - name: Hippo Jaw
+      parentName: Hippo Head
+      position: {x: -0.08762252, y: 0.02733509, z: -0.00000007517367}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000001}
+    - name: Hippo L LowerLip
+      parentName: Hippo Jaw
+      position: {x: -0.37937042, y: -0.06946037, z: 0.12175955}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: Hippo R LowerLip
+      parentName: Hippo Jaw
+      position: {x: -0.37937036, y: -0.06945976, z: -0.12175993}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000002}
+    - name: Hippo Tongue
+      parentName: Hippo Jaw
+      position: {x: -0.082659245, y: -0.030162811, z: 0.0000004135431}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000006}
+    - name: Hippo Tongue02
+      parentName: Hippo Tongue
+      position: {x: -0.08778024, y: -0.00006973266, z: 0.0000027287006}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000004}
+    - name: Hippo Tongue03
+      parentName: Hippo Tongue02
+      position: {x: -0.08777738, y: -0.00006996155, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.000001, z: 1.0000008}
+    - name: Hippo L LowerEyelid
+      parentName: Hippo Head
+      position: {x: -0.31003997, y: 0.17145078, z: 0.07172269}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000006}
+    - name: Hippo L Eyebrow
+      parentName: Hippo Head
+      position: {x: -0.48148933, y: 0.104003504, z: 0.028187612}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 0.9999997}
+    - name: Hippo L UpperEyelid
+      parentName: Hippo Head
+      position: {x: -0.39714774, y: 0.16713607, z: 0.06820859}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000012, z: 1.0000006}
+    - name: Hippo R Eyebrow
+      parentName: Hippo Head
+      position: {x: -0.48148933, y: 0.10400365, z: -0.02818705}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000002, y: 1.0000007, z: 1.0000008}
+    - name: Hippo Ponytail1
+      parentName: Hippo Head
+      position: {x: -0.37491873, y: -0.0958782, z: 0.11664116}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000006}
+    - name: Hippo Ponytail11
+      parentName: Hippo Ponytail1
+      position: {x: -0.09653873, y: -0.00007499695, z: -0.000011291504}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.9999997, z: 1.0000001}
+    - name: Hippo R UpperLip
+      parentName: Hippo Head
+      position: {x: -0.05482971, y: 0.55579484, z: -0.24116752}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000006}
+    - name: Hippo R UpperEyelid
+      parentName: Hippo Head
+      position: {x: -0.39714774, y: 0.16713646, z: -0.068207674}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000012, z: 1.0000007}
+    - name: Hippo Ponytail2
+      parentName: Hippo Head
+      position: {x: -0.37491873, y: -0.09587755, z: -0.1166417}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000005}
+    - name: Hippo Ponytail21
+      parentName: Hippo Ponytail2
+      position: {x: -0.09653873, y: -0.0000749588, z: 0.000011215209}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000012, y: 0.9999998, z: 1.0000008}
+    - name: Hippo R Lip
+      parentName: Hippo Head
+      position: {x: -0.20308052, y: 0.062687814, z: -0.21319915}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000002}
+    - name: Hippo R LowerEyelid
+      parentName: Hippo Head
+      position: {x: -0.31003997, y: 0.17145117, z: -0.07172174}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000011, y: 1.000001, z: 1.0000008}
+    - name: Hippo R Clavicle
+      parentName: Hippo Spine2
+      position: {x: -0.13577232, y: -0.043127716, z: -0.079157166}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Hippo R UpperArm
+      parentName: Hippo R Clavicle
+      position: {x: -0.1627501, y: 0.000000009536743, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000012, y: 1.000001, z: 1.0000008}
+    - name: Hippo R Forearm
+      parentName: Hippo R UpperArm
+      position: {x: -0.17394339, y: 0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 0.99999994, z: 1.0000002}
+    - name: Hippo R Hand
+      parentName: Hippo R Forearm
+      position: {x: -0.15109119, y: 0.0000000047683715, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000012, y: 1.0000017, z: 1}
+    - name: Hippo R Finger0
+      parentName: Hippo R Hand
+      position: {x: -0.06507935, y: 0.012253265, z: 0.05659581}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 0.9999998, y: 0.9999995, z: 0.9999994}
+    - name: Hippo R Finger1
+      parentName: Hippo R Hand
+      position: {x: -0.11256004, y: 0.0060474393, z: 0.007125866}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000005}
+    - name: Hippo L Thigh
+      parentName: Hippo Pelvis
+      position: {x: 0.00000028610228, y: 0.00000029571353, z: 0.20486464}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.000001}
+    - name: Hippo L Calf
+      parentName: Hippo L Thigh
+      position: {x: -0.11295353, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999996, y: 0.99999994, z: 0.99999994}
+    - name: Hippo L Foot
+      parentName: Hippo L Calf
+      position: {x: -0.07907607, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000008}
+    - name: Hippo L Toe0
+      parentName: Hippo L Foot
+      position: {x: -0.07094349, y: 0.16128998, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 0.99999994, y: 0.9999997, z: 0.9999998}
+    - name: Hippo Tail
+      parentName: Hippo Pelvis
+      position: {x: -0.08646421, y: -0.31859612, z: 0.0000010124297}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000004}
+    - name: Hippo Tail02
+      parentName: Hippo Tail
+      position: {x: -0.11802614, y: -0.00009391784, z: -2.606248e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000005}
+    - name: Hippo R Thigh
+      parentName: Hippo Pelvis
+      position: {x: -0.00000028610228, y: -0.00000027246773, z: -0.20486464}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.0000008}
+    - name: Hippo R Calf
+      parentName: Hippo R Thigh
+      position: {x: -0.11295354, y: -0.000000009536743, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000004}
+    - name: Hippo R Foot
+      parentName: Hippo R Calf
+      position: {x: -0.07907607, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: Hippo R Toe0
+      parentName: Hippo R Foot
+      position: {x: -0.07094349, y: 0.16128996, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 0.9999996, y: 0.99999994, z: 0.99999976}
+    - name: Hippo 1
+      parentName: Hippo(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 42a1a492d8beb5d41a015b907d3b16f6,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

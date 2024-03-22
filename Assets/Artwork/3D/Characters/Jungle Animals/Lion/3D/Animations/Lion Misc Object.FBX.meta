@@ -1,0 +1,1440 @@
+fileFormatVersion: 2
+guid: 6718215206b03d346b41a157d2c7854e
+timeCreated: 1553213284
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Eye Left
+    100002: Eye Right
+    100004: Lion
+    100006: Lion Head
+    100008: Lion Jaw
+    100010: Lion L Calf
+    100012: Lion L Clavicle
+    100014: Lion L Eyebrow
+    100016: Lion L Finger0
+    100018: Lion L Finger1
+    100020: Lion L Foot
+    100022: Lion L Forearm
+    100024: Lion L Hand
+    100026: Lion L Lip
+    100028: Lion L LowerEyelid
+    100030: Lion L LowerLip
+    100032: Lion L Thigh
+    100034: Lion L Toe0
+    100036: Lion L UpperArm
+    100038: Lion L UpperEyelid
+    100040: Lion L UpperLip
+    100042: //RootNode
+    100044: Lion Neck
+    100046: Lion Nose
+    100048: Lion Pelvis
+    100050: Lion Ponytail1
+    100052: Lion Ponytail11
+    100054: Lion Ponytail2
+    100056: Lion Ponytail21
+    100058: Lion R Calf
+    100060: Lion R Clavicle
+    100062: Lion R Eyebrow
+    100064: Lion R Finger0
+    100066: Lion R Finger1
+    100068: Lion R Foot
+    100070: Lion R Forearm
+    100072: Lion R Hand
+    100074: Lion R Lip
+    100076: Lion R LowerEyelid
+    100078: Lion R LowerLip
+    100080: Lion R Thigh
+    100082: Lion R Toe0
+    100084: Lion R UpperArm
+    100086: Lion R UpperEyelid
+    100088: Lion R UpperLip
+    100090: Lion Spine
+    100092: Lion Spine1
+    100094: Lion Spine2
+    100096: Lion Tail
+    100098: Lion Tail1
+    100100: Lion Tail2
+    100102: Lion Tail3
+    100104: Lion Tail4
+    100106: Lion Tongue
+    100108: Lion Tongue02
+    100110: Lion Tongue03
+    400000: Eye Left
+    400002: Eye Right
+    400004: Lion
+    400006: Lion Head
+    400008: Lion Jaw
+    400010: Lion L Calf
+    400012: Lion L Clavicle
+    400014: Lion L Eyebrow
+    400016: Lion L Finger0
+    400018: Lion L Finger1
+    400020: Lion L Foot
+    400022: Lion L Forearm
+    400024: Lion L Hand
+    400026: Lion L Lip
+    400028: Lion L LowerEyelid
+    400030: Lion L LowerLip
+    400032: Lion L Thigh
+    400034: Lion L Toe0
+    400036: Lion L UpperArm
+    400038: Lion L UpperEyelid
+    400040: Lion L UpperLip
+    400042: //RootNode
+    400044: Lion Neck
+    400046: Lion Nose
+    400048: Lion Pelvis
+    400050: Lion Ponytail1
+    400052: Lion Ponytail11
+    400054: Lion Ponytail2
+    400056: Lion Ponytail21
+    400058: Lion R Calf
+    400060: Lion R Clavicle
+    400062: Lion R Eyebrow
+    400064: Lion R Finger0
+    400066: Lion R Finger1
+    400068: Lion R Foot
+    400070: Lion R Forearm
+    400072: Lion R Hand
+    400074: Lion R Lip
+    400076: Lion R LowerEyelid
+    400078: Lion R LowerLip
+    400080: Lion R Thigh
+    400082: Lion R Toe0
+    400084: Lion R UpperArm
+    400086: Lion R UpperEyelid
+    400088: Lion R UpperLip
+    400090: Lion Spine
+    400092: Lion Spine1
+    400094: Lion Spine2
+    400096: Lion Tail
+    400098: Lion Tail1
+    400100: Lion Tail2
+    400102: Lion Tail3
+    400104: Lion Tail4
+    400106: Lion Tongue
+    400108: Lion Tongue02
+    400110: Lion Tongue03
+    2100000: Eyes
+    2100002: Eye Shine
+    2300000: Eye Left
+    2300002: Eye Right
+    3300000: Eye Left
+    3300002: Eye Right
+    4300000: Eye Left
+    4300002: Eye Right
+    7400000: Lion Pick Up
+    7400002: Lion Carry Idle
+    7400004: Lion Carry Move
+    7400006: Lion Throw
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Lion Pick Up
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lion
+        weight: 1
+      - path: Lion/Lion Pelvis
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot/Lion L Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot/Lion R Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Left
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Right
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion L LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion R LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02/Lion Tongue03
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Mane
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Nose
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1/Lion Ponytail11
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2/Lion Ponytail21
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3/Lion Tail4
+        weight: 1
+      - path: Lion Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 52b0cea98f3196b4da7ff21daf6b9281, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lion Carry Idle
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lion
+        weight: 1
+      - path: Lion/Lion Pelvis
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot/Lion L Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot/Lion R Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Left
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Right
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion L LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion R LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02/Lion Tongue03
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Mane
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Nose
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1/Lion Ponytail11
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2/Lion Ponytail21
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3/Lion Tail4
+        weight: 1
+      - path: Lion Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 52b0cea98f3196b4da7ff21daf6b9281, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lion Carry Move
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lion
+        weight: 1
+      - path: Lion/Lion Pelvis
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot/Lion L Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot/Lion R Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Left
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Right
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion L LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion R LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02/Lion Tongue03
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Mane
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Nose
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1/Lion Ponytail11
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2/Lion Ponytail21
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3/Lion Tail4
+        weight: 1
+      - path: Lion Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 52b0cea98f3196b4da7ff21daf6b9281, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Lion Throw
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Lion
+        weight: 1
+      - path: Lion/Lion Pelvis
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion L Thigh/Lion L Calf/Lion L Foot/Lion L Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion R Thigh/Lion R Calf/Lion R Foot/Lion R Toe0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion L Clavicle/Lion
+          L UpperArm/Lion L Forearm/Lion L Hand/Lion L Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Left
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Eye
+          Right
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion L LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion R LowerLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Lion Tongue/Lion Tongue02/Lion Tongue03
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Jaw/Tongue
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          L UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Mane
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Nose
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail1/Lion Ponytail11
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          Ponytail2/Lion Ponytail21
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Eyebrow
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R Lip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R LowerEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperEyelid
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion Neck/Lion Head/Lion
+          R UpperLip
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger0
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Spine/Lion Spine1/Lion Spine2/Lion R Clavicle/Lion
+          R UpperArm/Lion R Forearm/Lion R Hand/Lion R Finger1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3
+        weight: 1
+      - path: Lion/Lion Pelvis/Lion Tail/Lion Tail1/Lion Tail2/Lion Tail3/Lion Tail4
+        weight: 1
+      - path: Lion Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 52b0cea98f3196b4da7ff21daf6b9281, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Lion Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Lion Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Lion Humanoid(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.00000050384944, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lion
+      parentName: Lion Humanoid(Clone)
+      position: {x: 8.379433e-10, y: 0.30915716, z: -0.00083008554}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lion Pelvis
+      parentName: Lion
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: Lion Spine
+      parentName: Lion Pelvis
+      position: {x: -0.052458648, y: -0.00012279078, z: 0.0000000729199}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Lion Spine1
+      parentName: Lion Spine
+      position: {x: -0.1542265, y: -0.00012280658, z: -3.4061598e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999976, y: 1.0000004, z: 1}
+    - name: Lion Spine2
+      parentName: Lion Spine1
+      position: {x: -0.15422645, y: -0.00012280658, z: -3.4061684e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Lion Neck
+      parentName: Lion Spine2
+      position: {x: -0.14427567, y: -0.030078625, z: -0.000000040938342}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lion Head
+      parentName: Lion Neck
+      position: {x: -0.083433606, y: 0.015824208, z: 0.00000002148407}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000007}
+    - name: Eye Left
+      parentName: Lion Head
+      position: {x: -0.27057818, y: 0.16148277, z: 0.08697869}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.125775, y: 1.125775, z: 1.125775}
+    - name: Eye Right
+      parentName: Lion Head
+      position: {x: -0.27057818, y: 0.16148303, z: -0.08759482}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.125775, y: 1.125775, z: 1.125775}
+    - name: Lion Mane
+      parentName: Lion Head
+      position: {x: 0.8961598, y: 0.008692194, z: 0.000000012688451}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lion L Lip
+      parentName: Lion Head
+      position: {x: -0.12474777, y: 0.22701217, z: 0.18157804}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.9999999, z: 1.0000005}
+    - name: Lion L UpperLip
+      parentName: Lion Head
+      position: {x: -0.04119873, y: 0.4451419, z: 0.15555838}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Lion L Eyebrow
+      parentName: Lion Head
+      position: {x: -0.3900189, y: 0.19359037, z: 0.06350861}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Lion R Eyebrow
+      parentName: Lion Head
+      position: {x: -0.3900189, y: 0.19359072, z: -0.06350755}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Lion Nose
+      parentName: Lion Head
+      position: {x: -0.18170455, y: 0.44119698, z: 0.0000005032291}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000006, z: 0.9999999}
+    - name: Lion L LowerEyelid
+      parentName: Lion Head
+      position: {x: -0.23198111, y: 0.23268679, z: 0.08977839}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999999, z: 0.99999976}
+    - name: Lion Jaw
+      parentName: Lion Head
+      position: {x: -0.11950416, y: 0.16216694, z: 0.000000130784}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000012, z: 1.0000002}
+    - name: Tongue
+      parentName: Lion Jaw
+      position: {x: -0.05966855, y: -0.016388398, z: -0.010689468}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999964, z: 1.0000001}
+    - name: Lion L LowerLip
+      parentName: Lion Jaw
+      position: {x: -0.24726059, y: 0.07727806, z: 0.10731906}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999997, y: 0.99999964, z: 0.99999964}
+    - name: Lion R LowerLip
+      parentName: Lion Jaw
+      position: {x: -0.24726059, y: 0.077278666, z: -0.10731862}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999997, y: 0.9999997, z: 0.9999995}
+    - name: Lion Tongue
+      parentName: Lion Jaw
+      position: {x: -0.044380885, y: 0.032436218, z: -0.000000066709546}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000013, y: 1.0000018, z: 1.000001}
+    - name: Lion Tongue02
+      parentName: Lion Tongue
+      position: {x: -0.07605823, y: -0.00006034851, z: 0.0000023652738}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000017, z: 1.0000011}
+    - name: Lion Tongue03
+      parentName: Lion Tongue02
+      position: {x: -0.076055735, y: -0.000060501097, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000004}
+    - name: Lion L UpperEyelid
+      parentName: Lion Head
+      position: {x: -0.31398636, y: 0.22834288, z: 0.087749556}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: Lion Ponytail1
+      parentName: Lion Head
+      position: {x: -0.25766128, y: -0.07598542, z: 0.21464744}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 0.99999994}
+    - name: Lion Ponytail11
+      parentName: Lion Ponytail1
+      position: {x: -0.09369667, y: -0.000074653624, z: -0.000000038146972}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+    - name: Lion Ponytail2
+      parentName: Lion Head
+      position: {x: -0.2576612, y: -0.075984225, z: -0.21464786}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 0.9999999}
+    - name: Lion Ponytail21
+      parentName: Lion Ponytail2
+      position: {x: -0.0936969, y: -0.00007457733, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000002}
+    - name: Lion R UpperLip
+      parentName: Lion Head
+      position: {x: -0.04119873, y: 0.44514275, z: -0.15555592}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000004}
+    - name: Lion R Lip
+      parentName: Lion Head
+      position: {x: -0.12474777, y: 0.22701319, z: -0.18157679}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000004}
+    - name: Lion R LowerEyelid
+      parentName: Lion Head
+      position: {x: -0.23198111, y: 0.23268728, z: -0.08977711}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000002, z: 1}
+    - name: Lion R UpperEyelid
+      parentName: Lion Head
+      position: {x: -0.31398636, y: 0.22834337, z: -0.0877483}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lion L Clavicle
+      parentName: Lion Spine2
+      position: {x: -0.06752281, y: -0.043925848, z: 0.032500163}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 0.9999998, y: 1.0000001, z: 1.0000001}
+    - name: Lion L UpperArm
+      parentName: Lion L Clavicle
+      position: {x: -0.092204124, y: -0.000000009536743, z: 0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000001}
+    - name: Lion L Forearm
+      parentName: Lion L UpperArm
+      position: {x: -0.1878176, y: 0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1.0000006, z: 1.0000007}
+    - name: Lion L Hand
+      parentName: Lion L Forearm
+      position: {x: -0.1389888, y: -0.0000000047683715, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 0.9999999, y: 1.0000012, z: 1.0000005}
+    - name: Lion L Finger0
+      parentName: Lion L Hand
+      position: {x: -0.05221546, y: 0.0040876004, z: -0.034620438}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 1.0000012, y: 1.0000011, z: 1.0000012}
+    - name: Lion L Finger1
+      parentName: Lion L Hand
+      position: {x: -0.10539158, y: 0.0033307646, z: 0.000012397766}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000006, z: 1.0000011}
+    - name: Lion R Clavicle
+      parentName: Lion Spine2
+      position: {x: -0.06752281, y: -0.043925665, z: -0.0325004}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1.0000005, y: 1.0000011, z: 1.0000008}
+    - name: Lion R UpperArm
+      parentName: Lion R Clavicle
+      position: {x: -0.092204124, y: 0, z: -0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000013, y: 1.0000005, z: 1.0000011}
+    - name: Lion R Forearm
+      parentName: Lion R UpperArm
+      position: {x: -0.1878176, y: -0.0000000047683715, z: 0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000012, y: 1.0000006, z: 1.0000008}
+    - name: Lion R Hand
+      parentName: Lion R Forearm
+      position: {x: -0.13898884, y: 0.0000000047683715, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000005, y: 1.000001, z: 1.0000002}
+    - name: Lion R Finger0
+      parentName: Lion R Hand
+      position: {x: -0.052215423, y: 0.0040876004, z: 0.03462044}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 1.0000011, y: 1.0000002, z: 1.0000006}
+    - name: Lion R Finger1
+      parentName: Lion R Hand
+      position: {x: -0.10539158, y: 0.003330841, z: -0.000012392998}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000004, z: 0.99999994}
+    - name: Lion Tail
+      parentName: Lion Pelvis
+      position: {x: -0.076478004, y: -0.13282683, z: 0.00000044294487}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000011, y: 1.0000004, z: 1.0000008}
+    - name: Lion Tail1
+      parentName: Lion Tail
+      position: {x: -0.23539154, y: -0.00018741607, z: -5.206675e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Lion Tail2
+      parentName: Lion Tail1
+      position: {x: -0.23538849, y: -0.00018737793, z: -5.1921234e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999998, z: 1.0000007}
+    - name: Lion Tail3
+      parentName: Lion Tail2
+      position: {x: -0.23539265, y: -0.00018737793, z: -5.154288e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: Lion Tail4
+      parentName: Lion Tail3
+      position: {x: -0.23538856, y: -0.00018741607, z: -5.09026e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000001, z: 1.0000008}
+    - name: Lion L Thigh
+      parentName: Lion Pelvis
+      position: {x: 0.00000017166137, y: 0.00000018291175, z: 0.12215792}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000004}
+    - name: Lion L Calf
+      parentName: Lion L Thigh
+      position: {x: -0.13051224, y: 0, z: -0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000006, z: 1.0000002}
+    - name: Lion L Foot
+      parentName: Lion L Calf
+      position: {x: -0.10991476, y: 0, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.99999976}
+    - name: Lion L Toe0
+      parentName: Lion L Foot
+      position: {x: -0.051580805, y: 0.11726889, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1.0000004}
+    - name: Lion R Thigh
+      parentName: Lion Pelvis
+      position: {x: -0.00000017166137, y: -0.00000015594065, z: -0.12215792}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000011, y: 1.0000006, z: 1.000001}
+    - name: Lion R Calf
+      parentName: Lion R Thigh
+      position: {x: -0.13051225, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000004, z: 1.0000005}
+    - name: Lion R Foot
+      parentName: Lion R Calf
+      position: {x: -0.109914765, y: 0, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 0.99999976, z: 1.0000002}
+    - name: Lion R Toe0
+      parentName: Lion R Foot
+      position: {x: -0.051580805, y: 0.11726888, z: -0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 0.9999996, y: 1.0000001, z: 0.99999976}
+    - name: Lion 1
+      parentName: Lion Humanoid(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 4169321273f8db2449f0e0b25cb02ac2,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

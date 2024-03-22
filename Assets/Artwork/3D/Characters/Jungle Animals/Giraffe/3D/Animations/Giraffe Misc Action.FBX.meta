@@ -1,0 +1,1075 @@
+fileFormatVersion: 2
+guid: 866ae141e1af4f64a8dc750f4d65d48a
+timeCreated: 1553529040
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Eye Left
+    100002: Eye Right
+    100004: Giraffe
+    100006: Giraffe Head
+    100008: Giraffe Jaw
+    100010: Giraffe L Calf
+    100012: Giraffe L Clavicle
+    100014: Giraffe L Eyebrow
+    100016: Giraffe L Finger0
+    100018: Giraffe L Foot
+    100020: Giraffe L Forearm
+    100022: Giraffe L Hand
+    100024: Giraffe L Lip
+    100026: Giraffe L LowerEyelid
+    100028: Giraffe L LowerLip
+    100030: Giraffe L Thigh
+    100032: Giraffe L Toe0
+    100034: Giraffe L UpperArm
+    100036: Giraffe L UpperEyelid
+    100038: Giraffe L UpperLip
+    100040: //RootNode
+    100042: Giraffe Neck
+    100044: Giraffe Nose
+    100046: Giraffe Pelvis
+    100048: Giraffe Ponytail1
+    100050: Giraffe Ponytail11
+    100052: Giraffe Ponytail2
+    100054: Giraffe Ponytail21
+    100056: Giraffe R Calf
+    100058: Giraffe R Clavicle
+    100060: Giraffe R Eyebrow
+    100062: Giraffe R Finger0
+    100064: Giraffe R Foot
+    100066: Giraffe R Forearm
+    100068: Giraffe R Hand
+    100070: Giraffe R Lip
+    100072: Giraffe R LowerEyelid
+    100074: Giraffe R LowerLip
+    100076: Giraffe R Thigh
+    100078: Giraffe R Toe0
+    100080: Giraffe R UpperArm
+    100082: Giraffe R UpperEyelid
+    100084: Giraffe R UpperLip
+    100086: Giraffe Spine
+    100088: Giraffe Spine1
+    100090: Giraffe Spine2
+    100092: Giraffe Tail
+    100094: Giraffe Tail1
+    100096: Giraffe Tail2
+    100098: Giraffe Tail3
+    100100: Giraffe Tail4
+    100102: Giraffe Tongue
+    100104: Giraffe Tongue02
+    100106: Giraffe Tongue03
+    100108: Teeth Lower
+    100110: Teeth Upper
+    400000: Eye Left
+    400002: Eye Right
+    400004: Giraffe
+    400006: Giraffe Head
+    400008: Giraffe Jaw
+    400010: Giraffe L Calf
+    400012: Giraffe L Clavicle
+    400014: Giraffe L Eyebrow
+    400016: Giraffe L Finger0
+    400018: Giraffe L Foot
+    400020: Giraffe L Forearm
+    400022: Giraffe L Hand
+    400024: Giraffe L Lip
+    400026: Giraffe L LowerEyelid
+    400028: Giraffe L LowerLip
+    400030: Giraffe L Thigh
+    400032: Giraffe L Toe0
+    400034: Giraffe L UpperArm
+    400036: Giraffe L UpperEyelid
+    400038: Giraffe L UpperLip
+    400040: //RootNode
+    400042: Giraffe Neck
+    400044: Giraffe Nose
+    400046: Giraffe Pelvis
+    400048: Giraffe Ponytail1
+    400050: Giraffe Ponytail11
+    400052: Giraffe Ponytail2
+    400054: Giraffe Ponytail21
+    400056: Giraffe R Calf
+    400058: Giraffe R Clavicle
+    400060: Giraffe R Eyebrow
+    400062: Giraffe R Finger0
+    400064: Giraffe R Foot
+    400066: Giraffe R Forearm
+    400068: Giraffe R Hand
+    400070: Giraffe R Lip
+    400072: Giraffe R LowerEyelid
+    400074: Giraffe R LowerLip
+    400076: Giraffe R Thigh
+    400078: Giraffe R Toe0
+    400080: Giraffe R UpperArm
+    400082: Giraffe R UpperEyelid
+    400084: Giraffe R UpperLip
+    400086: Giraffe Spine
+    400088: Giraffe Spine1
+    400090: Giraffe Spine2
+    400092: Giraffe Tail
+    400094: Giraffe Tail1
+    400096: Giraffe Tail2
+    400098: Giraffe Tail3
+    400100: Giraffe Tail4
+    400102: Giraffe Tongue
+    400104: Giraffe Tongue02
+    400106: Giraffe Tongue03
+    400108: Teeth Lower
+    400110: Teeth Upper
+    2100000: Giraffe
+    2100002: Eye
+    2100004: Eye Shine
+    2300000: Eye Left
+    2300002: Eye Right
+    2300004: Teeth Lower
+    2300006: Teeth Upper
+    3300000: Eye Left
+    3300002: Eye Right
+    3300004: Teeth Lower
+    3300006: Teeth Upper
+    4300000: Teeth Lower
+    4300002: Eye Left
+    4300004: Teeth Upper
+    7400000: Giraffe Kick
+    7400002: Giraffe Damage
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Giraffe Kick
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Giraffe
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf/Giraffe L Foot
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf/Giraffe L Foot/Giraffe
+          L Toe0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf/Giraffe R Foot
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf/Giraffe R Foot/Giraffe
+          R Toe0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm/Giraffe L Hand
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm/Giraffe L Hand/Giraffe L
+          Finger0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Eye Left
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Eye Right
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe L LowerLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe R LowerLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue/Giraffe Tongue02
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue/Giraffe Tongue02/Giraffe Tongue03
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Teeth Lower
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Tongue
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L Eyebrow
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L Lip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L LowerEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L UpperEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L UpperLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Nose
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail1/Giraffe Ponytail11
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail2/Giraffe Ponytail21
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R Eyebrow
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R Lip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R LowerEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R UpperEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R UpperLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Teeth Upper
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm/Giraffe R Hand
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm/Giraffe R Hand/Giraffe R
+          Finger0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2/Giraffe
+          Tail3
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2/Giraffe
+          Tail3/Giraffe Tail4
+        weight: 1
+      - path: Giraffe Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 494c05216b3e3864ebf6407c590d1e93, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Giraffe Damage
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 70
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Giraffe
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf/Giraffe L Foot
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe L Thigh/Giraffe L Calf/Giraffe L Foot/Giraffe
+          L Toe0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf/Giraffe R Foot
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe R Thigh/Giraffe R Calf/Giraffe R Foot/Giraffe
+          R Toe0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm/Giraffe L Hand
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          L Clavicle/Giraffe L UpperArm/Giraffe L Forearm/Giraffe L Hand/Giraffe L
+          Finger0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Eye Left
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Eye Right
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe L LowerLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe R LowerLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue/Giraffe Tongue02
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Giraffe Tongue/Giraffe Tongue02/Giraffe Tongue03
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Teeth Lower
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Jaw/Tongue
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L Eyebrow
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L Lip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L LowerEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L UpperEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe L UpperLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Nose
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail1/Giraffe Ponytail11
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe Ponytail2/Giraffe Ponytail21
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R Eyebrow
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R Lip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R LowerEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R UpperEyelid
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Giraffe R UpperLip
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          Neck/Giraffe Head/Teeth Upper
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm/Giraffe R Hand
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Spine/Giraffe Spine1/Giraffe Spine2/Giraffe
+          R Clavicle/Giraffe R UpperArm/Giraffe R Forearm/Giraffe R Hand/Giraffe R
+          Finger0
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2/Giraffe
+          Tail3
+        weight: 1
+      - path: Giraffe/Giraffe Pelvis/Giraffe Tail/Giraffe Tail1/Giraffe Tail2/Giraffe
+          Tail3/Giraffe Tail4
+        weight: 1
+      - path: Giraffe Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 494c05216b3e3864ebf6407c590d1e93, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Giraffe Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Giraffe Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Giraffe(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.0000004755519, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Giraffe
+      parentName: Giraffe(Clone)
+      position: {x: -0, y: 0.37826866, z: -0.019999992}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Giraffe Pelvis
+      parentName: Giraffe
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: Giraffe Spine
+      parentName: Giraffe Pelvis
+      position: {x: -0.054254796, y: 0.02857115, z: -0.0000000037319112}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999996, y: 1, z: 0.9999996}
+    - name: Giraffe Spine1
+      parentName: Giraffe Spine
+      position: {x: -0.16636834, y: -0.0001324749, z: -3.6743358e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Giraffe Spine2
+      parentName: Giraffe Spine1
+      position: {x: -0.16636837, y: -0.0001324755, z: -3.6743245e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Giraffe Neck
+      parentName: Giraffe Spine2
+      position: {x: -0.14900734, y: -0.00011707961, z: -3.247328e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000004}
+    - name: Giraffe Head
+      parentName: Giraffe Neck
+      position: {x: -0.48233497, y: -0.099635884, z: -0.00000008699697}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Eye Left
+      parentName: Giraffe Head
+      position: {x: -0.20962152, y: 0.17944625, z: 0.14991531}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.1257751, y: 1.125775, z: 1.125775}
+    - name: Eye Right
+      parentName: Giraffe Head
+      position: {x: -0.20962156, y: 0.17944667, z: -0.14990951}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.125775, y: 1.1257751, z: 1.1257751}
+    - name: Teeth Upper
+      parentName: Giraffe Head
+      position: {x: -0.027085142, y: 0.3719161, z: -0.0021014404}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000006, z: 0.9999998}
+    - name: Giraffe L UpperEyelid
+      parentName: Giraffe Head
+      position: {x: -0.23105744, y: 0.24449962, z: 0.17221385}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000001}
+    - name: Giraffe L LowerEyelid
+      parentName: Giraffe Head
+      position: {x: -0.17127715, y: 0.24260278, z: 0.17054407}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999976, z: 0.99999976}
+    - name: Giraffe L Lip
+      parentName: Giraffe Head
+      position: {x: -0.08359283, y: 0.26643896, z: 0.14031747}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+    - name: Giraffe L Eyebrow
+      parentName: Giraffe Head
+      position: {x: -0.31219298, y: 0.22568808, z: 0.079025924}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000006}
+    - name: Giraffe Jaw
+      parentName: Giraffe Head
+      position: {x: -0.076315306, y: 0.20076717, z: 0.00000018295039}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1.0000007, z: 1.0000002}
+    - name: Teeth Lower
+      parentName: Giraffe Jaw
+      position: {x: -0.1511414, y: -0.055958632, z: 0.003092041}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000013, z: 1.0000002}
+    - name: Tongue
+      parentName: Giraffe Jaw
+      position: {x: -0.059668425, y: -0.016388474, z: -0.010689391}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 0.9999996, z: 1.0000002}
+    - name: Giraffe L LowerLip
+      parentName: Giraffe Jaw
+      position: {x: -0.17841865, y: -0.0531353, z: 0.07625366}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 0.9999999, z: 0.9999998}
+    - name: Giraffe R LowerLip
+      parentName: Giraffe Jaw
+      position: {x: -0.17841865, y: -0.05313484, z: -0.07625394}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999999, z: 1.0000001}
+    - name: Giraffe Tongue
+      parentName: Giraffe Jaw
+      position: {x: -0.031662673, y: -0.015801238, z: -0.0000002623764}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000011, y: 1.0000014, z: 1.0000002}
+    - name: Giraffe Tongue02
+      parentName: Giraffe Tongue
+      position: {x: -0.05908737, y: -0.00004684448, z: 0.0000018370989}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000014, z: 1.0000011}
+    - name: Giraffe Tongue03
+      parentName: Giraffe Tongue02
+      position: {x: -0.059085462, y: -0.000047073365, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000008, z: 1.0000007}
+    - name: Giraffe Nose
+      parentName: Giraffe Head
+      position: {x: -0.06501846, y: 0.44189426, z: 0.00000050414775}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1.0000002}
+    - name: Giraffe L UpperLip
+      parentName: Giraffe Head
+      position: {x: 0.03527176, y: 0.4766694, z: 0.10441352}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: Giraffe R UpperLip
+      parentName: Giraffe Head
+      position: {x: 0.03527176, y: 0.47667003, z: -0.104410864}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000004}
+    - name: Giraffe Ponytail1
+      parentName: Giraffe Head
+      position: {x: -0.25481644, y: -0.021985121, z: 0.21074253}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Giraffe Ponytail11
+      parentName: Giraffe Ponytail1
+      position: {x: -0.12270534, y: -0.000097808836, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999995, y: 0.9999997, z: 0.99999934}
+    - name: Giraffe R UpperEyelid
+      parentName: Giraffe Head
+      position: {x: -0.23105744, y: 0.24450053, z: -0.17221248}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.99999934, z: 0.99999934}
+    - name: Giraffe R LowerEyelid
+      parentName: Giraffe Head
+      position: {x: -0.17127715, y: 0.24260372, z: -0.17054278}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 0.9999998, z: 0.9999995}
+    - name: Giraffe R Lip
+      parentName: Giraffe Head
+      position: {x: -0.08359283, y: 0.26643977, z: -0.140316}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999976, y: 0.9999999, z: 1.0000001}
+    - name: Giraffe R Eyebrow
+      parentName: Giraffe Head
+      position: {x: -0.31219298, y: 0.22568855, z: -0.07902469}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: Giraffe Ponytail2
+      parentName: Giraffe Head
+      position: {x: -0.25481644, y: -0.021983948, z: -0.2107427}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1, z: 1.0000006}
+    - name: Giraffe Ponytail21
+      parentName: Giraffe Ponytail2
+      position: {x: -0.1227053, y: -0.000097808836, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1}
+    - name: Giraffe L Clavicle
+      parentName: Giraffe Spine2
+      position: {x: -0.10813301, y: -0.017692914, z: 0.021701869}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000004}
+    - name: Giraffe L UpperArm
+      parentName: Giraffe L Clavicle
+      position: {x: -0.1026719, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000008, z: 1.0000007}
+    - name: Giraffe L Forearm
+      parentName: Giraffe L UpperArm
+      position: {x: -0.18541521, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 0.99999976}
+    - name: Giraffe L Hand
+      parentName: Giraffe L Forearm
+      position: {x: -0.1247554, y: -0.0000000023841857, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
+    - name: Giraffe L Finger0
+      parentName: Giraffe L Hand
+      position: {x: -0.1411674, y: 0, z: 0.0000000047683715}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 0.9999998, y: 0.99999994, z: 1}
+    - name: Giraffe R Clavicle
+      parentName: Giraffe Spine2
+      position: {x: -0.10813301, y: -0.017692795, z: -0.021701965}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1.0000011, y: 1.0000012, z: 1.000001}
+    - name: Giraffe R UpperArm
+      parentName: Giraffe R Clavicle
+      position: {x: -0.1026719, y: -5.9604643e-10, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000006, z: 1.0000006}
+    - name: Giraffe R Forearm
+      parentName: Giraffe R UpperArm
+      position: {x: -0.18541522, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1.0000004, z: 1.0000005}
+    - name: Giraffe R Hand
+      parentName: Giraffe R Forearm
+      position: {x: -0.12475536, y: 0, z: -0.000000076293944}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000008, y: 1.0000008, z: 0.99999994}
+    - name: Giraffe R Finger0
+      parentName: Giraffe R Hand
+      position: {x: -0.1411674, y: 0, z: 0}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1}
+    - name: Giraffe L Thigh
+      parentName: Giraffe Pelvis
+      position: {x: 0.00000019073485, y: 0.00000019073485, z: 0.12634048}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000011, y: 1.000001, z: 1.0000007}
+    - name: Giraffe L Calf
+      parentName: Giraffe L Thigh
+      position: {x: -0.194504, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000006, z: 1.0000001}
+    - name: Giraffe L Foot
+      parentName: Giraffe L Calf
+      position: {x: -0.1463003, y: 0.0000000035762786, z: -0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999996, y: 0.99999964, z: 0.99999994}
+    - name: Giraffe L Toe0
+      parentName: Giraffe L Foot
+      position: {x: -0.03321054, y: 0.07550412, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000007}
+    - name: Giraffe R Thigh
+      parentName: Giraffe Pelvis
+      position: {x: -0.00000019073485, y: -0.00000015974044, z: -0.12634048}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000007}
+    - name: Giraffe R Calf
+      parentName: Giraffe R Thigh
+      position: {x: -0.19450398, y: 0, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000007, z: 1.0000007}
+    - name: Giraffe R Foot
+      parentName: Giraffe R Calf
+      position: {x: -0.14630032, y: 0.0000000023841857, z: -0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000002}
+    - name: Giraffe R Toe0
+      parentName: Giraffe R Foot
+      position: {x: -0.03321054, y: 0.07550412, z: -0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1, y: 0.9999999, z: 1.0000004}
+    - name: Giraffe Tail
+      parentName: Giraffe Pelvis
+      position: {x: -0.06217346, y: -0.12701464, z: 0.00000040513675}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000004}
+    - name: Giraffe Tail1
+      parentName: Giraffe Tail
+      position: {x: -0.125128, y: -0.000099678036, z: -2.7677743e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: Giraffe Tail2
+      parentName: Giraffe Tail1
+      position: {x: -0.1251265, y: -0.00009960174, z: -2.7619534e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 0.9999999, z: 1}
+    - name: Giraffe Tail3
+      parentName: Giraffe Tail2
+      position: {x: -0.12512863, y: -0.00009963989, z: -2.7386704e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 1}
+    - name: Giraffe Tail4
+      parentName: Giraffe Tail3
+      position: {x: -0.125113, y: -0.00015293121, z: -4.1123713e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.9999999, z: 0.9999999}
+    - name: Giraffe Mesh
+      parentName: Giraffe(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 2e7cfec9d29d906498be92af04c2e422,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

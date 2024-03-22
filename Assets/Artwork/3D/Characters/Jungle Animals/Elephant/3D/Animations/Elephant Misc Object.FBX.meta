@@ -1,0 +1,1588 @@
+fileFormatVersion: 2
+guid: cb9c5e8bdf0da9d4587dfcd62eda407e
+timeCreated: 1553117501
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Elephant
+    100002: Elephant Head
+    100004: Elephant Jaw
+    100006: Elephant L Calf
+    100008: Elephant L Clavicle
+    100010: Elephant L Eyebrow
+    100012: Elephant L Finger0
+    100014: Elephant L Foot
+    100016: Elephant L Forearm
+    100018: Elephant L Hand
+    100020: Elephant L Lip
+    100022: Elephant L LowerEyelid
+    100024: Elephant L LowerLip
+    100026: Elephant L Thigh
+    100028: Elephant L Toe0
+    100030: Elephant L UpperArm
+    100032: Elephant L UpperEyelid
+    100034: Elephant L UpperLip
+    100036: //RootNode
+    100038: Elephant Neck
+    100040: Elephant Nose
+    100042: Elephant Nose02
+    100044: Elephant Nose03
+    100046: Elephant Nose04
+    100048: Elephant Nose05
+    100050: Elephant Pelvis
+    100052: Elephant Ponytail1
+    100054: Elephant Ponytail11
+    100056: Elephant Ponytail12
+    100058: Elephant Ponytail2
+    100060: Elephant Ponytail21
+    100062: Elephant Ponytail22
+    100064: Elephant R Calf
+    100066: Elephant R Clavicle
+    100068: Elephant R Eyebrow
+    100070: Elephant R Finger0
+    100072: Elephant R Foot
+    100074: Elephant R Forearm
+    100076: Elephant R Hand
+    100078: Elephant R Lip
+    100080: Elephant R LowerEyelid
+    100082: Elephant R LowerLip
+    100084: Elephant R Thigh
+    100086: Elephant R Toe0
+    100088: Elephant R UpperArm
+    100090: Elephant R UpperEyelid
+    100092: Elephant R UpperLip
+    100094: Elephant Spine
+    100096: Elephant Spine1
+    100098: Elephant Spine2
+    100100: Elephant Tail
+    100102: Elephant Tail1
+    100104: Elephant Tail2
+    100106: Elephant Tail3
+    100108: Elephant Tail4
+    100110: Elephant Tongue
+    100112: Elephant Tongue02
+    100114: Elephant Tongue03
+    100116: Eye Left
+    100118: Eye Right
+    100120: Teeth Lower
+    100122: Teeth Upper
+    400000: Elephant
+    400002: Elephant Head
+    400004: Elephant Jaw
+    400006: Elephant L Calf
+    400008: Elephant L Clavicle
+    400010: Elephant L Eyebrow
+    400012: Elephant L Finger0
+    400014: Elephant L Foot
+    400016: Elephant L Forearm
+    400018: Elephant L Hand
+    400020: Elephant L Lip
+    400022: Elephant L LowerEyelid
+    400024: Elephant L LowerLip
+    400026: Elephant L Thigh
+    400028: Elephant L Toe0
+    400030: Elephant L UpperArm
+    400032: Elephant L UpperEyelid
+    400034: Elephant L UpperLip
+    400036: //RootNode
+    400038: Elephant Neck
+    400040: Elephant Nose
+    400042: Elephant Nose02
+    400044: Elephant Nose03
+    400046: Elephant Nose04
+    400048: Elephant Nose05
+    400050: Elephant Pelvis
+    400052: Elephant Ponytail1
+    400054: Elephant Ponytail11
+    400056: Elephant Ponytail12
+    400058: Elephant Ponytail2
+    400060: Elephant Ponytail21
+    400062: Elephant Ponytail22
+    400064: Elephant R Calf
+    400066: Elephant R Clavicle
+    400068: Elephant R Eyebrow
+    400070: Elephant R Finger0
+    400072: Elephant R Foot
+    400074: Elephant R Forearm
+    400076: Elephant R Hand
+    400078: Elephant R Lip
+    400080: Elephant R LowerEyelid
+    400082: Elephant R LowerLip
+    400084: Elephant R Thigh
+    400086: Elephant R Toe0
+    400088: Elephant R UpperArm
+    400090: Elephant R UpperEyelid
+    400092: Elephant R UpperLip
+    400094: Elephant Spine
+    400096: Elephant Spine1
+    400098: Elephant Spine2
+    400100: Elephant Tail
+    400102: Elephant Tail1
+    400104: Elephant Tail2
+    400106: Elephant Tail3
+    400108: Elephant Tail4
+    400110: Elephant Tongue
+    400112: Elephant Tongue02
+    400114: Elephant Tongue03
+    400116: Eye Left
+    400118: Eye Right
+    400120: Teeth Lower
+    400122: Teeth Upper
+    2100000: Elephant
+    2100002: Eye
+    2100004: Eye Shine
+    2300000: Eye Left
+    2300002: Eye Right
+    2300004: Teeth Lower
+    2300006: Teeth Upper
+    3300000: Eye Left
+    3300002: Eye Right
+    3300004: Teeth Lower
+    3300006: Teeth Upper
+    4300000: Teeth Lower
+    4300002: Teeth Upper
+    4300004: Eye Left
+    4300006: Eye Right
+    7400000: Elephant Pick Up
+    7400002: Elephant Carry Idle
+    7400004: Elephant Carry Move
+    7400006: Elephant Throw
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Elephant Pick Up
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Elephant
+        weight: 1
+      - path: Elephant/Elephant Pelvis
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot/Elephant L Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot/Elephant R Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand/Elephant
+          L Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant L LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant R LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02/Elephant
+          Tongue03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Teeth Lower
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04/Elephant Nose05
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11/Elephant Ponytail12
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21/Elephant Ponytail22
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Left
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Right
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Teeth Upper
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand/Elephant
+          R Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3/Elephant Tail4
+        weight: 1
+      - path: Elephant Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 974573c1945664f408959c08447135f3, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Elephant Carry Idle
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Elephant
+        weight: 1
+      - path: Elephant/Elephant Pelvis
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot/Elephant L Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot/Elephant R Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand/Elephant
+          L Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant L LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant R LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02/Elephant
+          Tongue03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Teeth Lower
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04/Elephant Nose05
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11/Elephant Ponytail12
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21/Elephant Ponytail22
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Left
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Right
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Teeth Upper
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand/Elephant
+          R Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3/Elephant Tail4
+        weight: 1
+      - path: Elephant Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 974573c1945664f408959c08447135f3, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Elephant Carry Move
+      takeName: Take 001
+      firstFrame: 90
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Elephant
+        weight: 1
+      - path: Elephant/Elephant Pelvis
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot/Elephant L Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot/Elephant R Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand/Elephant
+          L Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant L LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant R LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02/Elephant
+          Tongue03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Teeth Lower
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04/Elephant Nose05
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11/Elephant Ponytail12
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21/Elephant Ponytail22
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Left
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Right
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Teeth Upper
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand/Elephant
+          R Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3/Elephant Tail4
+        weight: 1
+      - path: Elephant Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 974573c1945664f408959c08447135f3, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Elephant Throw
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Elephant
+        weight: 1
+      - path: Elephant/Elephant Pelvis
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant L Thigh/Elephant L Calf/Elephant L
+          Foot/Elephant L Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant R Thigh/Elephant R Calf/Elephant R
+          Foot/Elephant R Toe0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          L Clavicle/Elephant L UpperArm/Elephant L Forearm/Elephant L Hand/Elephant
+          L Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant L LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant R LowerLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Elephant Tongue/Elephant Tongue02/Elephant
+          Tongue03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Teeth Lower
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Jaw/Tongue
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant L UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Nose/Elephant Nose02/Elephant Nose03/Elephant
+          Nose04/Elephant Nose05
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail1/Elephant Ponytail11/Elephant Ponytail12
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant Ponytail2/Elephant Ponytail21/Elephant Ponytail22
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Eyebrow
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R Lip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R LowerEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperEyelid
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Elephant R UpperLip
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Left
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Eye Right
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          Neck/Elephant Head/Teeth Upper
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Spine/Elephant Spine1/Elephant Spine2/Elephant
+          R Clavicle/Elephant R UpperArm/Elephant R Forearm/Elephant R Hand/Elephant
+          R Finger0
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3
+        weight: 1
+      - path: Elephant/Elephant Pelvis/Elephant Tail/Elephant Tail1/Elephant Tail2/Elephant
+          Tail3/Elephant Tail4
+        weight: 1
+      - path: Elephant Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 974573c1945664f408959c08447135f3, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Elephant Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Elephant Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Elephant(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.00000040017264, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Elephant
+      parentName: Elephant(Clone)
+      position: {x: 8.379433e-10, y: 0.29542056, z: -0.0008300862}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Elephant Pelvis
+      parentName: Elephant
+      position: {x: 0, y: 0, z: 0.0094200075}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: Elephant Tail
+      parentName: Elephant Pelvis
+      position: {x: -0.100196585, y: -0.19479665, z: 0.000000636856}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 0.9999994, z: 0.9999999}
+    - name: Elephant Tail1
+      parentName: Elephant Tail
+      position: {x: -0.1108946, y: -0.00008831024, z: -2.4534527e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: Elephant Tail2
+      parentName: Elephant Tail1
+      position: {x: -0.11089325, y: -0.00008831024, z: -2.4505425e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1.0000007}
+    - name: Elephant Tail3
+      parentName: Elephant Tail2
+      position: {x: -0.110895075, y: -0.00008827209, z: -2.424349e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 0.9999999}
+    - name: Elephant Tail4
+      parentName: Elephant Tail3
+      position: {x: -0.11090717, y: -0.000087203975, z: -2.4214386e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1, z: 1}
+    - name: Elephant Spine
+      parentName: Elephant Pelvis
+      position: {x: -0.06862039, y: -0.00017150491, z: 0.00000009540057}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Elephant Spine1
+      parentName: Elephant Spine
+      position: {x: -0.2154042, y: -0.00014769062, z: -4.096347e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999994, y: 0.99999994, z: 0.9999996}
+    - name: Elephant Spine2
+      parentName: Elephant Spine1
+      position: {x: -0.1854771, y: -0.00014769076, z: -4.096347e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Elephant Neck
+      parentName: Elephant Spine2
+      position: {x: -0.12630257, y: -0.0027058262, z: -0.0000000025433609}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Elephant Head
+      parentName: Elephant Neck
+      position: {x: -0.13686286, y: 0.015824212, z: 0.000000021484064}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000008}
+    - name: Eye Left
+      parentName: Elephant Head
+      position: {x: -0.3549218, y: 0.18993393, z: 0.09260955}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000002, z: 0.9999997}
+    - name: Eye Right
+      parentName: Elephant Head
+      position: {x: -0.35492182, y: 0.18993418, z: -0.09324143}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999976, z: 0.9999998}
+    - name: Teeth Upper
+      parentName: Elephant Head
+      position: {x: -0.08151559, y: 0.2496077, z: 0.0017896122}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000006, z: 0.9999998}
+    - name: Elephant L UpperEyelid
+      parentName: Elephant Head
+      position: {x: -0.39992508, y: 0.25569874, z: 0.12750678}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000012, y: 1.000001, z: 1.0000007}
+    - name: Elephant L Eyebrow
+      parentName: Elephant Head
+      position: {x: -0.48626953, y: 0.25423983, z: 0.084251955}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1.0000001}
+    - name: Elephant L Lip
+      parentName: Elephant Head
+      position: {x: -0.19051574, y: 0.27069402, z: 0.2131998}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000002, z: 1.0000004}
+    - name: Elephant L LowerEyelid
+      parentName: Elephant Head
+      position: {x: -0.28840378, y: 0.26558992, z: 0.12080973}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000006}
+    - name: Elephant Ponytail1
+      parentName: Elephant Head
+      position: {x: -0.42563292, y: -0.08346109, z: 0.2326563}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.000001}
+    - name: Elephant Ponytail11
+      parentName: Elephant Ponytail1
+      position: {x: -0.20306812, y: -0.00015737533, z: -0.000027770995}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1, z: 1.000001}
+    - name: Elephant Ponytail12
+      parentName: Elephant Ponytail11
+      position: {x: -0.20305054, y: -0.00016158103, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000011}
+    - name: Elephant Nose
+      parentName: Elephant Head
+      position: {x: -0.1989373, y: 0.28370163, z: 0.00000027224954}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1.000001, z: 1.0000004}
+    - name: Elephant Nose02
+      parentName: Elephant Nose
+      position: {x: -0.21225272, y: -0.00013153076, z: -3.6496203e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.99999964}
+    - name: Elephant Nose03
+      parentName: Elephant Nose02
+      position: {x: -0.16990471, y: -0.00013328552, z: -3.6961864e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000007, z: 1.0000004}
+    - name: Elephant Nose04
+      parentName: Elephant Nose03
+      position: {x: -0.16986796, y: -0.00012252807, z: -3.3935066e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000005}
+    - name: Elephant Nose05
+      parentName: Elephant Nose04
+      position: {x: -0.1548748, y: -0.00012008667, z: -3.335299e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000005, z: 1.0000002}
+    - name: Elephant L UpperLip
+      parentName: Elephant Head
+      position: {x: 0.002497177, y: 0.3170657, z: 0.15503779}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Elephant Jaw
+      parentName: Elephant Head
+      position: {x: -0.08762268, y: 0.02733512, z: -0.00000007517355}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.000001, z: 1.0000002}
+    - name: Teeth Lower
+      parentName: Elephant Jaw
+      position: {x: -0.18188728, y: -0.0069938344, z: 0.0024419187}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: Tongue
+      parentName: Elephant Jaw
+      position: {x: -0.0596685, y: -0.016388474, z: -0.010689468}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999964, z: 1.0000001}
+    - name: Elephant L LowerLip
+      parentName: Elephant Jaw
+      position: {x: -0.25129232, y: -0.018220596, z: 0.1073194}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000005}
+    - name: Elephant R LowerLip
+      parentName: Elephant Jaw
+      position: {x: -0.25129235, y: -0.018220061, z: -0.1073186}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1.0000006, z: 1.0000006}
+    - name: Elephant Tongue
+      parentName: Elephant Jaw
+      position: {x: -0.030152397, y: -0.027675476, z: 0.00000017694714}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 0.9999998, z: 1.0000001}
+    - name: Elephant Tongue02
+      parentName: Elephant Tongue
+      position: {x: -0.07605823, y: -0.0000604248, z: 0.0000023641053}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000025, z: 1.0000018}
+    - name: Elephant Tongue03
+      parentName: Elephant Tongue02
+      position: {x: -0.07605571, y: -0.000060501097, z: 0.0000000023841857}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000007, z: 1.0000004}
+    - name: Elephant R Eyebrow
+      parentName: Elephant Head
+      position: {x: -0.48626953, y: 0.25424027, z: -0.08425055}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000007}
+    - name: Elephant R UpperEyelid
+      parentName: Elephant Head
+      position: {x: -0.3999249, y: 0.25569943, z: -0.1232128}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000011, z: 1.0000008}
+    - name: Elephant R LowerEyelid
+      parentName: Elephant Head
+      position: {x: -0.28840378, y: 0.2655906, z: -0.12080826}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000011, y: 1.0000008, z: 1.0000006}
+    - name: Elephant R Lip
+      parentName: Elephant Head
+      position: {x: -0.19051574, y: 0.2706952, z: -0.21319832}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000006}
+    - name: Elephant R UpperLip
+      parentName: Elephant Head
+      position: {x: 0.002497177, y: 0.31706658, z: -0.15503603}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000006, z: 1.0000007}
+    - name: Elephant Ponytail2
+      parentName: Elephant Head
+      position: {x: -0.42563292, y: -0.083459795, z: -0.2326567}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000013, y: 1.000001, z: 1.0000011}
+    - name: Elephant Ponytail21
+      parentName: Elephant Ponytail2
+      position: {x: -0.20306815, y: -0.0001573944, z: 0.000027770995}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000005, z: 1.0000001}
+    - name: Elephant Ponytail22
+      parentName: Elephant Ponytail21
+      position: {x: -0.20305037, y: -0.00016154289, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 0.9999996}
+    - name: Elephant L Clavicle
+      parentName: Elephant Spine2
+      position: {x: -0.09086082, y: -0.03626458, z: 0.021608902}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Elephant L UpperArm
+      parentName: Elephant L Clavicle
+      position: {x: -0.16275007, y: 0.0000000047683715, z: 0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000012, z: 1.000001}
+    - name: Elephant L Forearm
+      parentName: Elephant L UpperArm
+      position: {x: -0.16541244, y: -0.0000000023841857, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000006}
+    - name: Elephant L Hand
+      parentName: Elephant L Forearm
+      position: {x: -0.13898887, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 0.99999994, y: 1.000001, z: 1.0000012}
+    - name: Elephant L Finger0
+      parentName: Elephant L Hand
+      position: {x: -0.10202248, y: 0, z: 0.000000005960464}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 0.9999999, y: 1.0000005, z: 1.0000002}
+    - name: Elephant R Clavicle
+      parentName: Elephant Spine2
+      position: {x: -0.09086082, y: -0.03626446, z: -0.021609109}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1.000001}
+    - name: Elephant R UpperArm
+      parentName: Elephant R Clavicle
+      position: {x: -0.1627501, y: 0, z: -0.000000076293944}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000012, y: 1.000001, z: 1.0000005}
+    - name: Elephant R Forearm
+      parentName: Elephant R UpperArm
+      position: {x: -0.16541244, y: 0.000000007152557, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 0.9999999, z: 1.0000004}
+    - name: Elephant R Hand
+      parentName: Elephant R Forearm
+      position: {x: -0.13898882, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.0000006, y: 1.0000011, z: 0.99999976}
+    - name: Elephant R Finger0
+      parentName: Elephant R Hand
+      position: {x: -0.10202248, y: 0, z: 0.0000000023841857}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 0.99999917, y: 0.9999988, z: 1.0000004}
+    - name: Elephant L Thigh
+      parentName: Elephant Pelvis
+      position: {x: 0.00000022888183, y: 0.00000023446977, z: 0.15979293}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.000001, y: 1.0000002, z: 1.0000008}
+    - name: Elephant L Calf
+      parentName: Elephant L Thigh
+      position: {x: -0.13808851, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 1.0000002, z: 0.99999994}
+    - name: Elephant L Foot
+      parentName: Elephant L Calf
+      position: {x: -0.106291994, y: 0, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999995, z: 0.9999997}
+    - name: Elephant L Toe0
+      parentName: Elephant L Foot
+      position: {x: -0.05158081, y: 0.11726891, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000004, y: 0.99999994, z: 0.99999994}
+    - name: Elephant R Thigh
+      parentName: Elephant Pelvis
+      position: {x: -0.00000022888183, y: -0.00000020869076, z: -0.15979293}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.000001, y: 1.0000008, z: 1.0000008}
+    - name: Elephant R Calf
+      parentName: Elephant R Thigh
+      position: {x: -0.13808852, y: -0.0000000047683715, z: 0.000000009536743}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 1.0000004}
+    - name: Elephant R Foot
+      parentName: Elephant R Calf
+      position: {x: -0.106291994, y: 0.000000009536743, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000005}
+    - name: Elephant R Toe0
+      parentName: Elephant R Foot
+      position: {x: -0.05158081, y: 0.11726889, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000006, y: 0.99999994, z: 1.0000007}
+    - name: Elephant Mesh
+      parentName: Elephant(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: e3d9f1595599ccc4faee1c8e8ed0e04d,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

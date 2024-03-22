@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd4312013502f14abf3133b36507980, type: 3}
+  m_Name: PhotonRegions
+  m_EditorClassIdentifier: 
+  m_RegionsMap:
+  - RegionCode: us
+    RegionName: USA
+  - RegionCode: usw
+    RegionName: USA, West
+  - RegionCode: asia
+    RegionName: Asia
+  - RegionCode: au
+    RegionName: Australia
+  - RegionCode: cae
+    RegionName: Canada, East
+  - RegionCode: tr
+    RegionName: Turkey
+  - RegionCode: cn
+    RegionName: Chinese Mainland
+  - RegionCode: eu
+    RegionName: Europe
+  - RegionCode: in
+    RegionName: India
+  - RegionCode: jp
+    RegionName: Japan
+  - RegionCode: ru
+    RegionName: Russia
+  - RegionCode: rue
+    RegionName: "Russia, East\t"
+  - RegionCode: za
+    RegionName: "South Africa\t"
+  - RegionCode: sa
+    RegionName: South America
+  - RegionCode: kr
+    RegionName: South Korea

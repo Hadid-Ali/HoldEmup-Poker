@@ -1,0 +1,1053 @@
+fileFormatVersion: 2
+guid: 20b2698c7f931e142a91f94d68b3aa60
+timeCreated: 1557878218
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Crocodile
+    100002: Crocodile Head
+    100004: Crocodile Jaw
+    100006: Crocodile L Calf
+    100008: Crocodile L Clavicle
+    100010: Crocodile L Eyebrow
+    100012: Crocodile L Finger0
+    100014: Crocodile L Finger1
+    100016: Crocodile L Foot
+    100018: Crocodile L Forearm
+    100020: Crocodile L Hand
+    100022: Crocodile L Lip
+    100024: Crocodile L LowerEyelid
+    100026: Crocodile L LowerLip
+    100028: Crocodile L Thigh
+    100030: Crocodile L Toe0
+    100032: Crocodile L UpperArm
+    100034: Crocodile L UpperEyelid
+    100036: Crocodile L UpperLip
+    100038: Crocodile Neck
+    100040: Crocodile Nose
+    100042: Crocodile Pelvis
+    100044: Crocodile R Calf
+    100046: Crocodile R Clavicle
+    100048: Crocodile R Eyebrow
+    100050: Crocodile R Finger0
+    100052: Crocodile R Finger1
+    100054: Crocodile R Foot
+    100056: Crocodile R Forearm
+    100058: Crocodile R Hand
+    100060: Crocodile R Lip
+    100062: Crocodile R LowerEyelid
+    100064: Crocodile R LowerLip
+    100066: Crocodile R Thigh
+    100068: Crocodile R Toe0
+    100070: Crocodile R UpperArm
+    100072: Crocodile R UpperEyelid
+    100074: Crocodile R UpperLip
+    100076: Crocodile Spine
+    100078: Crocodile Spine1
+    100080: Crocodile Spine2
+    100082: //RootNode
+    100084: Crocodile Tail
+    100086: Crocodile Tail1
+    100088: Crocodile Tail2
+    100090: Crocodile Tail3
+    100092: Crocodile Tail4
+    100094: Crocodile Tongue
+    100096: Crocodile Tongue02
+    100098: Crocodile Tongue03
+    100100: Eye Left
+    100102: Eye Right
+    400000: Crocodile
+    400002: Crocodile Head
+    400004: Crocodile Jaw
+    400006: Crocodile L Calf
+    400008: Crocodile L Clavicle
+    400010: Crocodile L Eyebrow
+    400012: Crocodile L Finger0
+    400014: Crocodile L Finger1
+    400016: Crocodile L Foot
+    400018: Crocodile L Forearm
+    400020: Crocodile L Hand
+    400022: Crocodile L Lip
+    400024: Crocodile L LowerEyelid
+    400026: Crocodile L LowerLip
+    400028: Crocodile L Thigh
+    400030: Crocodile L Toe0
+    400032: Crocodile L UpperArm
+    400034: Crocodile L UpperEyelid
+    400036: Crocodile L UpperLip
+    400038: Crocodile Neck
+    400040: Crocodile Nose
+    400042: Crocodile Pelvis
+    400044: Crocodile R Calf
+    400046: Crocodile R Clavicle
+    400048: Crocodile R Eyebrow
+    400050: Crocodile R Finger0
+    400052: Crocodile R Finger1
+    400054: Crocodile R Foot
+    400056: Crocodile R Forearm
+    400058: Crocodile R Hand
+    400060: Crocodile R Lip
+    400062: Crocodile R LowerEyelid
+    400064: Crocodile R LowerLip
+    400066: Crocodile R Thigh
+    400068: Crocodile R Toe0
+    400070: Crocodile R UpperArm
+    400072: Crocodile R UpperEyelid
+    400074: Crocodile R UpperLip
+    400076: Crocodile Spine
+    400078: Crocodile Spine1
+    400080: Crocodile Spine2
+    400082: //RootNode
+    400084: Crocodile Tail
+    400086: Crocodile Tail1
+    400088: Crocodile Tail2
+    400090: Crocodile Tail3
+    400092: Crocodile Tail4
+    400094: Crocodile Tongue
+    400096: Crocodile Tongue02
+    400098: Crocodile Tongue03
+    400100: Eye Left
+    400102: Eye Right
+    2100000: Eyes
+    2100002: Eye Shine
+    2300000: Eye Left
+    2300002: Eye Right
+    3300000: Eye Left
+    3300002: Eye Right
+    4300000: Eye Left
+    4300002: Eye Right
+    7400000: Swim
+    7400002: Swim Idle
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Swim
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crocodile
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf/Crocodile
+          L Foot
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf/Crocodile
+          L Foot/Crocodile L Toe0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf/Crocodile
+          R Foot
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf/Crocodile
+          R Foot/Crocodile R Toe0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand/Crocodile L Finger0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand/Crocodile L Finger1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile L LowerLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile R LowerLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue/Crocodile
+          Tongue02
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue/Crocodile
+          Tongue02/Crocodile Tongue03
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Tongue
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L Eyebrow
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L Lip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L LowerEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L UpperEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L UpperLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Nose
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R Eyebrow
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R Lip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R LowerEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R UpperEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R UpperLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Eye Left
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Eye Right
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand/Crocodile R Finger0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand/Crocodile R Finger1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2/Crocodile Tail3
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2/Crocodile Tail3/Crocodile Tail4
+        weight: 1
+      - path: Crocodile Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 7ca263c468c5cf0478f0cf8d50783653, type: 2}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Swim Idle
+      takeName: Take 001
+      firstFrame: 50
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Crocodile
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf/Crocodile
+          L Foot
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile L Thigh/Crocodile L Calf/Crocodile
+          L Foot/Crocodile L Toe0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf/Crocodile
+          R Foot
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile R Thigh/Crocodile R Calf/Crocodile
+          R Foot/Crocodile R Toe0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand/Crocodile L Finger0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile L Clavicle/Crocodile L UpperArm/Crocodile L Forearm/Crocodile
+          L Hand/Crocodile L Finger1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile L LowerLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile R LowerLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue/Crocodile
+          Tongue02
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Crocodile Tongue/Crocodile
+          Tongue02/Crocodile Tongue03
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Jaw/Tongue
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L Eyebrow
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L Lip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L LowerEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L UpperEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile L UpperLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile Nose
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R Eyebrow
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R Lip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R LowerEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R UpperEyelid
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Crocodile R UpperLip
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Eye Left
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile Neck/Crocodile Head/Eye Right
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand/Crocodile R Finger0
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Spine/Crocodile Spine1/Crocodile
+          Spine2/Crocodile R Clavicle/Crocodile R UpperArm/Crocodile R Forearm/Crocodile
+          R Hand/Crocodile R Finger1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2/Crocodile Tail3
+        weight: 1
+      - path: Crocodile/Crocodile Pelvis/Crocodile Tail/Crocodile Tail1/Crocodile
+          Tail2/Crocodile Tail3/Crocodile Tail4
+        weight: 1
+      - path: Crocodile Mesh
+        weight: 1
+      maskType: 1
+      maskSource: {fileID: 101100000, guid: 7ca263c468c5cf0478f0cf8d50783653, type: 2}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 1
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Crocodile Pelvis
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Thigh
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Thigh
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Calf
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Calf
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Foot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Foot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile Spine
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile Spine1
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile Head
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Clavicle
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Clavicle
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L UpperArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R UpperArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Forearm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Forearm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Hand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Hand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Toe0
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Toe0
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Finger0
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile L Finger1
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Finger0
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile R Finger1
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Crocodile Spine2
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: Crocodile(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0.00000044347527, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Crocodile
+      parentName: Crocodile(Clone)
+      position: {x: 8.379433e-10, y: 0.29542056, z: 0.015554801}
+      rotation: {x: -0.50000036, y: 0.49999967, z: 0.49999967, w: 0.50000036}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1}
+    - name: Crocodile Pelvis
+      parentName: Crocodile
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: Crocodile Spine
+      parentName: Crocodile Pelvis
+      position: {x: -0.095172025, y: -0.00017145037, z: 0.00000013222237}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000008, y: 1.0000006, z: 1.0000005}
+    - name: Crocodile Spine1
+      parentName: Crocodile Spine
+      position: {x: -0.21544193, y: -0.00016733407, z: -4.578169e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000005, z: 1}
+    - name: Crocodile Spine2
+      parentName: Crocodile Spine1
+      position: {x: -0.21542324, y: -0.00017046928, z: -4.834146e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Crocodile Neck
+      parentName: Crocodile Spine2
+      position: {x: -0.15625617, y: -0.0027134323, z: -0.0000000025670306}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Crocodile Head
+      parentName: Crocodile Neck
+      position: {x: -0.15473068, y: 0.015824202, z: 0.000000021484011}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999917, y: 0.9999994, z: 0.99999976}
+    - name: Eye Left
+      parentName: Crocodile Head
+      position: {x: -0.2790367, y: 0.2938613, z: 0.069867246}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Eye Right
+      parentName: Crocodile Head
+      position: {x: -0.2790367, y: 0.2938615, z: -0.06986983}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Crocodile Jaw
+      parentName: Crocodile Head
+      position: {x: -0.1964074, y: 0.09978077, z: -0.00010353467}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000012, z: 0.99999976}
+    - name: Tongue
+      parentName: Crocodile Jaw
+      position: {x: -0.05966858, y: -0.016388398, z: -0.010689465}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.99999964, z: 1.0000001}
+    - name: Crocodile L LowerLip
+      parentName: Crocodile Jaw
+      position: {x: -0.32951656, y: 0.03310379, z: 0.12963066}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999917, y: 0.9999999, z: 0.99999964}
+    - name: Crocodile R LowerLip
+      parentName: Crocodile Jaw
+      position: {x: -0.32951644, y: 0.033104554, z: -0.1296305}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999934, y: 0.9999999, z: 0.99999964}
+    - name: Crocodile Tongue
+      parentName: Crocodile Jaw
+      position: {x: -0.15999141, y: 0.06635177, z: 0.0000004415866}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.000001, y: 1.0000024, z: 1.000001}
+    - name: Crocodile Tongue02
+      parentName: Crocodile Tongue
+      position: {x: -0.110643804, y: -0.00008804321, z: 0.0000034381635}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000001, z: 1.0000004}
+    - name: Crocodile Tongue03
+      parentName: Crocodile Tongue02
+      position: {x: -0.11064026, y: -0.00008804321, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000007, y: 1.0000018, z: 1.0000012}
+    - name: Crocodile L UpperLip
+      parentName: Crocodile Head
+      position: {x: -0.06940704, y: 0.3887275, z: 0.14269216}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000002}
+    - name: Crocodile L Lip
+      parentName: Crocodile Head
+      position: {x: -0.23403907, y: 0.21052194, z: 0.26033732}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: Crocodile Nose
+      parentName: Crocodile Head
+      position: {x: -0.046888962, y: 0.60196257, z: 0.0000007049351}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000002, z: 0.99999976}
+    - name: Crocodile L LowerEyelid
+      parentName: Crocodile Head
+      position: {x: -0.22021157, y: 0.36685705, z: 0.08669387}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 0.9999998, z: 1.0000002}
+    - name: Crocodile L UpperEyelid
+      parentName: Crocodile Head
+      position: {x: -0.32359245, y: 0.37674147, z: 0.07973005}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000001}
+    - name: Crocodile L Eyebrow
+      parentName: Crocodile Head
+      position: {x: -0.40140113, y: 0.32812643, z: 0.055476002}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1.0000001}
+    - name: Crocodile R Eyebrow
+      parentName: Crocodile Head
+      position: {x: -0.40140113, y: 0.32812676, z: -0.05547418}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 0.9999998, z: 1.0000002}
+    - name: Crocodile R UpperLip
+      parentName: Crocodile Head
+      position: {x: -0.06940704, y: 0.38872826, z: -0.14268999}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000002}
+    - name: Crocodile R Lip
+      parentName: Crocodile Head
+      position: {x: -0.23403907, y: 0.21052343, z: -0.2603362}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000002}
+    - name: Crocodile R LowerEyelid
+      parentName: Crocodile Head
+      position: {x: -0.22021157, y: 0.36685753, z: -0.08669183}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 0.99999994, z: 1.0000001}
+    - name: Crocodile R UpperEyelid
+      parentName: Crocodile Head
+      position: {x: -0.32359245, y: 0.37674195, z: -0.07972797}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000005}
+    - name: Crocodile L Clavicle
+      parentName: Crocodile Spine2
+      position: {x: -0.07999084, y: -0.08245985, z: 0.025095498}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: -0.7071068, w: 0.000000030908623}
+      scale: {x: 0.99999976, y: 0.9999999, z: 1}
+    - name: Crocodile L UpperArm
+      parentName: Crocodile L Clavicle
+      position: {x: -0.17461702, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1.0000007, z: 1.000001}
+    - name: Crocodile L Forearm
+      parentName: Crocodile L UpperArm
+      position: {x: -0.18348105, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000012, z: 1.0000007}
+    - name: Crocodile L Hand
+      parentName: Crocodile L Forearm
+      position: {x: -0.12268028, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
+      scale: {x: 1.0000001, y: 1.0000017, z: 1.0000012}
+    - name: Crocodile L Finger0
+      parentName: Crocodile L Hand
+      position: {x: -0.0442399, y: 0.0057772826, z: -0.050079133}
+      rotation: {x: 0, y: 0.3826835, z: 0, w: -0.9238795}
+      scale: {x: 1.0000002, y: 1.0000006, z: 1.000001}
+    - name: Crocodile L Finger1
+      parentName: Crocodile L Hand
+      position: {x: -0.11696203, y: -0.0013245392, z: -0.0018352265}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999997, y: 1.0000011, z: 1.0000014}
+    - name: Crocodile R Clavicle
+      parentName: Crocodile Spine2
+      position: {x: -0.07999084, y: -0.08245972, z: -0.025095956}
+      rotation: {x: 0.7071068, y: -0.000000030908623, z: 0.7071068, w: -0.000000030908623}
+      scale: {x: 0.9999999, y: 1.0000004, z: 1.0000001}
+    - name: Crocodile R UpperArm
+      parentName: Crocodile R Clavicle
+      position: {x: -0.174617, y: 0.000000019073486, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000014, y: 1.0000007, z: 1.000001}
+    - name: Crocodile R Forearm
+      parentName: Crocodile R UpperArm
+      position: {x: -0.18348098, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000002, z: 0.9999999}
+    - name: Crocodile R Hand
+      parentName: Crocodile R Forearm
+      position: {x: -0.12268024, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+      scale: {x: 1.000001, y: 1.0000017, z: 1}
+    - name: Crocodile R Finger0
+      parentName: Crocodile R Hand
+      position: {x: -0.044239957, y: 0.0057772826, z: 0.050079133}
+      rotation: {x: 0, y: 0.38268346, z: 0, w: 0.9238795}
+      scale: {x: 1.0000007, y: 1.0000011, z: 1}
+    - name: Crocodile R Finger1
+      parentName: Crocodile R Hand
+      position: {x: -0.11696209, y: -0.0013244628, z: 0.0018352261}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000005, z: 0.99999994}
+    - name: Crocodile L Thigh
+      parentName: Crocodile Pelvis
+      position: {x: 0.00000030517577, y: 0.000000320673, z: 0.22163278}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.0000011, y: 1.0000006, z: 1.0000008}
+    - name: Crocodile L Calf
+      parentName: Crocodile L Thigh
+      position: {x: -0.120588206, y: 0.0000000023841857, z: 0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1.0000006}
+    - name: Crocodile L Foot
+      parentName: Crocodile L Calf
+      position: {x: -0.09326164, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 1.0000006, z: 1.0000004}
+    - name: Crocodile L Toe0
+      parentName: Crocodile L Foot
+      position: {x: -0.059066474, y: 0.13428754, z: 0}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000005, y: 0.9999999, z: 1.0000006}
+    - name: Crocodile Tail
+      parentName: Crocodile Pelvis
+      position: {x: -0.13890661, y: -0.2701299, z: 0.0000008833595}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000005}
+    - name: Crocodile Tail1
+      parentName: Crocodile Tail
+      position: {x: -0.24663211, y: -0.00019630432, z: -5.439506e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: Crocodile Tail2
+      parentName: Crocodile Tail1
+      position: {x: -0.24662903, y: -0.00019638061, z: -5.4511473e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1.0000008}
+    - name: Crocodile Tail3
+      parentName: Crocodile Tail2
+      position: {x: -0.24663329, y: -0.00019630432, z: -5.3900295e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000002, y: 1.0000001, z: 1.0000002}
+    - name: Crocodile Tail4
+      parentName: Crocodile Tail3
+      position: {x: -0.24666007, y: -0.0001940155, z: -5.387119e-10}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1}
+    - name: Crocodile R Thigh
+      parentName: Crocodile Pelvis
+      position: {x: -0.00000030517577, y: -0.00000029444695, z: -0.22163278}
+      rotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
+      scale: {x: 1.000001, y: 1.0000007, z: 1.000001}
+    - name: Crocodile R Calf
+      parentName: Crocodile R Thigh
+      position: {x: -0.12058818, y: 0.0000000011920929, z: -0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 0.9999999, y: 1.0000001, z: 0.9999999}
+    - name: Crocodile R Foot
+      parentName: Crocodile R Calf
+      position: {x: -0.09326164, y: -0.0000000047683715, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1.0000005, y: 0.9999998, z: 1.0000004}
+    - name: Crocodile R Toe0
+      parentName: Crocodile R Foot
+      position: {x: -0.059066474, y: 0.13428755, z: -0.000000019073486}
+      rotation: {x: 0, y: 0, z: 0.7071068, w: -0.7071068}
+      scale: {x: 1.0000005, y: 0.99999976, z: 1.0000001}
+    - name: Crocodile 1
+      parentName: Crocodile(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 1
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 62ae09d2ccdae4c4eaeed456dff4f36c,
+    type: 3}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

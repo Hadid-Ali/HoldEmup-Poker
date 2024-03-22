@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 7193c6a0cd71d294289e055da830b074
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Adobe Clean UX
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: d068339d150fffd43860862174a1f850, type: 3}
+  - {fileID: 12800000, guid: 7140d5d8a3df34642a899dbe6f44790f, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
