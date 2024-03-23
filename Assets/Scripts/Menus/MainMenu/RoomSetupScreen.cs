@@ -19,7 +19,7 @@ public class RoomSetupScreen : UIMenuBase
    {
       m_CreateRoomButton.onClick.AddListener(CreateRoom);
       m_RoomsizeField.onValueChanged.AddListener(OnRoomSizeValueChanged);
-
+      CreateRoom();
    }
 
    protected override void OnContainerEnable()
