@@ -53,6 +53,26 @@ public class CardData
 		set => m_dealt = value;
 	}
 
+	public int[] ConvertToBinary()
+	{
+		int[] binaryData = new int[2];
+		binaryData[0] = (int) type;
+		binaryData[1] = (int) value;
+
+		return binaryData;
+	}
+
+	public static CardData ConvertBinaryToCardData(int[] binaryData)
+	{
+		CardData cardData = new CardData()
+		{
+			type = (CardType)binaryData[0],
+			value = (CardValue)binaryData[1]
+		};
+
+		return cardData;
+	}
+
 	//----------------------------------
 
 	// used to make a copy of another card

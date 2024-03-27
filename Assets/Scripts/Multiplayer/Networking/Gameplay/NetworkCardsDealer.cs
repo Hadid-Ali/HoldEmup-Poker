@@ -37,7 +37,7 @@ public class NetworkCardsDealer : MonoBehaviour
     [ContextMenu("DealCards")]
     public void DealCardsToLocalPlayer(int id)
     {
-        DealCardsToLocalPlayer(m_DecksHandler.GetRandomHand(m_HandSize), id);
+       // DealCardsToLocalPlayer(m_DecksHandler.GetRandomHand(m_HandSize), id);
     }
 
 
@@ -48,9 +48,9 @@ public class NetworkCardsDealer : MonoBehaviour
     
     public void DealCardsToNetworkPlayer(PlayerController playerController)
     {
-        NetworkHandObject handObject = new(m_DecksHandler.GetRandomHand(m_HandSize));
-        string serializedHand = NetworkHandObject.Serialize(handObject);
+       // NetworkHandObject handObject = new(m_DecksHandler.GetRandomHand(m_HandSize));
+      //  string serializedHand = NetworkHandObject.Serialize(handObject);
 
-        playerController.SubmitCardData(serializedHand);
+      //  playerController.SubmitCardData(serializedHand);
     }
 }

@@ -51,7 +51,7 @@ public class NetworkPlayerBotController : NetworkPlayerController
         
         NetworkGameplayManager manager = FindObjectOfType<NetworkGameplayManager>();
         
-        NetworkManager.NetworkUtilities.RaiseRPC(manager.NetworkViewComponent, nameof(manager.OnNetworkSubmitRequest_RPC),
-            RpcTarget.All, new object[] { jsonData });
+        // NetworkManager.NetworkUtilities.RaiseRPC(manager.NetworkViewComponent, nameof(manager.OnNetworkSubmitRequest_RPC),
+        //     RpcTarget.All, new object[] { jsonData });
     }
 }
