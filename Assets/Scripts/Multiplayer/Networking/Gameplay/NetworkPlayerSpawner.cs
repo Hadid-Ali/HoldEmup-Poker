@@ -1,10 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using ExitGames.Client.Photon;
+
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.Serialization;
+using Photon.Realtime;
+
 
 public class NetworkPlayerSpawner : MonoBehaviour
 {
@@ -17,6 +15,9 @@ public class NetworkPlayerSpawner : MonoBehaviour
     { 
         NetworkPlayer player =  PhotonNetwork.Instantiate($"Network/Player/Avatars/PlayerAvatar", Vector3.zero,
             Quaternion.identity, 0).GetComponent<NetworkPlayer>();
+
+        Player p = PhotonNetwork.LocalPlayer;
+        player.nickName = p.NickName;
     }
     
 }

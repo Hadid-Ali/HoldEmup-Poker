@@ -1,13 +1,5 @@
-using System;
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using Photon.Pun;
-using Unity.VisualScripting;
-using UnityEngine.Serialization;
 
-[RequireComponent(typeof(NetworkPlayerSpawner))]
 public class NetworkGameplayManager : MonoBehaviour
 {
     // [Header("Component Refs")]

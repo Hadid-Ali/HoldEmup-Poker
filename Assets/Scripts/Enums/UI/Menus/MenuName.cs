@@ -11,5 +11,6 @@ public enum MenuName
     ErrorWindow,
     MatchCompleteMenu,
     SettingsMenu,
-    GameOverMenu
+    GameOverMenu,
+    InsideRoom
 }

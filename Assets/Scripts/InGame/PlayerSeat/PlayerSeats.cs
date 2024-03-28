@@ -15,7 +15,7 @@ public class Seat
 public class PlayerSeats : MonoBehaviour
 {
      public static PlayerSeats Instance { get; private set; }
-     private const int MaxSeats = 5;
+     public const int MaxSeats = 5;
      
      [SerializeField] private Seat[] seats = new Seat[MaxSeats];
      
@@ -31,7 +31,10 @@ public class PlayerSeats : MonoBehaviour
 
          //Initialize Seats
          for (int i = 0; i < seats.Length; i++)
+         {
              seats[i] = new Seat(){IsOccupied = false};
+             
+         }
      }
 
      private void Start()

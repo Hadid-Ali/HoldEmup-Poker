@@ -8,11 +8,7 @@ using UnityEngine;
 
 public class ConnectionController : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private NetworkMatchStartHandler m_MatchStartHandler;
-    
-    [SerializeField] private ConnectionTransitionEvent m_OnServerConnected;
-    [SerializeField] private VoidEvent m_OnRoomJoinFailed;
-
+    [SerializeField] private NetworkSceneManager sceneManager;
     private RegionHandler m_RegionHandler;
     
     private bool m_IsTestConnection = true;
@@ -101,7 +97,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     private void OnRegionsPingCompleted()
     {
         List<Region> regions = m_RegionHandler.EnabledRegions;
-        m_OnServerConnected.Raise(new RegionConfig()
+        GameEvents.NetworkEvents.OnServerConnected.Raise(new RegionConfig()
         {
             Availableregions = regions,
             BestRegion = m_RegionHandler.BestRegion
@@ -121,7 +117,6 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 
     public void CreateRoom(RoomOptions roomOptions)
     {
-       m_MatchStartHandler.SetMaxPlayersCount(roomOptions.MaxPlayers);
         PhotonNetwork.JoinOrCreateRoom(Guid.NewGuid().ToString(), roomOptions, TypedLobby.Default);
         StartCoroutine(NotifyPlayerJoined_Routine());
     }
@@ -129,7 +124,6 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     IEnumerator NotifyPlayerJoined_Routine()
     {
         yield return new WaitForSeconds(GameData.MetaData.WaitBeforePlayerJoinNotify);
-        m_MatchStartHandler.OnPlayerEnteredInRoom();
     }
 
     public virtual void OnCreateRoomFailed(short returnCode, string message)
@@ -140,12 +134,15 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     {
         UpdateConnectionStatus("\t\tFinding Match");
         PhotonNetwork.JoinRandomRoom();
+        
+        print("Joined Lobby");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
     {
         base.OnJoinRandomFailed(returnCode, message);
-        m_OnRoomJoinFailed.Raise();
+        
+        PhotonNetwork.CreateRoom(null, new RoomOptions());
         UpdateConnectionStatus("\t Setting Up Game");
     }
 
@@ -153,26 +150,21 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     {
         base.OnJoinedRoom();
         UpdateConnectionStatus($"\t Waiting For Others");
+        
+        GameEvents.NetworkEvents.OnRoomJoined.Raise();
+        print("Joined Room");
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         base.OnPlayerLeftRoom(otherPlayer);
-        
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-        
-        m_MatchStartHandler.OnPlayerLeftRoom();
+        GameEvents.NetworkEvents.OnPlayerRoomActivity.Raise();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        print("Player Entered photon");
-        if (!PhotonNetwork.IsMasterClient)
-            return;
-
-        m_MatchStartHandler.OnPlayerEnteredInRoom();
+        GameEvents.NetworkEvents.OnPlayerRoomActivity.Raise();
     }
 
     public void Disconnect()
@@ -182,6 +174,8 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 
     public void StartMatch()
     {
-        m_MatchStartHandler.StartMatchInternal();
+        sceneManager.LoadGameplayScene();
+        print("Start Match");
+        //m_MatchStartHandler.StartMatchInternal();
     }
 }

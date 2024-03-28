@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using Photon.Realtime;
 
 public static partial class GameEvents
 {
@@ -15,5 +16,14 @@ public static partial class GameEvents
         public static GameEvent NetworkDisconnectedEvent = new();
 
         public static GameEvent<string, float> NetworkTimerStartRequest = new();
+
+        public static GameEvent OnStartMatch = new();
+        public static GameEvent OnRoomJoined = new();
+        public static GameEvent OnPlayerRoomActivity = new();
+        
+        public static GameEvent<Region> OnRegionSelect = new();
+        public static GameEvent<RoomOptions> OnRoomSelect = new();
+        public static GameEvent<RegionConfig> OnServerConnected = new();
+        public static GameEvent OnRoomJoinFailed = new();
     }
 }

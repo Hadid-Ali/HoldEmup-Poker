@@ -14,9 +14,6 @@ public class RegionSelectionScreen : UIMenuBase
     [SerializeField] private TMP_Dropdown m_RegionsListDropDown;
     [SerializeField] private TextMeshProUGUI m_BestRegionText;
 
-    [SerializeField] private ConnectionTransitionEvent m_ConnectionTransitionEvent;
-    [SerializeField] private PhotonRegionEvent m_OnRegionSelectedEvent;
-
     [SerializeField] private Button m_ConnectButton;
 
     private Region m_SelectedRegion;
@@ -36,12 +33,12 @@ public class RegionSelectionScreen : UIMenuBase
 
     private void OnEnable()
     {
-        m_ConnectionTransitionEvent.Register(OnRegionsDataReceived);
+        GameEvents.NetworkEvents.OnServerConnected.Register(OnRegionsDataReceived);
     }
 
     private void OnDisable()
     {
-        m_ConnectionTransitionEvent.Unregister(OnRegionsDataReceived);
+        GameEvents.NetworkEvents.OnServerConnected.UnRegister(OnRegionsDataReceived);
     }
 
     private void OnDropDownSelectionEvent(int index)
@@ -86,7 +83,7 @@ public class RegionSelectionScreen : UIMenuBase
             OnDropDownSelectionEvent(0);
         }
 
-        m_OnRegionSelectedEvent.Raise(m_SelectedRegion);
+        GameEvents.NetworkEvents.OnRegionSelect.Raise(m_SelectedRegion);
         ChangeMenuState(MenuName.ConnectionScreen);
     }
 }

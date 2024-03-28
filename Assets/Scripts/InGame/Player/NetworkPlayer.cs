@@ -43,6 +43,7 @@ public class NetworkPlayer : MonoBehaviourPun
     public void OnNetworkSpawn()
     {
         OnPlayerSpawn?.Invoke(this);
+        // _photonView.RPC(nameof(SyncInformation), RpcTarget.Others);
     }
     
     public void SetBetAction(PlayerAction playerAction)
@@ -75,6 +76,13 @@ public class NetworkPlayer : MonoBehaviourPun
     }
     
     #region RPC
+
+    [PunRPC]
+    private void SyncInformation(string nickName)
+    {
+        this.nickName = nickName;
+    }
+    
     [PunRPC]
     private void SetSeatServerRpc(int _seatNumber)
     {

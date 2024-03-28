@@ -8,22 +8,19 @@ using UnityEngine;
 public class ConnectionControllerView : MonoBehaviour
 {
     [SerializeField] private ConnectionController m_ConnectionController;
-    
-    [SerializeField] private PhotonRegionEvent m_PlayerRegionSelectEvent;
-    [SerializeField] private PhotonRoomCreationEvent m_RoomcreationEvent;
 
     private void OnEnable()
     {
         GameEvents.MenuEvents.LoginAtMenuEvent.Register(OnLogin);
-        m_PlayerRegionSelectEvent.Register(OnRegionSelection);
-        m_RoomcreationEvent.Register(OnCreateRoom);
+        GameEvents.NetworkEvents.OnRegionSelect.Register(OnRegionSelection);
+        GameEvents.NetworkEvents.OnRoomSelect.Register(OnCreateRoom);
     }
 
     private void OnDisable()
     {
         GameEvents.MenuEvents.LoginAtMenuEvent.UnRegister(OnLogin);
-        m_PlayerRegionSelectEvent.Unregister(OnRegionSelection);
-        m_RoomcreationEvent.Unregister(OnCreateRoom);
+        GameEvents.NetworkEvents.OnRegionSelect.UnRegister(OnRegionSelection);
+        GameEvents.NetworkEvents.OnRoomSelect.UnRegister(OnCreateRoom);
     }
 
     private void OnLogin(string userName)

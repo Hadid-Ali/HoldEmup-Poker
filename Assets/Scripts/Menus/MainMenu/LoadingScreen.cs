@@ -19,12 +19,15 @@ public class LoadingScreen : UIMenuBase
     {
         GameEvents.MenuEvents.NetworkStatusUpdated.Register(UpdateLobbyStatus);
         GameEvents.MenuEvents.TimeBasedActionRequested.Register(OnTimeBasedActionRequested);
+        
+        GameEvents.NetworkEvents.OnRoomJoined.Register(()=> ChangeMenuState(MenuName.InsideRoom));
     }
 
     private void OnDisable()
     {
         GameEvents.MenuEvents.NetworkStatusUpdated.UnRegister(UpdateLobbyStatus);
         GameEvents.MenuEvents.TimeBasedActionRequested.UnRegister(OnTimeBasedActionRequested);
+        GameEvents.NetworkEvents.OnRoomJoined.UnRegister(()=> ChangeMenuState(MenuName.InsideRoom));
     }
 
     private void UpdateLobbyStatus(string status)

@@ -30,6 +30,7 @@ public class Game : MonoBehaviour
     [SerializeField] private float _playerPerformSeatActionTimeoutSeconds;
     
 
+    [ContextMenu("Start Poker")]
     private void StartPoker()
     {
         if(!PhotonNetwork.IsMasterClient)
@@ -42,7 +43,6 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
-        
         NetworkPlayer player1 = playerSeats.activePlayers[TurnSequenceHandler.TurnSequence[0]];
         NetworkPlayer player2 = playerSeats.activePlayers[TurnSequenceHandler.TurnSequence[1]];
 
@@ -53,6 +53,8 @@ public class Game : MonoBehaviour
             
         
         yield return betting.BetBlinds(player2);
+
+        TurnSequenceHandler.currentTurnIndex = 2;
     
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         

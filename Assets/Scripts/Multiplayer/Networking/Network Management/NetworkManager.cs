@@ -8,6 +8,6 @@ public partial class NetworkManager : MonobehaviourSingleton<NetworkManager>
     
     public void LoadGameplay()
     {
-        m_NetworkSceneManager.LoadGameplayScene(1f);
+        //m_NetworkSceneManager.LoadGameplayScene(1f);
     }
 }

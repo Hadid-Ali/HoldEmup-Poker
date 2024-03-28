@@ -1,5 +1,5 @@
+using System;
 using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,10 +8,21 @@ public class NetworkSceneManager : MonoBehaviour
 {
     [SerializeField] private PhotonView m_PhotonView;
 
-    public void LoadGameplayScene(float wait)
+    private void Awake()
     {
-        NetworkManager.NetworkUtilities.RaiseRPC(m_PhotonView, nameof(LoadGameplaySceneRPC), RpcTarget.All,
-            new object[] { wait });
+        GameEvents.NetworkEvents.OnStartMatch.Register(LoadGameplayScene);
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.NetworkEvents.OnStartMatch.UnRegister(LoadGameplayScene);
+    }
+
+    [ContextMenu("Start Match")]
+    public void LoadGameplayScene()
+    {
+        m_PhotonView.RPC(nameof(LoadGameplaySceneRPC), RpcTarget.All,1f);
+        print("loading RPC call");
     }
     
     [PunRPC]
@@ -19,6 +30,8 @@ public class NetworkSceneManager : MonoBehaviour
     {
         GameEvents.MenuEvents.NetworkStatusUpdated.Raise("\t\tLoading Game");
         StartCoroutine(LoadScene("PokerGame", wait));
+        
+        print("has Run");
     }
 
     //TODO: Implement Scene Flow Loader
