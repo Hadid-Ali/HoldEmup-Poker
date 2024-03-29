@@ -43,7 +43,7 @@ public class NetworkPlayer : MonoBehaviourPun
     public void OnNetworkSpawn()
     {
         OnPlayerSpawn?.Invoke(this);
-        // _photonView.RPC(nameof(SyncInformation), RpcTarget.Others);
+        _photonView.RPC(nameof(SyncInformation), RpcTarget.Others, id,nickName);
     }
     
     public void SetBetAction(PlayerAction playerAction)
@@ -78,9 +78,10 @@ public class NetworkPlayer : MonoBehaviourPun
     #region RPC
 
     [PunRPC]
-    private void SyncInformation(string nickName)
+    private void SyncInformation(int id, string nickName)
     {
         this.nickName = nickName;
+        this.id = id;
     }
     
     [PunRPC]
@@ -109,6 +110,9 @@ public class NetworkPlayer : MonoBehaviourPun
         
         pocketCard1 = CardData.ConvertBinaryToCardData(binaryCardData1);
         pocketCard2 = CardData.ConvertBinaryToCardData(binaryCardData2);
+        
+        if(PhotonNetwork.LocalPlayer.NickName == nickName)
+            GameEvents.NetworkGameplayEvents.OnPocketCardsView.Raise(pocketCard1,pocketCard2);
     }
     
     [PunRPC]

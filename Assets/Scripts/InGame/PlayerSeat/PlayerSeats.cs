@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Photon.Realtime;
 using UnityEngine;
@@ -15,7 +16,7 @@ public class Seat
 public class PlayerSeats : MonoBehaviour
 {
      public static PlayerSeats Instance { get; private set; }
-     public const int MaxSeats = 5;
+     public const int MaxSeats = 4;
      
      [SerializeField] private Seat[] seats = new Seat[MaxSeats];
      
@@ -40,6 +41,14 @@ public class PlayerSeats : MonoBehaviour
      private void Start()
      {
          NetworkPlayer.OnPlayerSpawn += AssignSeat;
+
+         StartCoroutine(WaitRoutine());
+     }
+
+     IEnumerator WaitRoutine()
+     {
+         yield return new WaitForSeconds(5f);
+         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise(TurnSequenceHandler.TurnSequence);
      }
 
      private void OnDestroy()

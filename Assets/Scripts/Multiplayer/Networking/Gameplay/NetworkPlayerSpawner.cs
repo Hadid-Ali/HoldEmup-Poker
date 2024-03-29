@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
@@ -18,6 +19,8 @@ public class NetworkPlayerSpawner : MonoBehaviour
 
         Player p = PhotonNetwork.LocalPlayer;
         player.nickName = p.NickName;
+        player.id = p.ActorNumber;
+
     }
     
 }
