@@ -12,8 +12,7 @@ public class Betting : MonoBehaviour
      public NetworkPlayer CurrentBetRaiser { get; private set; }
      public int CurrentBetterId => CurrentBetRaiser.id;
      
-     public int CallAmount => PlayerSeats.Instance.activePlayers.GroupBy(entry => entry.betAmount)
-         .Max(item => item.Count());
+     public int CallAmount;
 
      public int BigBlind;
      public int SmallBlind;
@@ -22,7 +21,7 @@ public class Betting : MonoBehaviour
      [SerializeField] private float _betTime;
 
      private int betsCount;
-     public bool TurnsCompleted => betsCount >= playerSeats.activePlayers.Count;
+     public bool TurnsCompleted => betsCount >= playerSeats.ActivePlayers.Count;
 
      public int BetBlinds(NetworkPlayer smallBlindPlayer)
      {

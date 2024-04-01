@@ -17,10 +17,10 @@ public class PlayerView : MonoBehaviour
 
 
 
-    public void UpdateView(int id, string name)
+    public void UpdateView()
     {
-        ID.SetText(id.ToString());
-        Name.SetText(name);
+        ID.SetText(playerID.ToString());
+        Name.SetText(playerName);
     }
 
     public void UpdateCardView(CardData card1, CardData card2)

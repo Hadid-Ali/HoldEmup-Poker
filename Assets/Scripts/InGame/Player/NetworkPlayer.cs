@@ -17,11 +17,8 @@ public class NetworkPlayer : MonoBehaviourPun
 {
     [SerializeField] private PhotonView _photonView;
     
-    private const int NullSeatNumber = -1;
-    
     public string nickName;
     public int id;
-    public int seatNumber = NullSeatNumber;
     public PlayerAction playerAction;
     public int betAmount;
     
@@ -29,32 +26,27 @@ public class NetworkPlayer : MonoBehaviourPun
     public CardData pocketCard2;
 
     private PlayerAction _selectedPlayerAction;
-    private float _lastSeatActionTime;
-    private const float SeatActionCooldownSeconds = 2f;
+    public bool IsLocalPlayer => _photonView.IsMine;
 
     public static Action<NetworkPlayer> OnPlayerSpawn;
 
 
     private void Start()
     {
-        Invoke(nameof(OnNetworkSpawn),1f);
+        Invoke(nameof(OnNetworkSpawn), 1f);
+        GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Register(ExposeCardsLocally);
     }
 
-    public void OnNetworkSpawn()
+    private void OnDestroy()
     {
-        OnPlayerSpawn?.Invoke(this);
-        _photonView.RPC(nameof(SyncInformation), RpcTarget.Others, id,nickName);
-    }
-    
-    public void SetBetAction(PlayerAction playerAction)
-    {
-        SetSelectedBetActionServerRpc(playerAction);
+        GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.UnRegister(ExposeCardsLocally);
     }
 
-    public void DealCards(NetworkPlayer player)
-    {
-        player.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard(), player.id);
-    }
+    public void OnNetworkSpawn() => OnPlayerSpawn?.Invoke(this);
+    public void ExposeCardsLocally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
+    public void SyncInformationGlobally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
+    public void SetBetAction(PlayerAction playerAction) => SetSelectedBetActionServerRpc(playerAction);
+    public void DealCards(NetworkPlayer player) => player.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard(), player.id);
 
 
     public void SetPocketCards(CardData card1, CardData card2, int playerId)
@@ -83,11 +75,13 @@ public class NetworkPlayer : MonoBehaviourPun
         this.nickName = nickName;
         this.id = id;
     }
-    
     [PunRPC]
-    private void SetSeatServerRpc(int _seatNumber)
+    private void SyncInformation()
     {
-        seatNumber = _seatNumber;
+        if(!IsLocalPlayer)
+            return;
+        
+        GameEvents.NetworkGameplayEvents.OnPocketCardsView.Raise(pocketCard1,pocketCard2);
     }
     
     [PunRPC]
@@ -110,9 +104,6 @@ public class NetworkPlayer : MonoBehaviourPun
         
         pocketCard1 = CardData.ConvertBinaryToCardData(binaryCardData1);
         pocketCard2 = CardData.ConvertBinaryToCardData(binaryCardData2);
-        
-        if(PhotonNetwork.LocalPlayer.NickName == nickName)
-            GameEvents.NetworkGameplayEvents.OnPocketCardsView.Raise(pocketCard1,pocketCard2);
     }
     
     [PunRPC]

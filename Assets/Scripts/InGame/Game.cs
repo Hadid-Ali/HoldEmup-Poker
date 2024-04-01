@@ -23,7 +23,7 @@ public class Game : MonoBehaviour
     private IEnumerator _startDealAfterRoundsInterval;
 
 
-    private bool StartCondition =>  playerSeats.activePlayers.Count >= 2;
+    private bool StartCondition =>  playerSeats.ActivePlayers.Count >= 2;
     
     [SerializeField] private float _roundsIntervalSeconds;
     [SerializeField] private float _showdownEndTimeSeconds;
@@ -43,14 +43,15 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
-        NetworkPlayer player1 = playerSeats.activePlayers[TurnSequenceHandler.TurnSequence[0]];
-        NetworkPlayer player2 = playerSeats.activePlayers[TurnSequenceHandler.TurnSequence[1]];
+        NetworkPlayer player1 = playerSeats.ActivePlayers[TurnSequenceHandler.TurnSequence[0]];
+        NetworkPlayer player2 = playerSeats.ActivePlayers[TurnSequenceHandler.TurnSequence[1]];
 
-        foreach (var v in playerSeats.activePlayers)
-            player1.DealCards(v);
+        foreach (var v in playerSeats.ActivePlayers)
+            player1.DealCards(v.Value);
 
         BoardCards = DecksHandler.GetRandomHand(5);
-            
+        
+        GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
         
         yield return betting.BetBlinds(player2);
 

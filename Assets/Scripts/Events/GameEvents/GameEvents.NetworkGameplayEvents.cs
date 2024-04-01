@@ -14,6 +14,7 @@ public static partial class GameEvents
         public static GameEvent<PlayerController> PlayerJoinedGame = new();
         public static GameEvent<List<int>,bool> MatchWinnersAnnounced = new();
 
+        public static GameEvent ExposePocketCardsLocally = new();
         public static GameEvent<CardData, CardData> OnPocketCardsView = new();
         public static GameEvent<int[]> OnAllPlayersSeated = new();
     }
