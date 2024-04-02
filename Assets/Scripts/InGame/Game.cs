@@ -11,6 +11,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Betting betting;
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private Pot pot;
+    [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     
     public event Action<GameStage> GameStageBeganEvent;
     public event Action<GameStage> GameStageOverEvent;
@@ -28,9 +29,14 @@ public class Game : MonoBehaviour
     [SerializeField] private float _roundsIntervalSeconds;
     [SerializeField] private float _showdownEndTimeSeconds;
     [SerializeField] private float _playerPerformSeatActionTimeoutSeconds;
-    
 
-    [ContextMenu("Start Poker")]
+
+    private IEnumerator Start()
+    {
+        yield return new WaitForSeconds(5);
+        StartPoker();
+    }
+
     private void StartPoker()
     {
         if(!PhotonNetwork.IsMasterClient)
@@ -43,8 +49,8 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
-        NetworkPlayer player1 = playerSeats.ActivePlayers[TurnSequenceHandler.TurnSequence[0]];
-        NetworkPlayer player2 = playerSeats.ActivePlayers[TurnSequenceHandler.TurnSequence[1]];
+        NetworkPlayer player1 = playerSeats.ActivePlayers[turnSequenceHandler.TurnSequence[0]];
+        NetworkPlayer player2 = playerSeats.ActivePlayers[turnSequenceHandler.TurnSequence[1]];
 
         foreach (var v in playerSeats.ActivePlayers)
             player1.DealCards(v.Value);
@@ -53,7 +59,7 @@ public class Game : MonoBehaviour
         
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
         
-        yield return betting.BetBlinds(player2);
+        betting.BetBlinds(player2);
 
         TurnSequenceHandler.currentTurnIndex = 2;
     

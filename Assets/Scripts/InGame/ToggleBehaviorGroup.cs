@@ -3,8 +3,9 @@ using UnityEngine;
 public class ToggleBehaviorGroup : MonoBehaviour
 {
     [SerializeField] private ToggleBehavior[] toggles;
+    [SerializeField] private int selectedToggleIndex;
+    [SerializeField] private BetAction[] actions;
     
-    [SerializeField] private int selectedToggleIndex; 
     private void OnValidate()
     {
         toggles = GetComponentsInChildren<ToggleBehavior>();
@@ -26,7 +27,11 @@ public class ToggleBehaviorGroup : MonoBehaviour
     {
         selectedToggleIndex = index;
         UpdateView();
+    }
 
+    public BetAction GetSelectedAction()
+    {
+        return actions[selectedToggleIndex];
     }
 
     private void UpdateView()

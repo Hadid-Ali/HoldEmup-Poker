@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -16,6 +17,8 @@ public class Seat
 }
 public class PlayerSeats : MonoBehaviour
 {
+    [SerializeField] private TurnSequenceHandler turnSequenceHandler;
+    
      public const int MaxSeats = 4;
      
      [SerializeField] private Seat[] seats = new Seat[MaxSeats];
@@ -38,19 +41,22 @@ public class PlayerSeats : MonoBehaviour
 
          StartCoroutine(WaitRoutine());
      }
-
-     IEnumerator WaitRoutine()
-     {
-         yield return new WaitForSeconds(3f);
-         
-         TurnSequenceHandler.TurnViewSequence = RotateOrder(TurnSequenceHandler.TurnSequence);
-         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise(TurnSequenceHandler.TurnViewSequence);
-     }
-
      private void OnDestroy()
      {
          NetworkPlayer.OnPlayerSpawn -= AssignSeat;
      }
+
+     IEnumerator WaitRoutine()
+     {
+         yield return new WaitForSeconds(4f);
+
+         foreach (var v in ActivePlayers)
+            v.Value.SyncInformationGlobally();
+         
+         turnSequenceHandler.TurnViewSequence = RotateOrder(turnSequenceHandler.TurnSequence);
+         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise(turnSequenceHandler.TurnViewSequence);
+     }
+
 
      private void AssignSeat(NetworkPlayer player)
      {
@@ -63,28 +69,33 @@ public class PlayerSeats : MonoBehaviour
              seats[i].Player = player;
              seats[i].IsOccupied = true;
              
-             player.SyncInformationGlobally();
              ActivePlayers.Add(player.id, player);
-             TurnSequenceHandler.TurnSequence[i] = player.id;
+             turnSequenceHandler.TurnSequence.Add(player.id);
              break;
          }
      }
-     int[] RotateOrder(int[] turnSequence)
+     List<int> RotateOrder(List<int> turnSequence)
      {
-         int localPlayerIndex = Array.IndexOf(turnSequence, localPlayerID);
-         int[] rotatedPlayerIds = new int[turnSequence.Length];
-        
-         for (int i = 0; i < turnSequence.Length; i++)
+         if (!turnSequence.Contains(localPlayerID))
          {
-             int turnIndex = (localPlayerIndex + i) % turnSequence.Length;
-             int playerId = turnSequence[turnIndex];
-             rotatedPlayerIds[i] = playerId;
+             Debug.LogError("Local player ID not found in turn sequence.");
+             return null;
          }
-        
-         int localPlayerOrderIndex = Array.IndexOf(rotatedPlayerIds, localPlayerID);
-        
-         Array.Copy(rotatedPlayerIds, localPlayerOrderIndex, rotatedPlayerIds, 0, turnSequence.Length - localPlayerOrderIndex);
-         Array.Copy(rotatedPlayerIds, 0, rotatedPlayerIds, turnSequence.Length - localPlayerOrderIndex, localPlayerOrderIndex);
+
+         int localPlayerIndex = turnSequence.IndexOf(localPlayerID);
+         List<int> rotatedPlayerIds = new List<int>();
+         
+         for (int i = 0; i < turnSequence.Count; i++)
+         {
+             int turnIndex = (localPlayerIndex + i) % turnSequence.Count;
+             int playerId = turnSequence[turnIndex];
+             rotatedPlayerIds.Add(playerId);
+         }
+         
+         int localPlayerOrderIndex = rotatedPlayerIds.IndexOf(localPlayerID);
+         
+         rotatedPlayerIds.InsertRange(0, rotatedPlayerIds.GetRange(turnSequence.Count - localPlayerOrderIndex, localPlayerOrderIndex));
+         rotatedPlayerIds.RemoveRange(turnSequence.Count, localPlayerOrderIndex);
 
          return rotatedPlayerIds;
      }

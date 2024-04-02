@@ -3,23 +3,22 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI ID;
+    [SerializeField] private TextMeshProUGUI id;
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private Image pocketCard1;
     [SerializeField] private Image pocketCard2;
     
     public int playerID;
     public string playerName;
-
-
-
+    
     public void UpdateView()
     {
-        ID.SetText(playerID.ToString());
+        id.SetText(playerID.ToString());
         Name.SetText(playerName);
     }
 

@@ -1,7 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -16,10 +14,6 @@ public class InsideRoom : UIMenuBase
     private void Awake()
     {
         GameEvents.NetworkEvents.OnPlayerRoomActivity.Register(AddPlayer);
-        
-        print(PhotonNetwork.IsMasterClient);
-        if(!PhotonNetwork.IsMasterClient)
-            return;
             
         _button.onClick.AddListener(()=> { GameEvents.NetworkEvents.OnStartMatch.Raise();});
     }

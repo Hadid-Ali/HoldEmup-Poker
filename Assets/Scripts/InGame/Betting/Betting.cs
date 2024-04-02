@@ -1,14 +1,14 @@
 using System;
 using System.Collections;
-using System.Linq;
 using UnityEngine;
 
 public class Betting : MonoBehaviour 
 {
     [SerializeField] private PlayerSeats playerSeats;
+    [SerializeField] private Pot pot;
     
-     public event Action<NetworkPlayer> PlayerStartBettingEvent;
-     public event Action<BetActionInfo> PlayerEndBettingEvent;
+     public static event Action<NetworkPlayer> PlayerStartBettingEvent;
+     public static event Action<BetActionInfo> PlayerEndBettingEvent;
      public NetworkPlayer CurrentBetRaiser { get; private set; }
      public int CurrentBetterId => CurrentBetRaiser.id;
      
@@ -16,32 +16,41 @@ public class Betting : MonoBehaviour
 
      public int BigBlind;
      public int SmallBlind;
-
-
+     
      [SerializeField] private float _betTime;
+     private Coroutine turnCoroutine;
 
      private int betsCount;
      public bool TurnsCompleted => betsCount >= playerSeats.ActivePlayers.Count;
 
-     public int BetBlinds(NetworkPlayer smallBlindPlayer)
+     IEnumerator TurnWaitCoroutine()
+     {
+         //PlayerStartBettingEvent?.Invoke();
+         yield return new WaitForSeconds(_betTime);
+         //PlayerEndBettingEvent?.Invoke();
+     }
+
+     public void BetBlinds(NetworkPlayer smallBlindPlayer)
      {
          SmallBlind = smallBlindPlayer.betAmount;
          BigBlind = SmallBlind * 2;
+
+         CallAmount = BigBlind;
          
-         return 0;
+         pot.AddToPot(CallAmount);
      }
 
      public void Bet(NetworkPlayer player)
      {
-         switch (player.playerAction)
+         switch (player.lastBetAction)
          {
-             case PlayerAction.Call:
+             case BetAction.Call:
                  break;
-             case PlayerAction.Check:
+             case BetAction.Check:
                  break;
-             case PlayerAction.Fold:
+             case BetAction.Fold:
                  break;
-             case PlayerAction.Raise:
+             case BetAction.Raise:
                  break;
          }
          

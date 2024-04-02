@@ -1,12 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnSequenceHandler : MonoBehaviour
 {
     [SerializeField] private PlayerSeats _playerSeats;
     
-    public static int[] TurnSequence = new int[PlayerSeats.MaxSeats];
-    public static int[] TurnViewSequence = new int[PlayerSeats.MaxSeats];
-    public static int[] PreflopTurnSequence;
+    [SerializeField] public List<int> TurnSequence = new();
+    [SerializeField] public List<int> TurnViewSequence = new();
 
     public static int currentTurnIndex;
 
@@ -15,7 +15,7 @@ public class TurnSequenceHandler : MonoBehaviour
 
     public void RotateTurn()
     {
-        if(currentTurnIndex >= TurnSequence.Length)
+        if(currentTurnIndex >= TurnSequence.Count)
             return; 
         
         currentTurnIndex++;

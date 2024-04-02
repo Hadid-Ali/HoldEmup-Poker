@@ -17,9 +17,9 @@ public class NetworkPlayerSpawner : MonoBehaviour
         NetworkPlayer player =  PhotonNetwork.Instantiate($"Network/Player/Avatars/PlayerAvatar", Vector3.zero,
             Quaternion.identity, 0).GetComponent<NetworkPlayer>();
 
-        Player p = PhotonNetwork.LocalPlayer;
-        player.nickName = p.NickName;
-        player.id = p.ActorNumber;
+        player.PhotonPlayer = PhotonNetwork.LocalPlayer;
+        player.nickName = player.PhotonPlayer.NickName;
+        player.id = player.PhotonPlayer.ActorNumber;
 
     }
     

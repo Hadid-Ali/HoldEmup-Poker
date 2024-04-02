@@ -1,5 +1,4 @@
 using System;
-using ExitGames.Client.Photon.StructWrapping;
 using Photon.Pun;
 using UnityEngine;
 
@@ -12,14 +11,11 @@ public class Pot : MonoBehaviour
 
      public static Action<int> OnPotUpdate;
      
-     public void AddTopPot(int val)
+     public void AddToPot(int val)
      {
-          if(!PhotonNetwork.IsMasterClient)
-               return;
-       
           _money += val;
-          
-          _photonView.RPC(nameof(SyncPot_RPC), RpcTarget.Others, val);
+          _photonView.RPC(nameof(SyncPot_RPC), RpcTarget.All, _money);
+          print("Add to Pot local");
      }
 
      [PunRPC]
@@ -27,6 +23,7 @@ public class Pot : MonoBehaviour
      {
           _money = val;
           OnPotUpdate?.Invoke(val);
+          print("Add to Pot Broadcast");
      }
 
 }

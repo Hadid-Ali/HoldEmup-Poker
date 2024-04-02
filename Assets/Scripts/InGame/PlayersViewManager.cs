@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class PlayersViewManager : MonoBehaviour
 
     private void UpdateLocalCardsView(CardData arg1, CardData arg2)
     {
-        playerViews[1].UpdateCardView(arg1, arg2);
+        playerViews[0].UpdateCardView(arg1, arg2);
         print("Cards Updated");
     }
 
@@ -26,16 +27,16 @@ public class PlayersViewManager : MonoBehaviour
         
     }
 
-    private void ArrangePlayersView(int[] turnSequence)
+    private void ArrangePlayersView(List<int> turnSequence)
     {
-        for (int i = 1; i < playerViews.Length; i++)
+        for (int i = 0; i < turnSequence.Count; i++)
         {
-            if(!playerSeats.ActivePlayers.ContainsKey(turnSequence[i-1]))
+            if(!playerSeats.ActivePlayers.ContainsKey(turnSequence[i]))
                 continue;
-
-            NetworkPlayer p = playerSeats.ActivePlayers[turnSequence[i-1]];
-            playerViews[i].playerID = p.id;
-            playerViews[i].playerName = p.nickName;
+            
+            NetworkPlayer p = playerSeats.ActivePlayers[turnSequence[i]];
+            playerViews[i].playerID = p.PhotonPlayer.ActorNumber;
+            playerViews[i].playerName = p.PhotonPlayer.NickName;
             
             playerViews[i].UpdateView();
         }

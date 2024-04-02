@@ -16,6 +16,6 @@ public static partial class GameEvents
 
         public static GameEvent ExposePocketCardsLocally = new();
         public static GameEvent<CardData, CardData> OnPocketCardsView = new();
-        public static GameEvent<int[]> OnAllPlayersSeated = new();
+        public static GameEvent<List<int>> OnAllPlayersSeated = new();
     }
 }
