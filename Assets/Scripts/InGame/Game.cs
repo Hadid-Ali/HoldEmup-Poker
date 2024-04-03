@@ -33,7 +33,7 @@ public class Game : MonoBehaviour
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(7);
         StartPoker();
     }
 
@@ -49,20 +49,20 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
-        NetworkPlayer player1 = playerSeats.ActivePlayers[turnSequenceHandler.TurnSequence[0]];
-        NetworkPlayer player2 = playerSeats.ActivePlayers[turnSequenceHandler.TurnSequence[1]];
+        NetworkPlayer player1 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
+        NetworkPlayer player2 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
         foreach (var v in playerSeats.ActivePlayers)
-            player1.DealCards(v.Value);
+            player1.DealCards(v);
 
         BoardCards = DecksHandler.GetRandomHand(5);
         
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
         
         betting.BetBlinds(player2);
-
-        TurnSequenceHandler.currentTurnIndex = 2;
     
+        betting.StartPreflopTurn();
+        
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         
         //S_EndStage();

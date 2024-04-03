@@ -17,7 +17,6 @@ public enum BetAction
 public class NetworkPlayer : MonoBehaviourPun
 {
     [SerializeField] private PhotonView _photonView;
-    [SerializeField] public Player PhotonPlayer;
     
     public string nickName;
     public int id;
@@ -35,13 +34,11 @@ public class NetworkPlayer : MonoBehaviourPun
     public static Action<bool> OnEnableTurn;
     private void Start()
     {
-        Invoke(nameof(OnNetworkSpawn), 1f);
+        Invoke(nameof(OnNetworkSpawn), 1.5f);
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Register(ExposeCardsLocally);
         TurnSubmitButton.OnPlayerActionSubmit += OnActionSubmit;
+        
     }
-
-    
-
     private void OnDestroy()
     {
         TurnSubmitButton.OnPlayerActionSubmit -= OnActionSubmit;
@@ -51,9 +48,13 @@ public class NetworkPlayer : MonoBehaviourPun
     public void OnNetworkSpawn() => OnPlayerSpawn?.Invoke(this);
     public void ExposeCardsLocally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
     public void SyncInformationGlobally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
-    public void SetBetAction(BetAction betAction) => SetSelectedBetActionServerRpc((int) betAction);
     public void DealCards(NetworkPlayer player) => player.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard(), player.id);
 
+
+    public void SetBetAction(BetAction betAction)
+    {
+        _photonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) betAction, id);
+    } 
     public void SubCredit(int val)
     {
         _totalCredit -= val;  
@@ -69,17 +70,12 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         lastBetAction = obj;
         
-        _canMakeTurn = false;
         OnEnableTurn.Invoke(false);
+        SetBetAction(obj);
     }
     public void EnableTurn(bool val)
     {
-        if(!IsLocalPlayer)
-            return;
-        
-        _canMakeTurn = val;
-        OnEnableTurn?.Invoke(val);
-        
+        _photonView.RPC(nameof(EnableTurn_RPC), RpcTarget.All, val, id);
     }
 
     public void SetPocketCards(CardData card1, CardData card2, int playerId)
@@ -101,6 +97,13 @@ public class NetworkPlayer : MonoBehaviourPun
     }
     
     #region RPC
+
+    [PunRPC]
+    private void EnableTurn_RPC(bool b, int _id)
+    {
+        if(IsLocalPlayer && id == _id)
+            OnEnableTurn?.Invoke(b);
+    }
 
     [PunRPC]
     private void SyncInformation(int id, string nickName)
@@ -126,9 +129,16 @@ public class NetworkPlayer : MonoBehaviourPun
     private void SetBetInputFieldValueServerRpc(int value) => betAmount = value;
     
     [PunRPC]
-    private void SetSelectedBetActionServerRpc(int playerAction)
+    private void SetSelectedBetActionServerRpc(int playerAction, int _id)
     {
+        print($"Checking : {id}");
         lastBetAction = (BetAction) playerAction;
+        
+        if(!PhotonNetwork.IsMasterClient)
+            return;
+     
+        if(id == _id)
+            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 0));
     }
     
     [PunRPC]

@@ -1,24 +1,19 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TurnSequenceHandler : MonoBehaviour
 {
-    [SerializeField] private PlayerSeats _playerSeats;
-    
     [SerializeField] public List<int> TurnSequence = new();
     [SerializeField] public List<int> TurnViewSequence = new();
 
-    public static int currentTurnIndex;
+    private int _currentTurnIndex;
 
-
-    public NetworkPlayer CurrentTurnPlayer => _playerSeats.ActivePlayers[currentTurnIndex];
-
-    public void RotateTurn()
+    public int CurrentTurnIndex
     {
-        if(currentTurnIndex >= TurnSequence.Count)
-            return; 
-        
-        currentTurnIndex++;
+        set => _currentTurnIndex = CurrentTurnIndex >= TurnSequence.Count - 1 ? 0 : value;
+        get => _currentTurnIndex;
     }
+
 
 }

@@ -1,17 +1,18 @@
 using System;
 using System.Collections;
+using Photon.Pun;
 using UnityEngine;
 
 public class Betting : MonoBehaviour 
 {
     [SerializeField] private PlayerSeats playerSeats;
+    [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     [SerializeField] private Pot pot;
     
-     public static event Action<NetworkPlayer> PlayerStartBettingEvent;
-     public static event Action<BetActionInfo> PlayerEndBettingEvent;
+     public static Action<NetworkPlayer> PlayerStartBettingEvent;
+     public static Action<BetActionInfo> PlayerEndBettingEvent;
      public NetworkPlayer CurrentBetRaiser { get; private set; }
-     public int CurrentBetterId => CurrentBetRaiser.id;
-     
+
      public int CallAmount;
 
      public int BigBlind;
@@ -23,11 +24,24 @@ public class Betting : MonoBehaviour
      private int betsCount;
      public bool TurnsCompleted => betsCount >= playerSeats.ActivePlayers.Count;
 
+     private void Start()
+     {
+         PlayerStartBettingEvent += NextTurn;
+         PlayerEndBettingEvent += OnBetEnd;
+     }
+     
+
+
+     private void OnDestroy()
+     {
+         PlayerStartBettingEvent -= NextTurn;
+         PlayerEndBettingEvent -= OnBetEnd;
+     }
+
      IEnumerator TurnWaitCoroutine()
      {
-         //PlayerStartBettingEvent?.Invoke();
          yield return new WaitForSeconds(_betTime);
-         //PlayerEndBettingEvent?.Invoke();
+         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
      }
 
      public void BetBlinds(NetworkPlayer smallBlindPlayer)
@@ -39,8 +53,47 @@ public class Betting : MonoBehaviour
          
          pot.AddToPot(CallAmount);
      }
+     private void OnBetEnd(BetActionInfo obj)
+     {
+         if(!PhotonNetwork.IsMasterClient)
+             return;
+         
+         CurrentBetRaiser.EnableTurn(false);
+         Bet(CurrentBetRaiser, obj);
 
-     public void Bet(NetworkPlayer player)
+         
+         NetworkPlayer p =
+             playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         
+         StopCoroutine(turnCoroutine);
+         
+         NextTurn(p);
+         
+     }
+
+     public void NextTurn(NetworkPlayer p)
+     {
+         turnSequenceHandler.CurrentTurnIndex++;
+         turnCoroutine = StartCoroutine(TurnWaitCoroutine());
+         
+         print(turnSequenceHandler.CurrentTurnIndex);
+         CurrentBetRaiser = p;
+         p.EnableTurn(true);
+         
+     }
+
+     public void StartPreflopTurn()
+     {
+         turnSequenceHandler.CurrentTurnIndex = playerSeats.ActivePlayers.Count > 2 ? 2 : 0;
+         
+         
+         NetworkPlayer p =
+             playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         
+         NextTurn(p);
+     }
+
+     public void Bet(NetworkPlayer player, BetActionInfo obj)
      {
          switch (player.lastBetAction)
          {

@@ -22,9 +22,9 @@ public class PlayerSeats : MonoBehaviour
      public const int MaxSeats = 4;
      
      [SerializeField] private Seat[] seats = new Seat[MaxSeats];
-     public Dictionary<int, NetworkPlayer> ActivePlayers = new();
+     public List<NetworkPlayer> ActivePlayers = new();
 
-     public int localPlayerID => ActivePlayers.FirstOrDefault(x=> x.Value.IsLocalPlayer).Key;
+     public int LocalPlayerID => ActivePlayers.Find(x=> x.IsLocalPlayer).id;
      
 
      private void Awake()
@@ -48,16 +48,13 @@ public class PlayerSeats : MonoBehaviour
 
      IEnumerator WaitRoutine()
      {
-         yield return new WaitForSeconds(4f);
-
-         foreach (var v in ActivePlayers)
-            v.Value.SyncInformationGlobally();
+         yield return new WaitForSeconds(4.5f);
          
          turnSequenceHandler.TurnViewSequence = RotateOrder(turnSequenceHandler.TurnSequence);
          GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise(turnSequenceHandler.TurnViewSequence);
      }
-
-
+     
+    
      private void AssignSeat(NetworkPlayer player)
      {
          for (int i = 0; i < seats.Length; i++)
@@ -69,20 +66,20 @@ public class PlayerSeats : MonoBehaviour
              seats[i].Player = player;
              seats[i].IsOccupied = true;
              
-             ActivePlayers.Add(player.id, player);
-             turnSequenceHandler.TurnSequence.Add(player.id);
+             ActivePlayers.Add(player);
+             turnSequenceHandler.TurnSequence.Add(ActivePlayers[i].id);
              break;
          }
      }
      List<int> RotateOrder(List<int> turnSequence)
      {
-         if (!turnSequence.Contains(localPlayerID))
+         if (!turnSequence.Contains(LocalPlayerID))
          {
              Debug.LogError("Local player ID not found in turn sequence.");
              return null;
          }
 
-         int localPlayerIndex = turnSequence.IndexOf(localPlayerID);
+         int localPlayerIndex = turnSequence.IndexOf(LocalPlayerID);
          List<int> rotatedPlayerIds = new List<int>();
          
          for (int i = 0; i < turnSequence.Count; i++)
@@ -92,7 +89,7 @@ public class PlayerSeats : MonoBehaviour
              rotatedPlayerIds.Add(playerId);
          }
          
-         int localPlayerOrderIndex = rotatedPlayerIds.IndexOf(localPlayerID);
+         int localPlayerOrderIndex = rotatedPlayerIds.IndexOf(LocalPlayerID);
          
          rotatedPlayerIds.InsertRange(0, rotatedPlayerIds.GetRange(turnSequence.Count - localPlayerOrderIndex, localPlayerOrderIndex));
          rotatedPlayerIds.RemoveRange(turnSequence.Count, localPlayerOrderIndex);

@@ -31,12 +31,13 @@ public class PlayersViewManager : MonoBehaviour
     {
         for (int i = 0; i < turnSequence.Count; i++)
         {
-            if(!playerSeats.ActivePlayers.ContainsKey(turnSequence[i]))
+            NetworkPlayer p = playerSeats.ActivePlayers.Find(x => x.id == turnSequence[i]);
+            
+            if(p == null) 
                 continue;
             
-            NetworkPlayer p = playerSeats.ActivePlayers[turnSequence[i]];
-            playerViews[i].playerID = p.PhotonPlayer.ActorNumber;
-            playerViews[i].playerName = p.PhotonPlayer.NickName;
+            playerViews[i].playerID = p.id;
+            playerViews[i].playerName = p.nickName;
             
             playerViews[i].UpdateView();
         }

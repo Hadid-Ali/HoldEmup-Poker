@@ -12,12 +12,18 @@ public class TurnSubmitButton : MonoBehaviour
     {
         button.onClick.AddListener(OnButtonClick);
         button.interactable = false;
-        NetworkPlayer.OnEnableTurn += (b) => button.interactable = b;
+        NetworkPlayer.OnEnableTurn += OnEnableTurn;
+    }
+
+    private void OnEnableTurn(bool obj)
+    {
+        button.interactable = obj;
+
     }
 
     private void OnDestroy()
     {
-        NetworkPlayer.OnEnableTurn -= (b) => button.interactable = b;
+        NetworkPlayer.OnEnableTurn -= OnEnableTurn;
     }
 
     private void OnButtonClick()
