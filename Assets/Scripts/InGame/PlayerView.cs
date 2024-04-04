@@ -14,16 +14,19 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI credit;
     [SerializeField] private Image pocketCard1;
     [SerializeField] private Image pocketCard2;
+    [SerializeField] private Image turn;
     
     public int playerID;
     public string playerName;
     public int playerCredit;
+    public bool isOnTurn;
     
     public void UpdateView()
     {
         id.SetText( $" Seat no : {playerID}");
         Name.SetText(playerName);
         credit.SetText("Credits : " + playerCredit);
+        turn.gameObject.SetActive(isOnTurn);
     }
 
     public void UpdateCardView(CardData card1, CardData card2)

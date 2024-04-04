@@ -17,6 +17,7 @@ public enum BetAction
 public class NetworkPlayer : MonoBehaviourPun
 {
     [SerializeField] private PhotonView _photonView;
+    public bool isOnTurn;
     private bool _hasFolded;
     public bool HasFolded
     {
@@ -113,8 +114,14 @@ public class NetworkPlayer : MonoBehaviourPun
     [PunRPC]
     private void EnableTurn_RPC(bool b, int _id)
     {
-        if(IsLocalPlayer && id == _id)
-            OnEnableTurn?.Invoke(b);
+        if (id == _id)
+        {
+            isOnTurn = b;
+            if(IsLocalPlayer)
+                OnEnableTurn?.Invoke(b);
+        }
+        
+        GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
     }
 
     [PunRPC]
