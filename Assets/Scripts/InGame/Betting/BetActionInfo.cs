@@ -4,9 +4,9 @@ public struct BetActionInfo
 {
     public readonly NetworkPlayer Player;
     public readonly BetAction BetAction;
-    public readonly uint BetAmount;
+    public readonly int BetAmount;
 
-    public BetActionInfo(NetworkPlayer player, BetAction betAction, uint betAmount)
+    public BetActionInfo(NetworkPlayer player, BetAction betAction, int betAmount)
     {
         Player = player;
         BetAction = betAction;

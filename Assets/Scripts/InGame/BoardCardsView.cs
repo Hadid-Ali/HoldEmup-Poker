@@ -1,18 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoardCardsView : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Image[] boardCards;
+    public void ExposeCards(CardData[] cards)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        for (int i = 0; i < cards.Length; i++)
+        {
+            boardCards[i].sprite = CardsRegistery.Instance.GetCardSprite(cards[i].type, cards[i].value);
+        }
     }
 }

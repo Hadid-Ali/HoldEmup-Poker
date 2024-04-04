@@ -41,17 +41,27 @@ public class Betting : MonoBehaviour
      IEnumerator TurnWaitCoroutine()
      {
          yield return new WaitForSeconds(_betTime);
-         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
+         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,5));
      }
 
-     public void BetBlinds(NetworkPlayer smallBlindPlayer)
+     public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer BigBlindPlayer)
      {
          SmallBlind = smallBlindPlayer.betAmount;
          BigBlind = SmallBlind * 2;
 
          CallAmount = BigBlind;
          
+         smallBlindPlayer.SubCredit(SmallBlind);
+         BigBlindPlayer.SubCredit(BigBlind);
+         
          pot.AddToPot(CallAmount);
+     }
+
+     public void EndRound()
+     {
+         StopCoroutine(turnCoroutine);
+         foreach (var v in playerSeats.ActivePlayers)
+            v.EnableTurn(false);
      }
      private void OnBetEnd(BetActionInfo obj)
      {
@@ -60,7 +70,6 @@ public class Betting : MonoBehaviour
          
          CurrentBetRaiser.EnableTurn(false);
          Bet(CurrentBetRaiser, obj);
-
          
          NetworkPlayer p =
              playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
@@ -78,14 +87,13 @@ public class Betting : MonoBehaviour
          
          print(turnSequenceHandler.CurrentTurnIndex);
          CurrentBetRaiser = p;
-         p.EnableTurn(true);
          
+         p.EnableTurn(true);
      }
 
      public void StartPreflopTurn()
      {
          turnSequenceHandler.CurrentTurnIndex = playerSeats.ActivePlayers.Count > 2 ? 2 : 0;
-         
          
          NetworkPlayer p =
              playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
@@ -98,12 +106,19 @@ public class Betting : MonoBehaviour
          switch (player.lastBetAction)
          {
              case BetAction.Call:
+                 player.SubCredit(CallAmount);
+                 pot.AddToPot(CallAmount);
                  break;
              case BetAction.Check:
+                 
                  break;
              case BetAction.Fold:
+                 player.HasFolded = true;
                  break;
              case BetAction.Raise:
+                 CallAmount += obj.BetAmount;
+                 player.SubCredit(CallAmount);
+                 pot.AddToPot(CallAmount);
                  break;
          }
          

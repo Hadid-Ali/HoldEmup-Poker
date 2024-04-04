@@ -17,17 +17,27 @@ public enum BetAction
 public class NetworkPlayer : MonoBehaviourPun
 {
     [SerializeField] private PhotonView _photonView;
-    
+    private bool _hasFolded;
+    public bool HasFolded
+    {
+        get => _hasFolded;
+        set
+        {
+            _hasFolded = value;
+            _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
+        }
+    }
+
     public string nickName;
     public int id;
-    [FormerlySerializedAs("lastPlayerAction")] public BetAction lastBetAction;
+    public BetAction lastBetAction;
     public int betAmount = 2;
     public bool IsLocalPlayer => _photonView.IsMine;
     
     public CardData pocketCard1;
     public CardData pocketCard2;
     
-    private int _totalCredit;
+    public int totalCredit = 1000;
     private bool _canMakeTurn;
 
     public static Action<NetworkPlayer> OnPlayerSpawn;
@@ -49,25 +59,27 @@ public class NetworkPlayer : MonoBehaviourPun
     public void ExposeCardsLocally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
     public void SyncInformationGlobally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
     public void DealCards(NetworkPlayer player) => player.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard(), player.id);
-
-
+    
     public void SetBetAction(BetAction betAction)
     {
         _photonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) betAction, id);
     } 
     public void SubCredit(int val)
     {
-        _totalCredit -= val;  
-        _photonView.RPC(nameof(SyncInformation), RpcTarget.All, _totalCredit);
+        totalCredit -= val;  
+        _photonView.RPC(nameof(SyncInformation), RpcTarget.All, totalCredit);
     }
 
     public void AddCredit(int val)
     {
-        _totalCredit += val;  
-        _photonView.RPC(nameof(SyncInformation), RpcTarget.All, _totalCredit);
+        totalCredit += val;  
+        _photonView.RPC(nameof(SyncInformation), RpcTarget.All, totalCredit);
     } 
     private void OnActionSubmit(BetAction obj)
     {
+        if(!IsLocalPlayer)
+            return;
+            
         lastBetAction = obj;
         
         OnEnableTurn.Invoke(false);
@@ -110,11 +122,15 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         this.nickName = nickName;
         this.id = id;
+        
+        GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
     }
     [PunRPC]
     private void SyncInformation(int credits)
     {
-        this._totalCredit = credits;
+        this.totalCredit = credits;
+        
+        GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
     }
     [PunRPC]
     private void SyncInformation()
@@ -138,7 +154,7 @@ public class NetworkPlayer : MonoBehaviourPun
             return;
      
         if(id == _id)
-            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 0));
+            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 5));
     }
     
     [PunRPC]

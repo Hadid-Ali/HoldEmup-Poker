@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private Pot pot;
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
+    [SerializeField] private BoardCardsView boardCardsView;
     
     public event Action<GameStage> GameStageBeganEvent;
     public event Action<GameStage> GameStageOverEvent;
@@ -59,14 +60,22 @@ public class Game : MonoBehaviour
         
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
         
-        betting.BetBlinds(player2);
+        betting.BetBlinds(player1,player2);
     
         betting.StartPreflopTurn();
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
+        print("Game Turns Completed");
+        betting.EndRound();
+
+        CardData[] cards = {BoardCards[0], BoardCards[1], BoardCards[2]};
         
-        //S_EndStage();
-    
+        int[] cardData1 = cards[0].ConvertToBinary();
+        int[] cardData2 = cards[1].ConvertToBinary();
+        int[] cardData3 = cards[2].ConvertToBinary();
+        
+        _photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, cardData1,cardData2,cardData3);
+        
         yield return new WaitForSeconds(_roundsIntervalSeconds);
     
         //S_StartNextStage();
@@ -419,6 +428,17 @@ public class Game : MonoBehaviour
     // #endregion
     //
     // #region RPC
+    [PunRPC]
+    private void SyncExposedCards(int[] card1,int[] card2,int[] card3)
+    {
+        CardData cardd1 = CardData.ConvertBinaryToCardData(card1);
+        CardData cardd2 = CardData.ConvertBinaryToCardData(card2);
+        CardData cardd3 = CardData.ConvertBinaryToCardData(card3);
+
+        CardData[] cardDatas = { cardd1, cardd2, cardd3 };
+        boardCardsView.ExposeCards(cardDatas);                         
+    }
+    
     //
     // [ClientRpc]
     // private void EndDealClientRpc(WinnerInfo[] winnerInfo)
