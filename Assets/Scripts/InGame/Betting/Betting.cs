@@ -30,18 +30,16 @@ public class Betting : MonoBehaviour
          PlayerEndBettingEvent += OnBetEnd;
      }
      
-
-
      private void OnDestroy()
      {
          PlayerStartBettingEvent -= NextTurn;
          PlayerEndBettingEvent -= OnBetEnd;
      }
-
+     
      IEnumerator TurnWaitCoroutine()
      {
          yield return new WaitForSeconds(_betTime);
-         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,5));
+         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
      }
 
      public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer BigBlindPlayer)
@@ -54,7 +52,7 @@ public class Betting : MonoBehaviour
          smallBlindPlayer.SubCredit(SmallBlind);
          BigBlindPlayer.SubCredit(BigBlind);
          
-         pot.AddToPot(CallAmount);
+         pot.AddToPot(BigBlind + SmallBlind);
      }
 
      public void EndRound()
@@ -62,6 +60,8 @@ public class Betting : MonoBehaviour
          StopCoroutine(turnCoroutine);
          foreach (var v in playerSeats.ActivePlayers)
             v.EnableTurn(false);
+         
+         turnSequenceHandler.CurrentTurnIndex = 0;
      }
      private void OnBetEnd(BetActionInfo obj)
      {
@@ -85,22 +85,29 @@ public class Betting : MonoBehaviour
          turnSequenceHandler.CurrentTurnIndex++;
          turnCoroutine = StartCoroutine(TurnWaitCoroutine());
          
-         print(turnSequenceHandler.CurrentTurnIndex);
          CurrentBetRaiser = p;
          
-         p.EnableTurn(true);
+         if(!p.HasFolded)
+            p.EnableTurn(true);
+         else
+             OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
+         
      }
 
-     public void StartPreflopTurn()
+     public void StartTurn(int roundIndex)
      {
-         turnSequenceHandler.CurrentTurnIndex = playerSeats.ActivePlayers.Count > 2 ? 2 : 0;
-         
-         NetworkPlayer p =
-             playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         turnSequenceHandler.CurrentTurnIndex = roundIndex switch
+         {
+             0 => playerSeats.ActivePlayers.Count > 2 ? 2 : 0,
+             1 => 0,
+             _ => turnSequenceHandler.CurrentTurnIndex
+         };
+
+         var p = playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
          NextTurn(p);
      }
-
+     
      public void Bet(NetworkPlayer player, BetActionInfo obj)
      {
          switch (player.lastBetAction)

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Photon.Pun;
 using UnityEngine;
 
@@ -30,7 +31,33 @@ public class Game : MonoBehaviour
     [SerializeField] private float _roundsIntervalSeconds;
     [SerializeField] private float _showdownEndTimeSeconds;
     [SerializeField] private float _playerPerformSeatActionTimeoutSeconds;
+    
+    private GameStage _currentGameStage;
 
+    private void Awake()
+    {
+        Betting.PlayerEndBettingEvent += OnPlayerBetEnd;
+    }
+
+    private void OnDestroy()
+    {
+        Betting.PlayerEndBettingEvent -= OnPlayerBetEnd;
+    }
+
+    private void OnPlayerBetEnd(BetActionInfo obj)
+    {
+        IEnumerable<NetworkPlayer> validPlayers = playerSeats.ActivePlayers.Where(x => !x.HasFolded);
+        var networkPlayers = validPlayers as NetworkPlayer[] ?? validPlayers.ToArray();
+        
+        Debug.Log($"Valid turns : {networkPlayers.Count()}");
+        if (networkPlayers.Count() == 1)
+        {
+            Debug.Log($"Winner {networkPlayers[0].nickName}");
+            StopCoroutine(_stageCoroutine);
+            betting.EndRound();
+        }
+        
+    }
 
     private IEnumerator Start()
     {
@@ -62,7 +89,7 @@ public class Game : MonoBehaviour
         
         betting.BetBlinds(player1,player2);
     
-        betting.StartPreflopTurn();
+        betting.StartTurn(0);
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         print("Game Turns Completed");
@@ -70,18 +97,53 @@ public class Game : MonoBehaviour
 
         CardData[] cards = {BoardCards[0], BoardCards[1], BoardCards[2]};
         
-        int[] cardData1 = cards[0].ConvertToBinary();
-        int[] cardData2 = cards[1].ConvertToBinary();
-        int[] cardData3 = cards[2].ConvertToBinary();
+        int[] cardData1 = cards[0].ConvertToIntArray();
+        int[] cardData2 = cards[1].ConvertToIntArray();
+        int[] cardData3 = cards[2].ConvertToIntArray();
         
         _photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, cardData1,cardData2,cardData3);
         
         yield return new WaitForSeconds(_roundsIntervalSeconds);
     
-        //S_StartNextStage();
+        StartNextStage(GameStage.Turn);
+    }
+
+    private IEnumerator StartTurn()
+    {
+        betting.StartTurn(1);
+        yield return new WaitUntil(()=> betting.TurnsCompleted);
+        betting.EndRound();
+        
+        yield return new WaitForSeconds(_roundsIntervalSeconds);
+        
     }
     
     // // Stage like Flop, Turn and River.
+    private void StartNextStage(GameStage stage)
+    {
+        StopCoroutine(_stageCoroutine);
+        
+        
+            
+        switch (stage)
+        {
+            case GameStage.Flop: 
+                
+                _stageCoroutine = StartTurn();
+                StartCoroutine(_stageCoroutine);
+                
+                break;
+            case GameStage.Turn:
+
+                break;
+            case GameStage.River:
+
+                break;
+            default:
+                return;
+        }
+        
+    }
     // private IEnumerator StartMidGameStage()
     // {
     //     if (IsServer == false)
@@ -364,51 +426,7 @@ public class Game : MonoBehaviour
     //     EndDealClientRpc(winnerInfo);
     // }
     //
-    // private void S_StartNextStage()
-    // {
-    //     if (IsServer == false)
-    //     {
-    //         return;
-    //     }
-    //
-    //     GameStage stage = _currentGameStage.Value + 1;
-    //
-    //     _currentGameStage.Value = stage;
-    //     SetStageCoroutine(stage);
-    //     StartCoroutine(_stageCoroutine);
-    //     
-    //     if (IsHost == false)
-    //     {
-    //         InvokeGameStageBeganEvent(stage);
-    //     }
-    //     
-    //     StartNextStageClientRpc(stage);
-    //     
-    //     Logger.Log($"Starting {stage} stage.");
-    //
-    //     int startIndex;
-    //     int cardsCount;
-    //     switch (stage)
-    //     {
-    //         case GameStage.Flop:
-    //             startIndex = 0;
-    //             cardsCount = 3;
-    //             break;
-    //         case GameStage.Turn:
-    //             startIndex = 3;
-    //             cardsCount = 1;
-    //             break;
-    //         case GameStage.River:
-    //             startIndex = 4;
-    //             cardsCount = 1;
-    //             break;
-    //         default:
-    //             return;
-    //     }
-    //
-    //     IEnumerable<CardObject> codedCards = _board.Cards.Skip(startIndex).Take(cardsCount);
-    //     SetBoardCardsClientRpc(CardObjectConverter.GetCodedCards(codedCards));
-    // }
+
     //
     // private void S_EndStage()
     // {

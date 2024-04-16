@@ -46,7 +46,7 @@ public class PlayersViewManager : MonoBehaviour
                 playerViews[i].UpdateView();
                 continue;
             }
-            
+
             NetworkPlayer p = playerSeats.ActivePlayers.Find(x => x.id == turnSequence[i]);
             
             if (p == null)

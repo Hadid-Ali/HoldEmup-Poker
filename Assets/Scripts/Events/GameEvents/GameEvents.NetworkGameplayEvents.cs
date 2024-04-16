@@ -1,22 +1,19 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public static partial class GameEvents
 {
     public static class NetworkGameplayEvents
     {
-        public static GameEvent<NetworkDataObject> NetworkSubmitRequest = new();
-        public static GameEvent<List<NetworkDataObject>> AllUserHandsReceived = new();
-        public static GameEvent<CardData[], int> UserHandReceivedEvent = new();
-        public static GameEvent<List<NetworkDataObject>, List<PlayerScoreObject>> PlayerScoresReceived = new();
-        public static GameEvent<PlayerController> PlayerJoinedGame = new();
-        public static GameEvent<List<int>,bool> MatchWinnersAnnounced = new();
-
-        public static GameEvent ExposePocketCardsLocally = new();
-        public static GameEvent<CardData, CardData> OnPocketCardsView = new();
-        public static GameEvent<List<int>> OnAllPlayersSeated = new();
-        public static GameEvent OnUpdatePlayersView = new();
+        public static readonly GameEvent <NetworkDataObject> NetworkSubmitRequest = new();
+        public static readonly GameEvent <List<NetworkDataObject>> AllUserHandsReceived = new();
+        public static readonly GameEvent <CardData[], int> UserHandReceivedEvent = new();
+        public static readonly GameEvent <List<NetworkDataObject>, List<PlayerScoreObject>> PlayerScoresReceived = new();
+        public static readonly GameEvent <PlayerController> PlayerJoinedGame = new();
+        public static readonly GameEvent <List<int>,bool> MatchWinnersAnnounced = new();
+ 
+        public static readonly GameEvent ExposePocketCardsLocally = new();
+        public static readonly GameEvent <CardData, CardData> OnPocketCardsView = new();
+        public static readonly GameEvent <List<int>> OnAllPlayersSeated = new();
+        public static readonly GameEvent OnUpdatePlayersView = new();
     }
 }

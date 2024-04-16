@@ -53,7 +53,7 @@ public class CardData
 		set => m_dealt = value;
 	}
 
-	public int[] ConvertToBinary()
+	public int[] ConvertToIntArray()
 	{
 		int[] binaryData = new int[2];
 		binaryData[0] = (int) type;

@@ -22,11 +22,7 @@ public class NetworkPlayer : MonoBehaviourPun
     public bool HasFolded
     {
         get => _hasFolded;
-        set
-        {
-            _hasFolded = value;
-            _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
-        }
+        set => _hasFolded = value;
     }
 
     public string nickName;
@@ -93,8 +89,8 @@ public class NetworkPlayer : MonoBehaviourPun
 
     public void SetPocketCards(CardData card1, CardData card2, int playerId)
     {
-        int[] binaryData1 = card1.ConvertToBinary();
-        int[] binaryData2 = card2.ConvertToBinary();
+        int[] binaryData1 = card1.ConvertToIntArray();
+        int[] binaryData2 = card2.ConvertToIntArray();
         
         _photonView.RPC(nameof(SyncPocketCards), RpcTarget.All, binaryData1,binaryData2,playerId);
     } 
