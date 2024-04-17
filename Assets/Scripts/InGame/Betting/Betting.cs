@@ -47,7 +47,7 @@ public class Betting : MonoBehaviour
          SmallBlind = smallBlindPlayer.betAmount;
          BigBlind = SmallBlind * 2;
 
-         CallAmount = BigBlind;
+         CallAmount = BigBlind + SmallBlind;
          
          smallBlindPlayer.SubCredit(SmallBlind);
          BigBlindPlayer.SubCredit(BigBlind);
@@ -106,6 +106,7 @@ public class Betting : MonoBehaviour
          var p = playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
          NextTurn(p);
+         print("Working...");
      }
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)

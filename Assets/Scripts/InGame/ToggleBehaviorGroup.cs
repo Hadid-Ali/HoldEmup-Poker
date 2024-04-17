@@ -10,7 +10,10 @@ public class ToggleBehaviorGroup : MonoBehaviour
     {
         toggles = GetComponentsInChildren<ToggleBehavior>();
         for (int i = 0; i < toggles.Length; i++)
+        {
             toggles[i].SetIndex(i);
+            toggles[i].gameObject.name = actions[i].ToString();
+        }
 
         selectedToggleIndex = Mathf.Clamp(selectedToggleIndex,0,toggles.Length - 1);
 

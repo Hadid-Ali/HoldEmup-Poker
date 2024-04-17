@@ -18,7 +18,6 @@ public class TurnSubmitButton : MonoBehaviour
     private void OnEnableTurn(bool obj)
     {
         button.interactable = obj;
-
     }
 
     private void OnDestroy()

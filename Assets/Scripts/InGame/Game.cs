@@ -70,8 +70,7 @@ public class Game : MonoBehaviour
         if(!PhotonNetwork.IsMasterClient)
             return;
         
-        _stageCoroutine = StartPreflop();
-        StartCoroutine(_stageCoroutine);
+        StartNextStage(GameStage.Preflop);
     }
 
 
@@ -121,20 +120,18 @@ public class Game : MonoBehaviour
     // // Stage like Flop, Turn and River.
     private void StartNextStage(GameStage stage)
     {
-        StopCoroutine(_stageCoroutine);
         
-        
-            
         switch (stage)
         {
-            case GameStage.Flop: 
-                
-                _stageCoroutine = StartTurn();
+            case GameStage.Preflop:
+                _stageCoroutine = StartPreflop();
                 StartCoroutine(_stageCoroutine);
                 
                 break;
             case GameStage.Turn:
-
+                StopCoroutine(_stageCoroutine);
+                _stageCoroutine = StartTurn();
+                StartCoroutine(_stageCoroutine);
                 break;
             case GameStage.River:
 

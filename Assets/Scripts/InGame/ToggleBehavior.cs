@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class ToggleBehavior : MonoBehaviour
     
     [SerializeField] private Button _button;
     [SerializeField] private Image _image;
+    [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private int index; 
     public bool isOn;
 
@@ -22,6 +24,7 @@ public class ToggleBehavior : MonoBehaviour
     {
         _button ??= GetComponent<Button>();
         _image ??= GetComponent<Image>();
+        _text ??= GetComponentInChildren<TextMeshProUGUI>();
         OnViewUpdate(isOn);
     }
 

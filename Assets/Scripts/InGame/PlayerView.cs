@@ -23,10 +23,18 @@ public class PlayerView : MonoBehaviour
     
     public void UpdateView()
     {
-        id.SetText( $" Seat no : {playerID}");
         Name.SetText(playerName);
+        id.SetText( $" Seat no : {playerID}");
         credit.SetText("Credits : " + playerCredit);
         turn.gameObject.SetActive(isOnTurn);
+    }
+
+    public void UpdateView(int not)
+    {
+        Name.SetText("Not Joined");
+        id.SetText( "");
+        credit.SetText("");
+        turn.gameObject.SetActive(false);
     }
 
     public void UpdateCardView(CardData card1, CardData card2)

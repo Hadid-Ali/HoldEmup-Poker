@@ -39,11 +39,7 @@ public class PlayersViewManager : MonoBehaviour
         {
             if (i >= playerSeats.ActivePlayers.Count)
             {
-                playerViews[i].playerID = 0;
-                playerViews[i].playerName = "Not Joined";
-                playerViews[i].playerCredit = 0;
-                
-                playerViews[i].UpdateView();
+                playerViews[i].UpdateView(0);
                 continue;
             }
 
