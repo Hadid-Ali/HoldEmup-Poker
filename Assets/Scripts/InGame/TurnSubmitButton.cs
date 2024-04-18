@@ -28,5 +28,6 @@ public class TurnSubmitButton : MonoBehaviour
     private void OnButtonClick()
     {
         OnPlayerActionSubmit.Invoke(group.GetSelectedAction());
+        button.interactable = false;
     }
 }

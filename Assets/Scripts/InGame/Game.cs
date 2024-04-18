@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using Photon.Pun;
+using TMPro;
 using UnityEngine;
 
 public class Game : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI text;
+    
     [SerializeField] private PhotonView _photonView;
     [SerializeField] private Betting betting;
     [SerializeField] private PlayerSeats playerSeats;
@@ -46,13 +49,14 @@ public class Game : MonoBehaviour
 
     private void OnPlayerBetEnd(BetActionInfo obj)
     {
-        IEnumerable<NetworkPlayer> validPlayers = playerSeats.ActivePlayers.Where(x => !x.HasFolded);
-        var networkPlayers = validPlayers as NetworkPlayer[] ?? validPlayers.ToArray();
-        
-        Debug.Log($"Valid turns : {networkPlayers.Count()}");
-        if (networkPlayers.Count() == 1)
+        StartCoroutine(Wait());
+    }
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1f);
+        if (CheckIfLonePlayer())
         {
-            Debug.Log($"Winner {networkPlayers[0].nickName}");
             StopCoroutine(_stageCoroutine);
             betting.EndRound();
         }
@@ -113,8 +117,35 @@ public class Game : MonoBehaviour
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         betting.EndRound();
         
+        CardData[] cards = {BoardCards[0], BoardCards[1], BoardCards[2], BoardCards[3]};
+        
+        int[] cardData1 = cards[0].ConvertToIntArray();
+        int[] cardData2 = cards[1].ConvertToIntArray();
+        int[] cardData3 = cards[2].ConvertToIntArray();
+        int[] cardData4 = cards[3].ConvertToIntArray();
+        
+        _photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, cardData1,cardData2,cardData3,cardData4);
+
+        CheckIfLonePlayer();
+        
         yield return new WaitForSeconds(_roundsIntervalSeconds);
         
+    }
+
+    private bool CheckIfLonePlayer()
+    {
+        IEnumerable<NetworkPlayer> validPlayers = playerSeats.ActivePlayers.Where(x => !x.HasFolded);
+        var networkPlayers = validPlayers as NetworkPlayer[] ?? validPlayers.ToArray();
+        
+        Debug.Log($"Valid turns : {networkPlayers.Count()}");
+
+        if (networkPlayers.Count() == 1)
+        {
+            text.SetText($"{networkPlayers[0].nickName} has Won");
+            return true;
+        }
+        else
+            return false;
     }
     
     // // Stage like Flop, Turn and River.
@@ -451,6 +482,17 @@ public class Game : MonoBehaviour
         CardData cardd3 = CardData.ConvertBinaryToCardData(card3);
 
         CardData[] cardDatas = { cardd1, cardd2, cardd3 };
+        boardCardsView.ExposeCards(cardDatas);                         
+    }
+    [PunRPC]
+    private void SyncExposedCards(int[] card1,int[] card2,int[] card3,int[] card4)
+    {
+        CardData cardd1 = CardData.ConvertBinaryToCardData(card1);
+        CardData cardd2 = CardData.ConvertBinaryToCardData(card2);
+        CardData cardd3 = CardData.ConvertBinaryToCardData(card3);
+        CardData cardd4 = CardData.ConvertBinaryToCardData(card4);
+
+        CardData[] cardDatas = { cardd1, cardd2, cardd3, cardd4};
         boardCardsView.ExposeCards(cardDatas);                         
     }
     

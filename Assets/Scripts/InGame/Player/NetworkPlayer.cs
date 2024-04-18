@@ -63,6 +63,9 @@ public class NetworkPlayer : MonoBehaviourPun
     } 
     public void SubCredit(int val)
     {
+        if(val > totalCredit)
+            return;
+        
         totalCredit -= val;  
         _photonView.RPC(nameof(SyncInformation), RpcTarget.All, totalCredit);
     }
@@ -152,11 +155,12 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         print($"Checking : {id}");
         lastBetAction = (BetAction) playerAction;
+        _hasFolded = lastBetAction == BetAction.Fold;
         
         if(!PhotonNetwork.IsMasterClient)
             return;
-     
-        if(id == _id)
+
+        if (id == _id)
             Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 5));
     }
     

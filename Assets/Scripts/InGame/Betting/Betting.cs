@@ -62,6 +62,7 @@ public class Betting : MonoBehaviour
             v.EnableTurn(false);
          
          turnSequenceHandler.CurrentTurnIndex = 0;
+         betsCount = 0;
      }
      private void OnBetEnd(BetActionInfo obj)
      {
