@@ -6,9 +6,6 @@ using UnityEngine;
 
 public class NetworkGameplayScoreHandler : MonoBehaviour
 {
-    [SerializeField] protected NetworkGameplayManager m_NetworkGameplayHandler;
-    [SerializeField] protected NetworkPlayerSpawner _spawner;
-    
     private Dictionary<int,int> m_PlayerScoreObjects = new();
     private GameEvent<int, int, int> m_OnPlayerWin = new();
 

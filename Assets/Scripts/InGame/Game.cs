@@ -11,18 +11,19 @@ public class Game : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI text;
     
-    [SerializeField] private PhotonView _photonView;
+    [SerializeField] private PhotonView photonView;
     [SerializeField] private Betting betting;
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private Pot pot;
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
-    [SerializeField] private BoardCardsView boardCardsView;
+    [SerializeField] private BoardCards boardCards;
+ 
     
     public event Action<GameStage> GameStageBeganEvent;
     public event Action<GameStage> GameStageOverEvent;
     public event Action<WinnerInfo[]> EndDealEvent;
     
-    public List<CardData> BoardCards;
+
 
     private IEnumerator _stageCoroutine;
     private IEnumerator _startDealWhenСonditionTrueCoroutine;
@@ -35,17 +36,64 @@ public class Game : MonoBehaviour
     [SerializeField] private float _showdownEndTimeSeconds;
     [SerializeField] private float _playerPerformSeatActionTimeoutSeconds;
     
-    private GameStage _currentGameStage;
+    private int _currentGameStageInt;
+    private int _boardCardExposeLength = 3;
+    private int _unFoldedPlayersCount;
+    private List<NetworkDataObject> playerCards = new();
 
     private void Awake()
     {
         Betting.PlayerEndBettingEvent += OnPlayerBetEnd;
+        GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.Register(OnPlayerCardsReceived);
+        GameEvents.GameplayEvents.UserHandsEvaluated.Register(OnHandsEvaluated);
+       
     }
-
     private void OnDestroy()
     {
         Betting.PlayerEndBettingEvent -= OnPlayerBetEnd;
+        GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.UnRegister(OnPlayerCardsReceived);
+        GameEvents.GameplayEvents.UserHandsEvaluated.UnRegister(OnHandsEvaluated);
     }
+    
+    private void OnPlayerCardsReceived(NetworkDataObject obj)
+    {
+        playerCards.Add(obj);
+        
+        if(playerCards.Count < _unFoldedPlayersCount)
+            return;
+
+        StartCoroutine(LazyCalculation());
+    }
+
+    IEnumerator LazyCalculation()
+    {
+        foreach (var v in playerCards)
+        {
+            v.PlayerDecks.AddRange(boardCards.GetCards);
+            
+            Handd hand = new Handd();
+            foreach (var j in v.PlayerDecks)
+                hand.Add(j);
+            
+            hand = CombinationСalculator.GetBestHanddEfficiently(hand);
+            HandTypes handV;
+            CardData[] handToEvaluate = hand._Handd.ToArray();
+            print($"Card Count : {handToEvaluate.Length}");
+            HandEvaluator.Evaluate(handToEvaluate, out handV);
+            
+            print($"{playerSeats.ActivePlayers.Find(x=>x.id == v.PhotonViewID).nickName} : {handV}");
+            v.PlayerDecks.Clear();
+            
+            v.PlayerDecks = hand._Handd;
+            
+            yield return new WaitForSeconds(.3f);
+        }
+        
+        GameEvents.NetworkGameplayEvents.AllUserHandsReceived.Raise(playerCards);
+    }
+    
+
+
 
     private void OnPlayerBetEnd(BetActionInfo obj)
     {
@@ -62,6 +110,18 @@ public class Game : MonoBehaviour
         }
         
     }
+    private void OnHandsEvaluated(Dictionary<int, PlayerScoreObject> obj)
+    {
+        foreach (var v in obj)
+        {
+            print($"{playerSeats.ActivePlayers.Find(x=>x.id == v.Key).nickName} : {v.Value.Score}" );
+        }
+        PlayerScoreObject pp = obj.First(x => x.Value.Score >= 10).Value;
+
+        NetworkPlayer p = playerSeats.ActivePlayers.Find(x => pp.UserID == x.id);
+        p.AddCredit(pot.GetPotMoney);
+        pot.ResetPot();
+    }
 
     private IEnumerator Start()
     {
@@ -74,19 +134,20 @@ public class Game : MonoBehaviour
         if(!PhotonNetwork.IsMasterClient)
             return;
         
-        StartNextStage(GameStage.Preflop);
+        StartNextStage(GameStage.Flop);
     }
 
 
     private IEnumerator StartPreflop()
     {
+        
         NetworkPlayer player1 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
         NetworkPlayer player2 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
         foreach (var v in playerSeats.ActivePlayers)
             player1.DealCards(v);
 
-        BoardCards = DecksHandler.GetRandomHand(5);
+        
         
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
         
@@ -97,38 +158,33 @@ public class Game : MonoBehaviour
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         print("Game Turns Completed");
         betting.EndRound();
-
-        CardData[] cards = {BoardCards[0], BoardCards[1], BoardCards[2]};
         
-        int[] cardData1 = cards[0].ConvertToIntArray();
-        int[] cardData2 = cards[1].ConvertToIntArray();
-        int[] cardData3 = cards[2].ConvertToIntArray();
-        
-        _photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, cardData1,cardData2,cardData3);
+        boardCards.PopulateCards();
+        boardCards.ExposeCards(_boardCardExposeLength);
+        _boardCardExposeLength++;
         
         yield return new WaitForSeconds(_roundsIntervalSeconds);
-    
-        StartNextStage(GameStage.Turn);
+
+        _currentGameStageInt = (int)GameStage.Turn;
+        StartNextStage((GameStage) _currentGameStageInt);
     }
 
-    private IEnumerator StartTurn()
+    private IEnumerator MidStage()
     {
         betting.StartTurn(1);
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         betting.EndRound();
         
-        CardData[] cards = {BoardCards[0], BoardCards[1], BoardCards[2], BoardCards[3]};
-        
-        int[] cardData1 = cards[0].ConvertToIntArray();
-        int[] cardData2 = cards[1].ConvertToIntArray();
-        int[] cardData3 = cards[2].ConvertToIntArray();
-        int[] cardData4 = cards[3].ConvertToIntArray();
-        
-        _photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, cardData1,cardData2,cardData3,cardData4);
+        boardCards.ExposeCards(_boardCardExposeLength);
+        _boardCardExposeLength++;
 
         CheckIfLonePlayer();
         
         yield return new WaitForSeconds(_roundsIntervalSeconds);
+        
+        _currentGameStageInt++;
+        print( $"Next Stage is : {(GameStage) _currentGameStageInt}");
+        StartNextStage((GameStage) _currentGameStageInt);
         
     }
 
@@ -141,7 +197,7 @@ public class Game : MonoBehaviour
 
         if (networkPlayers.Count() == 1)
         {
-            text.SetText($"{networkPlayers[0].nickName} has Won");
+            StartNextStage(GameStage.Showdown);
             return true;
         }
         else
@@ -154,45 +210,31 @@ public class Game : MonoBehaviour
         
         switch (stage)
         {
-            case GameStage.Preflop:
+            case GameStage.Flop:
                 _stageCoroutine = StartPreflop();
                 StartCoroutine(_stageCoroutine);
                 
                 break;
             case GameStage.Turn:
                 StopCoroutine(_stageCoroutine);
-                _stageCoroutine = StartTurn();
+                _stageCoroutine = MidStage();
                 StartCoroutine(_stageCoroutine);
                 break;
             case GameStage.River:
-
+                StopCoroutine(_stageCoroutine);
+                _stageCoroutine = MidStage();
+                StartCoroutine(_stageCoroutine);
+                break;
+            case GameStage.Showdown:
+                _unFoldedPlayersCount = playerSeats.ActivePlayers.Count(x => !x.HasFolded);
+                GameEvents.NetworkGameplayEvents.OnShowDown.Raise();
                 break;
             default:
                 return;
         }
         
     }
-    // private IEnumerator StartMidGameStage()
-    // {
-    //     if (IsServer == false)
-    //     {
-    //         Logger.Log("MidGame stage wanted to be performed on client. Aborting...", Logger.LogLevel.Error);
-    //         yield break;
-    //     }
-    //     
-    //     if (Betting.IsAllIn == false)
-    //     {
-    //         int[] turnSequence = _boardButton.GetTurnSequence();
-    //         yield return Bet(turnSequence);
-    //     }
-    //
-    //     S_EndStage();
-    //
-    //     yield return new WaitForSeconds(_roundsIntervalSeconds);
-    //     
-    //     S_StartNextStage();
-    // }
-    //
+
     // private IEnumerator StartShowdown()
     // {
     //     if (IsServer == false)
@@ -474,27 +516,7 @@ public class Game : MonoBehaviour
     // #endregion
     //
     // #region RPC
-    [PunRPC]
-    private void SyncExposedCards(int[] card1,int[] card2,int[] card3)
-    {
-        CardData cardd1 = CardData.ConvertBinaryToCardData(card1);
-        CardData cardd2 = CardData.ConvertBinaryToCardData(card2);
-        CardData cardd3 = CardData.ConvertBinaryToCardData(card3);
 
-        CardData[] cardDatas = { cardd1, cardd2, cardd3 };
-        boardCardsView.ExposeCards(cardDatas);                         
-    }
-    [PunRPC]
-    private void SyncExposedCards(int[] card1,int[] card2,int[] card3,int[] card4)
-    {
-        CardData cardd1 = CardData.ConvertBinaryToCardData(card1);
-        CardData cardd2 = CardData.ConvertBinaryToCardData(card2);
-        CardData cardd3 = CardData.ConvertBinaryToCardData(card3);
-        CardData cardd4 = CardData.ConvertBinaryToCardData(card4);
-
-        CardData[] cardDatas = { cardd1, cardd2, cardd3, cardd4};
-        boardCardsView.ExposeCards(cardDatas);                         
-    }
     
     //
     // [ClientRpc]

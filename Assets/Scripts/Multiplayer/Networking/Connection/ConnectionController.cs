@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 public class ConnectionController : MonoBehaviourPunCallbacks

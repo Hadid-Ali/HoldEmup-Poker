@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using ExitGames.Client.Photon;
 using Photon.Pun;
 using Photon.Realtime;
@@ -43,13 +44,27 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         Invoke(nameof(OnNetworkSpawn), 1.5f);
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Register(ExposeCardsLocally);
+        GameEvents.NetworkGameplayEvents.OnShowDown.Register(SubmitCards);
         TurnSubmitButton.OnPlayerActionSubmit += OnActionSubmit;
         
     }
+
+    private void SubmitCards()
+    {
+        List<CardData> cards = new ()
+        {
+            pocketCard1,
+            pocketCard2
+        };
+
+        GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.Raise(new NetworkDataObject(cards, id));
+    }
+
     private void OnDestroy()
     {
         TurnSubmitButton.OnPlayerActionSubmit -= OnActionSubmit;
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.UnRegister(ExposeCardsLocally);
+        GameEvents.NetworkGameplayEvents.OnShowDown.UnRegister(SubmitCards);
     }
 
     public void OnNetworkSpawn() => OnPlayerSpawn?.Invoke(this);
@@ -170,8 +185,8 @@ public class NetworkPlayer : MonoBehaviourPun
         if(playerID != id)
             return;
         
-        pocketCard1 = CardData.ConvertBinaryToCardData(binaryCardData1);
-        pocketCard2 = CardData.ConvertBinaryToCardData(binaryCardData2);
+        pocketCard1 = CardData.ConvertIntArrayToCardData(binaryCardData1);
+        pocketCard2 = CardData.ConvertIntArrayToCardData(binaryCardData2);
     }
     
     [PunRPC]

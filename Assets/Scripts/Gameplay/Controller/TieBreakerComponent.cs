@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 
 
-public class TieBreakerComponent : MonoBehaviour
+public class TieBreakerComponent 
 {
     public static int DeepEvaluate(Hand hand1, Hand hand2)
     {
@@ -400,7 +400,7 @@ public class TieBreakerComponent : MonoBehaviour
             }
         }
 
-        return CardValue.VALUE_2; // Default value if no pair is found
+        return CardValue.value_2; // Default value if no pair is found
     }
 
     static List<CardValue> GetNonPairValues(Hand hand)
@@ -453,13 +453,13 @@ public class TieBreakerComponent : MonoBehaviour
             }
         }
 
-        return CardValue.VALUE_2; // Default value if no three of a kind is found
+        return CardValue.value_2; // Default value if no three of a kind is found
     }
 
     static CardValue GetHighestCardValue(Hand hand)
     {
         // Helper function to get the highest card value in a hand
-        CardValue highestValue = CardValue.VALUE_2; // Start with the lowest value
+        CardValue highestValue = CardValue.value_2; // Start with the lowest value
 
         foreach (var card in hand.CardData)
         {

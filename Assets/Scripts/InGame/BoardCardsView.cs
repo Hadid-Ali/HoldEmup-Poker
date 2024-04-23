@@ -1,12 +1,21 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BoardCardsView : MonoBehaviour
 {
     [SerializeField] private Image[] boardCards;
+
+    private void Awake()
+    {
+        GameEvents.NetworkGameplayEvents.OnBoardCardsView.Register(ExposeCards);
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.NetworkGameplayEvents.OnBoardCardsView.UnRegister(ExposeCards);
+    }
+
     public void ExposeCards(CardData[] cards)
     {
         for (int i = 0; i < cards.Length; i++)

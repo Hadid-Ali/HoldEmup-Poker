@@ -11,12 +11,8 @@ struct HighestHandOccurence
 
 public class HandsEvaluator : MonoBehaviour
 {
-    [SerializeField] private NetworkGameplayManager _manager;
     private void OnEnable()
     {
-        if (!_manager)
-            _manager = GetComponent<NetworkGameplayManager>();
-        
         GameEvents.NetworkGameplayEvents.AllUserHandsReceived.Register(OnAllUserHandsReceived);
     }
 

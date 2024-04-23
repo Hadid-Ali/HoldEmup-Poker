@@ -14,15 +14,24 @@ public class Pot : MonoBehaviour
      public void AddToPot(int val)
      {
           _photonView.RPC(nameof(SyncPot_RPC), RpcTarget.All, val);
-          print("Add to Pot local");
      }
 
+     public void ResetPot()
+     {
+          _photonView.RPC(nameof(Reset_RPC), RpcTarget.All);
+     }
+
+     [PunRPC]
+     private void Reset_RPC()
+     {
+          _money = 0;
+          OnPotUpdate?.Invoke(_money);
+     }
      [PunRPC]
      public void SyncPot_RPC(int val)
      {
           _money += val;
           OnPotUpdate?.Invoke(_money);
-          print("Add to Pot Broadcast");
      }
 
 }
