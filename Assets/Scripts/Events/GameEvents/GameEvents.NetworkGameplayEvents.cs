@@ -16,8 +16,10 @@ public static partial class GameEvents
         public static readonly GameEvent ExposePocketCardsLocally = new();
         public static readonly GameEvent <CardData, CardData> OnPocketCardsView = new();
         public static readonly GameEvent <CardData[]> OnBoardCardsView = new();
+        public static readonly GameEvent  OnBoardCardsViewReset = new();
         public static readonly GameEvent <List<int>> OnAllPlayersSeated = new();
         public static readonly GameEvent OnUpdatePlayersView = new();
+        public static readonly GameEvent OnRoundEnd = new();
         
     }
 }

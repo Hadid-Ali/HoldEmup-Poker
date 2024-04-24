@@ -45,6 +45,7 @@ public class Game : MonoBehaviour
     {
         Betting.PlayerEndBettingEvent += OnPlayerBetEnd;
         GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.Register(OnPlayerCardsReceived);
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(ResetGame);
         GameEvents.GameplayEvents.UserHandsEvaluated.Register(OnHandsEvaluated);
        
     }
@@ -52,6 +53,7 @@ public class Game : MonoBehaviour
     {
         Betting.PlayerEndBettingEvent -= OnPlayerBetEnd;
         GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.UnRegister(OnPlayerCardsReceived);
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(ResetGame);
         GameEvents.GameplayEvents.UserHandsEvaluated.UnRegister(OnHandsEvaluated);
     }
     
@@ -76,14 +78,8 @@ public class Game : MonoBehaviour
                 hand.Add(j);
             
             hand = CombinationСalculator.GetBestHanddEfficiently(hand);
-            HandTypes handV;
-            CardData[] handToEvaluate = hand._Handd.ToArray();
-            print($"Card Count : {handToEvaluate.Length}");
-            HandEvaluator.Evaluate(handToEvaluate, out handV);
             
-            print($"{playerSeats.ActivePlayers.Find(x=>x.id == v.PhotonViewID).nickName} : {handV}");
             v.PlayerDecks.Clear();
-            
             v.PlayerDecks = hand._Handd;
             
             yield return new WaitForSeconds(.3f);
@@ -103,12 +99,13 @@ public class Game : MonoBehaviour
     IEnumerator Wait()
     {
         yield return new WaitForSeconds(1f);
-        if (CheckIfLonePlayer())
-        {
-            StopCoroutine(_stageCoroutine);
-            betting.EndRound();
-        }
         
+        if (!CheckIfLonePlayer()) yield break;
+        
+        StopCoroutine(_stageCoroutine);
+        betting.EndStage();
+        StartNextStage(GameStage.Showdown);
+
     }
     private void OnHandsEvaluated(Dictionary<int, PlayerScoreObject> obj)
     {
@@ -120,7 +117,6 @@ public class Game : MonoBehaviour
 
         NetworkPlayer p = playerSeats.ActivePlayers.Find(x => pp.UserID == x.id);
         p.AddCredit(pot.GetPotMoney);
-        pot.ResetPot();
     }
 
     private IEnumerator Start()
@@ -157,7 +153,7 @@ public class Game : MonoBehaviour
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
         print("Game Turns Completed");
-        betting.EndRound();
+        betting.EndStage();
         
         boardCards.PopulateCards();
         boardCards.ExposeCards(_boardCardExposeLength);
@@ -173,7 +169,7 @@ public class Game : MonoBehaviour
     {
         betting.StartTurn(1);
         yield return new WaitUntil(()=> betting.TurnsCompleted);
-        betting.EndRound();
+        betting.EndStage();
         
         boardCards.ExposeCards(_boardCardExposeLength);
         _boardCardExposeLength++;
@@ -195,13 +191,7 @@ public class Game : MonoBehaviour
         
         Debug.Log($"Valid turns : {networkPlayers.Count()}");
 
-        if (networkPlayers.Count() == 1)
-        {
-            StartNextStage(GameStage.Showdown);
-            return true;
-        }
-        else
-            return false;
+        return networkPlayers.Count() == 1;
     }
     
     // // Stage like Flop, Turn and River.
@@ -226,8 +216,10 @@ public class Game : MonoBehaviour
                 StartCoroutine(_stageCoroutine);
                 break;
             case GameStage.Showdown:
-                _unFoldedPlayersCount = playerSeats.ActivePlayers.Count(x => !x.HasFolded);
-                GameEvents.NetworkGameplayEvents.OnShowDown.Raise();
+                StopCoroutine(_stageCoroutine);
+                _stageCoroutine = StartShowdown();
+                StartCoroutine(_stageCoroutine);
+                
                 break;
             default:
                 return;
@@ -235,55 +227,35 @@ public class Game : MonoBehaviour
         
     }
 
-    // private IEnumerator StartShowdown()
-    // {
-    //     if (IsServer == false)
-    //     {
-    //         Logger.Log("Showdown stage wanted to performed on client. Aborting...", Logger.LogLevel.Error);
-    //         yield break;
-    //     }
-    //     
-    //     int[] turnSequence = _boardButton.GetShowdownTurnSequence();
-    //     
-    //     List<Player> winners = new();
-    //     Hand winnerHand = new();
-    //     for (var i = 0; i < turnSequence.Length; i++)
-    //     {
-    //         Player player = PlayerSeats.Players[turnSequence[i]];
-    //         List<CardObject> completeCards = _board.Cards.ToList();
-    //         completeCards.Add(player.PocketCard1); completeCards.Add(player.PocketCard2);
-    //
-    //         Hand bestHand = CombinationСalculator.GetBestHand(new Hand(completeCards));
-    //
-    //         if (i == 0 || bestHand > winnerHand)
-    //         {
-    //             winners.Clear();
-    //             winners.Add(player);
-    //             winnerHand = bestHand;
-    //         }
-    //         else if (bestHand == winnerHand)
-    //         {
-    //             winners.Add(player);
-    //         }
-    //     }
-    //     
-    //     if (winners.Count == 0)
-    //     {
-    //         throw new NullReferenceException();
-    //     }
-    //
-    //     S_EndStage();
-    //     
-    //     yield return new WaitForSeconds(_showdownEndTimeSeconds);
-    //
-    //     List<WinnerInfo> winnerInfo = new();
-    //     foreach (Player winner in winners)
-    //     {
-    //         winnerInfo.Add(new WinnerInfo(winner.OwnerClientId, Pot.GetWinValue(winner, winners), winnerHand.ToString()));
-    //     }
-    //
-    //     S_EndDeal(winnerInfo.ToArray());
-    // }
+    private IEnumerator StartShowdown()
+    {
+        _unFoldedPlayersCount = playerSeats.ActivePlayers.Count(x => !x.HasFolded);
+
+        if (_unFoldedPlayersCount == 1)
+        {
+            var p = playerSeats.ActivePlayers.Find(x => !x.HasFolded);
+            p = playerSeats.ActivePlayers.Find(x => p.id == x.id);
+            p.AddCredit(pot.GetPotMoney);
+        }
+        else
+        {
+            GameEvents.NetworkGameplayEvents.OnShowDown.Raise();
+        }
+        yield return new WaitForSeconds(_showdownEndTimeSeconds);
+        
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Raise();
+    }
+
+    private void ResetGame()
+    {
+        _boardCardExposeLength = 3;
+        _currentGameStageInt = (int)GameStage.Flop;
+
+        foreach (var v in playerSeats.ActivePlayers)
+            v.HasFolded = false;
+        
+        StartCoroutine(Start());
+    }
     //
     // private IEnumerator Bet(int[] turnSequence)
     // {

@@ -1,11 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Photon.Pun;
-using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.Serialization;
+
 
 [Serializable]
 public class Seat
@@ -71,6 +68,8 @@ public class PlayerSeats : MonoBehaviour
              break;
          }
      }
+
+
      List<int> RotateOrder(List<int> turnSequence)
      {
          if (!turnSequence.Contains(LocalPlayerID))

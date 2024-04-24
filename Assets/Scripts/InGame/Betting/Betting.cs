@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Betting : MonoBehaviour 
 {
@@ -11,18 +12,19 @@ public class Betting : MonoBehaviour
     
      public static Action<NetworkPlayer> PlayerStartBettingEvent;
      public static Action<BetActionInfo> PlayerEndBettingEvent;
-     public NetworkPlayer CurrentBetRaiser { get; private set; }
+     private NetworkPlayer CurrentBetRaiser { get; set; }
 
-     public int CallAmount;
+     private int _callAmount;
+     private int _lastRaise;
 
-     public int BigBlind;
-     public int SmallBlind;
+     public int bigBlind;
+     public int smallBlind;
      
-     [SerializeField] private float _betTime;
-     private Coroutine turnCoroutine;
+     [SerializeField] private float betTime;
+     private Coroutine _turnCoroutine;
 
-     private int betsCount;
-     public bool TurnsCompleted => betsCount >= playerSeats.ActivePlayers.Count;
+     private int _betsCount;
+     public bool TurnsCompleted => _betsCount >= playerSeats.ActivePlayers.Count;
 
      private void Start()
      {
@@ -38,31 +40,33 @@ public class Betting : MonoBehaviour
      
      IEnumerator TurnWaitCoroutine()
      {
-         yield return new WaitForSeconds(_betTime);
+         yield return new WaitForSeconds(betTime);
+         
          OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
      }
 
-     public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer BigBlindPlayer)
-     {
-         SmallBlind = smallBlindPlayer.betAmount;
-         BigBlind = SmallBlind * 2;
+     public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer bigBlindPlayer)
+     { 
+         smallBlind = smallBlindPlayer.betAmount;
+         bigBlind = smallBlind * 2;
 
-         CallAmount = BigBlind + SmallBlind;
+         _callAmount = bigBlind + smallBlind;
          
-         smallBlindPlayer.SubCredit(SmallBlind);
-         BigBlindPlayer.SubCredit(BigBlind);
+         smallBlindPlayer.SubCredit(smallBlind);
+         bigBlindPlayer.SubCredit(bigBlind);
          
-         pot.AddToPot(BigBlind + SmallBlind);
+         pot.AddToPot(bigBlind + smallBlind);
      }
 
-     public void EndRound()
+     public void EndStage()
      {
-         StopCoroutine(turnCoroutine);
+         StopCoroutine(_turnCoroutine);
          foreach (var v in playerSeats.ActivePlayers)
             v.EnableTurn(false);
          
          turnSequenceHandler.CurrentTurnIndex = 0;
-         betsCount = 0;
+         _betsCount = 0;
+         _lastRaise = 0;
      }
      private void OnBetEnd(BetActionInfo obj)
      {
@@ -75,7 +79,7 @@ public class Betting : MonoBehaviour
          NetworkPlayer p =
              playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
-         StopCoroutine(turnCoroutine);
+         StopCoroutine(_turnCoroutine);
          
          NextTurn(p);
          
@@ -84,7 +88,7 @@ public class Betting : MonoBehaviour
      public void NextTurn(NetworkPlayer p)
      {
          turnSequenceHandler.CurrentTurnIndex++;
-         turnCoroutine = StartCoroutine(TurnWaitCoroutine());
+         _turnCoroutine = StartCoroutine(TurnWaitCoroutine());
          
          CurrentBetRaiser = p;
          
@@ -107,7 +111,6 @@ public class Betting : MonoBehaviour
          var p = playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
          NextTurn(p);
-         print("Working...");
      }
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)
@@ -115,8 +118,8 @@ public class Betting : MonoBehaviour
          switch (player.lastBetAction)
          {
              case BetAction.Call:
-                 player.SubCredit(CallAmount);
-                 pot.AddToPot(CallAmount);
+                 player.SubCredit(_callAmount);
+                 pot.AddToPot(_callAmount);
                  break;
              case BetAction.Check:
                  
@@ -125,13 +128,17 @@ public class Betting : MonoBehaviour
                  player.HasFolded = true;
                  break;
              case BetAction.Raise:
-                 CallAmount += obj.BetAmount;
-                 player.SubCredit(CallAmount);
-                 pot.AddToPot(CallAmount);
+                 _callAmount += _lastRaise + obj.BetAmount;
+                 _lastRaise = obj.BetAmount;
+                 
+                 player.SubCredit(_callAmount);
+                 pot.AddToPot(_callAmount);
+                 break;
+             case BetAction.AllIn:
                  break;
          }
          
-         betsCount++;
+         _betsCount++;
      }
      
      

@@ -10,7 +10,17 @@ public class Pot : MonoBehaviour
      public int GetPotMoney => _money;
 
      public static Action<int> OnPotUpdate;
-     
+
+     private void Awake()
+     {
+          GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(ResetPot);
+     }
+
+     private void OnDestroy()
+     {
+          GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(ResetPot);
+     }
+
      public void AddToPot(int val)
      {
           _photonView.RPC(nameof(SyncPot_RPC), RpcTarget.All, val);

@@ -9,6 +9,20 @@ public class TurnSequenceHandler : MonoBehaviour
 
     private int _currentTurnIndex;
 
+    private void Awake()
+    {
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(RotateSequence);
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(RotateSequence);
+    }
+
+    public void RotateSequence()
+    {
+        (TurnSequence[0], TurnSequence[^1]) = (TurnSequence[^1], TurnSequence[0]);
+    }
     public int CurrentTurnIndex
     {
         set => _currentTurnIndex = CurrentTurnIndex >= TurnSequence.Count - 1 ? 0 : value;

@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Photon.Pun;
@@ -13,6 +14,25 @@ public class BoardCards : MonoBehaviour
     private readonly List<int[]> _intCards = new();
 
     public List<CardData> GetCards => _cards;
+
+    private void Awake()
+    {
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(ResetCards);   
+    }
+
+    private void OnDestroy()
+    {
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(ResetCards);   
+    }
+
+    public void ResetCards()
+    {
+        _cards.Clear();
+        PopulateCards();
+        
+        photonView.RPC(nameof(ResetCardsView), RpcTarget.All);
+        
+    }
     public void PopulateCards()
     {
         _cards = DecksHandler.GetRandomHand(5);
@@ -30,6 +50,11 @@ public class BoardCards : MonoBehaviour
             objArray[i] = _intCards[i];
            
         photonView.RPC(nameof(SyncExposedCards), RpcTarget.All, objArray);
+    }
+    [PunRPC]
+    private void ResetCardsView()
+    {
+        GameEvents.NetworkGameplayEvents.OnBoardCardsViewReset.Raise();                         
     }
     
     [PunRPC]

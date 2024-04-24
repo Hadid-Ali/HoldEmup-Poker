@@ -13,7 +13,8 @@ public enum BetAction
     Fold,
     Call,
     Raise,
-    Check
+    Check,
+    AllIn
 }
 public class NetworkPlayer : MonoBehaviourPun
 {
