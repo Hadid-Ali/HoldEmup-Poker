@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -14,8 +15,8 @@ public class Betting : MonoBehaviour
      public static Action<BetActionInfo> PlayerEndBettingEvent;
      private NetworkPlayer CurrentBetRaiser { get; set; }
 
-     private int _callAmount;
-     private int _lastRaise;
+     [SerializeField] private int _callAmount;
+     [SerializeField] private int _lastRaise = 0;
 
      public int bigBlind;
      public int smallBlind;
@@ -25,6 +26,7 @@ public class Betting : MonoBehaviour
 
      private int _betsCount;
      public bool TurnsCompleted => _betsCount >= playerSeats.ActivePlayers.Count;
+     private bool IsTurnCallEligible => _callAmount > 0;
 
      private void Start()
      {
@@ -50,7 +52,7 @@ public class Betting : MonoBehaviour
          smallBlind = smallBlindPlayer.betAmount;
          bigBlind = smallBlind * 2;
 
-         _callAmount = bigBlind + smallBlind;
+         _callAmount = bigBlind;
          
          smallBlindPlayer.SubCredit(smallBlind);
          bigBlindPlayer.SubCredit(bigBlind);
@@ -67,6 +69,7 @@ public class Betting : MonoBehaviour
          turnSequenceHandler.CurrentTurnIndex = 0;
          _betsCount = 0;
          _lastRaise = 0;
+         _callAmount = 0;
      }
      private void OnBetEnd(BetActionInfo obj)
      {
@@ -87,6 +90,11 @@ public class Betting : MonoBehaviour
 
      public void NextTurn(NetworkPlayer p)
      {
+         if (p.IsLocalPlayer)
+         {
+             
+         }
+         
          turnSequenceHandler.CurrentTurnIndex++;
          _turnCoroutine = StartCoroutine(TurnWaitCoroutine());
          
@@ -128,7 +136,7 @@ public class Betting : MonoBehaviour
                  player.HasFolded = true;
                  break;
              case BetAction.Raise:
-                 _callAmount += _lastRaise + obj.BetAmount;
+                 _callAmount = _lastRaise + obj.BetAmount;
                  _lastRaise = obj.BetAmount;
                  
                  player.SubCredit(_callAmount);

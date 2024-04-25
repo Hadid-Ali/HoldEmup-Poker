@@ -1,11 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using ExitGames.Client.Photon;
 using Photon.Pun;
-using Photon.Realtime;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum BetAction
 {
@@ -24,7 +20,7 @@ public class NetworkPlayer : MonoBehaviourPun
     public bool HasFolded
     {
         get => _hasFolded;
-        set => _hasFolded = value;
+        set => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, value);
     }
 
     public string nickName;
@@ -139,6 +135,11 @@ public class NetworkPlayer : MonoBehaviourPun
         GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
     }
 
+    [PunRPC]
+    private void SyncInformation(bool b)
+    {
+        _hasFolded = b;
+    }
     [PunRPC]
     private void SyncInformation(int id, string nickName)
     {

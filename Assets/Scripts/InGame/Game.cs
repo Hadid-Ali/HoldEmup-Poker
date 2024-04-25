@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -130,6 +129,8 @@ public class Game : MonoBehaviour
         if(!PhotonNetwork.IsMasterClient)
             return;
         
+        GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
+        
         StartNextStage(GameStage.Flop);
     }
 
@@ -241,8 +242,8 @@ public class Game : MonoBehaviour
         {
             GameEvents.NetworkGameplayEvents.OnShowDown.Raise();
         }
+
         yield return new WaitForSeconds(_showdownEndTimeSeconds);
-        
         GameEvents.NetworkGameplayEvents.OnRoundEnd.Raise();
     }
 
