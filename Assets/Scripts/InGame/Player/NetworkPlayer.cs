@@ -37,12 +37,13 @@ public class NetworkPlayer : MonoBehaviourPun
 
     public static Action<NetworkPlayer> OnPlayerSpawn;
     public static Action<bool> OnEnableTurn;
+    public static Action<BetAction, bool> OnEnableAction;
     private void Start()
     {
         Invoke(nameof(OnNetworkSpawn), 1.5f);
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Register(ExposeCardsLocally);
         GameEvents.NetworkGameplayEvents.OnShowDown.Register(SubmitCards);
-        TurnSubmitButton.OnPlayerActionSubmit += OnActionSubmit;
+        GamePlayButtons.OnPlayerActionSubmit += OnActionSubmit;
         
     }
 
@@ -59,7 +60,7 @@ public class NetworkPlayer : MonoBehaviourPun
 
     private void OnDestroy()
     {
-        TurnSubmitButton.OnPlayerActionSubmit -= OnActionSubmit;
+        GamePlayButtons.OnPlayerActionSubmit -= OnActionSubmit;
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.UnRegister(ExposeCardsLocally);
         GameEvents.NetworkGameplayEvents.OnShowDown.UnRegister(SubmitCards);
     }
@@ -100,6 +101,11 @@ public class NetworkPlayer : MonoBehaviourPun
     public void EnableTurn(bool val)
     {
         _photonView.RPC(nameof(EnableTurn_RPC), RpcTarget.All, val, id);
+    }
+
+    public void EnableAction(BetAction action, bool val)
+    {
+        _photonView.RPC(nameof(EnableActionRpc), RpcTarget.All, (int)action, val);
     }
 
     public void SetPocketCards(CardData card1, CardData card2, int playerId)
@@ -177,8 +183,10 @@ public class NetworkPlayer : MonoBehaviourPun
         if(!PhotonNetwork.IsMasterClient)
             return;
 
-        if (id == _id)
+        if (id == _id && (BetAction) playerAction != BetAction.UnSelected)
             Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 5));
+        
+        GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise(); 
     }
     
     [PunRPC]
@@ -192,9 +200,10 @@ public class NetworkPlayer : MonoBehaviourPun
     }
     
     [PunRPC]
-    private void ShutdownClientRpc()
+    private void EnableActionRpc(int i, bool val)
     {
-        
+        if(IsLocalPlayer)
+            OnEnableAction?.Invoke((BetAction)i, val);
     }
     
     #endregion

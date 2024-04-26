@@ -65,6 +65,7 @@ public class PlayersViewManager : MonoBehaviour
             playerViews[i].playerName = p.HasFolded? "Has Folded" : p.nickName;
             playerViews[i].playerCredit = p.totalCredit;
             playerViews[i].isOnTurn = p.isOnTurn;
+            playerViews[i].lastAction = p.lastBetAction;
             
             playerViews[i].UpdateView();
         }

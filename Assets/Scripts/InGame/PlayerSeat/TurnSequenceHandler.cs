@@ -8,6 +8,7 @@ public class TurnSequenceHandler : MonoBehaviour
     [SerializeField] public List<int> TurnViewSequence = new();
 
     private int _currentTurnIndex;
+    private int _raiseTurnIndex;
 
     private void Awake()
     {

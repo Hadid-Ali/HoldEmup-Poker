@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Betting : MonoBehaviour 
 {
@@ -13,7 +11,8 @@ public class Betting : MonoBehaviour
     
      public static Action<NetworkPlayer> PlayerStartBettingEvent;
      public static Action<BetActionInfo> PlayerEndBettingEvent;
-     private NetworkPlayer CurrentBetRaiser { get; set; }
+     private NetworkPlayer CurrentPlayer { get; set; }
+     private NetworkPlayer LastBetRaiser { get; set; }
 
      [SerializeField] private int _callAmount;
      [SerializeField] private int _lastRaise = 0;
@@ -25,8 +24,11 @@ public class Betting : MonoBehaviour
      private Coroutine _turnCoroutine;
 
      private int _betsCount;
+     private int _raiseCount;
      public bool TurnsCompleted => _betsCount >= playerSeats.ActivePlayers.Count;
      private bool IsTurnCallEligible => _callAmount > 0;
+     private bool IsTurnCheckEligible => _raiseCount <= 0;
+     
 
      private void Start()
      {
@@ -44,7 +46,7 @@ public class Betting : MonoBehaviour
      {
          yield return new WaitForSeconds(betTime);
          
-         OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
+         OnBetEnd(new BetActionInfo(CurrentPlayer, BetAction.Fold,0));
      }
 
      public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer bigBlindPlayer)
@@ -64,9 +66,15 @@ public class Betting : MonoBehaviour
      {
          StopCoroutine(_turnCoroutine);
          foreach (var v in playerSeats.ActivePlayers)
+         {
             v.EnableTurn(false);
+            v.SetBetAction(BetAction.UnSelected); 
+         }
+         
          
          turnSequenceHandler.CurrentTurnIndex = 0;
+         LastBetRaiser = null;
+         _raiseCount = 0;
          _betsCount = 0;
          _lastRaise = 0;
          _callAmount = 0;
@@ -76,11 +84,11 @@ public class Betting : MonoBehaviour
          if(!PhotonNetwork.IsMasterClient)
              return;
          
-         CurrentBetRaiser.EnableTurn(false);
-         Bet(CurrentBetRaiser, obj);
+         CurrentPlayer.EnableTurn(false);
+         Bet(CurrentPlayer, obj);
          
-         NetworkPlayer p =
-             playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+                                                      turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
          StopCoroutine(_turnCoroutine);
          
@@ -90,21 +98,32 @@ public class Betting : MonoBehaviour
 
      public void NextTurn(NetworkPlayer p)
      {
-         if (p.IsLocalPlayer)
-         {
-             
-         }
+         p.EnableAction(BetAction.Call, IsTurnCallEligible);
+         p.EnableAction(BetAction.Check, IsTurnCheckEligible);
          
          turnSequenceHandler.CurrentTurnIndex++;
+         
          _turnCoroutine = StartCoroutine(TurnWaitCoroutine());
          
-         CurrentBetRaiser = p;
+         CurrentPlayer = p;
          
-         if(!p.HasFolded)
-            p.EnableTurn(true);
-         else
-             OnBetEnd(new BetActionInfo(CurrentBetRaiser, BetAction.Fold,0));
+         if (p.HasFolded || (_raiseCount > 0 && LastBetRaiser == p))
+         {
+             SkipTurn();
+             return;
+         }
          
+         p.EnableTurn(true);
+         
+     }
+
+     public void SkipTurn()
+     {
+         _betsCount++;
+         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+                                                                turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         StopCoroutine(_turnCoroutine);
+         NextTurn(p);
      }
 
      public void StartTurn(int roundIndex)
@@ -116,8 +135,8 @@ public class Betting : MonoBehaviour
              _ => turnSequenceHandler.CurrentTurnIndex
          };
 
-         var p = playerSeats.ActivePlayers.Find(x => x.id == turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
-         
+         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+                                                      turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          NextTurn(p);
      }
      
@@ -137,10 +156,18 @@ public class Betting : MonoBehaviour
                  break;
              case BetAction.Raise:
                  _callAmount = _lastRaise + obj.BetAmount;
-                 _lastRaise = obj.BetAmount;
+                 _lastRaise += obj.BetAmount;
                  
                  player.SubCredit(_callAmount);
                  pot.AddToPot(_callAmount);
+
+                 if (_raiseCount <= 0)
+                 {
+                    _betsCount = 0;
+                     LastBetRaiser = player;
+                 }
+
+                 _raiseCount++;
                  break;
              case BetAction.AllIn:
                  break;

@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class ToggleBehaviorGroup : MonoBehaviour
@@ -24,6 +25,21 @@ public class ToggleBehaviorGroup : MonoBehaviour
     {
         foreach (var t in toggles)
             t.Initialize(OnClick);
+    }
+
+    public void EnableActionButton(BetAction action, bool val)
+    {
+        int togIndex = -1;
+        for (int i = 0; i < actions.Length; i++)
+        {
+            if (actions[i] != action) continue;
+            togIndex = i;
+            break;
+        }
+        if(togIndex == -1)
+            return;
+        
+        toggles[togIndex].gameObject.SetActive(val);
     }
 
     private void OnClick(int index)

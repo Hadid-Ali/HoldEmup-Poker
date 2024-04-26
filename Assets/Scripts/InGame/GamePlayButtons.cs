@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TurnSubmitButton : MonoBehaviour
+public class GamePlayButtons : MonoBehaviour
 {
     [SerializeField] private ToggleBehaviorGroup group;
     [SerializeField] private Button button;
@@ -13,6 +13,12 @@ public class TurnSubmitButton : MonoBehaviour
         button.onClick.AddListener(OnButtonClick);
         button.interactable = false;
         NetworkPlayer.OnEnableTurn += OnEnableTurn;
+        NetworkPlayer.OnEnableAction += OnEnableAction;
+    }
+    private void OnDestroy()
+    {
+        NetworkPlayer.OnEnableTurn -= OnEnableTurn;
+        NetworkPlayer.OnEnableAction -= OnEnableAction;
     }
 
     private void OnEnableTurn(bool obj)
@@ -20,10 +26,12 @@ public class TurnSubmitButton : MonoBehaviour
         button.interactable = obj;
     }
 
-    private void OnDestroy()
+    private void OnEnableAction(BetAction action, bool val)
     {
-        NetworkPlayer.OnEnableTurn -= OnEnableTurn;
+        group.EnableActionButton(action, val);
     }
+
+    
 
     private void OnButtonClick()
     {
