@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Photon.Pun;
 using Photon.Realtime;
@@ -13,33 +12,21 @@ public class InsideRoom : UIMenuBase
 
     private void Awake()
     {
-        GameEvents.NetworkEvents.OnPlayerRoomActivity.Register(AddPlayer);
+        GameEvents.NetworkEvents.OnRoomJoined.Register(AddPlayer);
+        GameEvents.NetworkEvents.OnPlayerJoined.Register(AddPlayer);
             
         _button.onClick.AddListener(()=> { GameEvents.NetworkEvents.OnStartMatch.Raise();});
     }
     private void OnDestroy()
     {
-        GameEvents.NetworkEvents.OnPlayerRoomActivity.UnRegister(AddPlayer);
+        GameEvents.NetworkEvents.OnRoomJoined.UnRegister(AddPlayer);
+        GameEvents.NetworkEvents.OnPlayerJoined.UnRegister(AddPlayer);
     }
-
-    private IEnumerator Start()
-    {
-        yield return new WaitForSeconds(1f);
-        AddPlayer();
-    }
-
+    
     private void AddPlayer()
     {
+        _button.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         Player[] playersA = PhotonNetwork.PlayerList;
-            
-        string playerString = String.Empty;
-
-        for (int i = 0; i < playersA.Length; i++)
-        {
-            playerString = $"Player Joined : {playersA[i].NickName} \n";
-        }
-        print(playerString);
-
-        _textMeshPro.text = playerString;
+        _textMeshPro.text = $"Players Joined : {playersA.Length}";
     }
 }

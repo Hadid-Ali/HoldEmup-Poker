@@ -29,7 +29,7 @@ public class Game : MonoBehaviour
     private IEnumerator _startDealAfterRoundsInterval;
 
 
-    private bool StartCondition =>  playerSeats.ActivePlayers.Count >= 2;
+    private bool StartCondition =>  playerSeats.activePlayers.Count >= 2;
     
     [SerializeField] private float _roundsIntervalSeconds;
     [SerializeField] private float _showdownEndTimeSeconds;
@@ -110,11 +110,11 @@ public class Game : MonoBehaviour
     {
         foreach (var v in obj)
         {
-            print($"{playerSeats.ActivePlayers.Find(x=>x.id == v.Key).nickName} : {v.Value.Score}" );
+            print($"{playerSeats.activePlayers.Find(x=>x.id == v.Key).nickName} : {v.Value.Score}" );
         }
         PlayerScoreObject pp = obj.First(x => x.Value.Score >= 10).Value;
 
-        NetworkPlayer p = playerSeats.ActivePlayers.Find(x => pp.UserID == x.id);
+        NetworkPlayer p = playerSeats.activePlayers.Find(x => pp.UserID == x.id);
         p.AddCredit(pot.GetPotMoney);
     }
 
@@ -138,10 +138,10 @@ public class Game : MonoBehaviour
     private IEnumerator StartPreflop()
     {
         
-        NetworkPlayer player1 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
-        NetworkPlayer player2 = playerSeats.ActivePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
+        NetworkPlayer player1 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
+        NetworkPlayer player2 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
-        foreach (var v in playerSeats.ActivePlayers)
+        foreach (var v in playerSeats.activePlayers)
             player1.DealCards(v);
 
         
@@ -187,7 +187,7 @@ public class Game : MonoBehaviour
 
     private bool CheckIfLonePlayer()
     {
-        IEnumerable<NetworkPlayer> validPlayers = playerSeats.ActivePlayers.Where(x => !x.HasFolded);
+        IEnumerable<NetworkPlayer> validPlayers = playerSeats.activePlayers.Where(x => !x.HasFolded);
         var networkPlayers = validPlayers as NetworkPlayer[] ?? validPlayers.ToArray();
         
         Debug.Log($"Valid turns : {networkPlayers.Count()}");
@@ -230,12 +230,12 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartShowdown()
     {
-        _unFoldedPlayersCount = playerSeats.ActivePlayers.Count(x => !x.HasFolded);
+        _unFoldedPlayersCount = playerSeats.activePlayers.Count(x => !x.HasFolded);
 
         if (_unFoldedPlayersCount == 1)
         {
-            var p = playerSeats.ActivePlayers.Find(x => !x.HasFolded);
-            p = playerSeats.ActivePlayers.Find(x => p.id == x.id);
+            var p = playerSeats.activePlayers.Find(x => !x.HasFolded);
+            p = playerSeats.activePlayers.Find(x => p.id == x.id);
             p.AddCredit(pot.GetPotMoney);
         }
         else
@@ -252,7 +252,7 @@ public class Game : MonoBehaviour
         _boardCardExposeLength = 3;
         _currentGameStageInt = (int)GameStage.Flop;
 
-        foreach (var v in playerSeats.ActivePlayers)
+        foreach (var v in playerSeats.activePlayers)
             v.HasFolded = false;
         
         StartCoroutine(Start());

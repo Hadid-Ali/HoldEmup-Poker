@@ -154,17 +154,18 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         print("Joined Room");
     }
 
-    public override void OnPlayerLeftRoom(Player otherPlayer)
-    {
-        base.OnPlayerLeftRoom(otherPlayer);
-        GameEvents.NetworkEvents.OnPlayerRoomActivity.Raise();
-    }
-
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        GameEvents.NetworkEvents.OnPlayerRoomActivity.Raise();
+        GameEvents.NetworkEvents.OnPlayerJoined.Raise();
     }
+    public override void OnPlayerLeftRoom(Player newPlayer)
+    {
+        base.OnPlayerEnteredRoom(newPlayer);
+        GameEvents.NetworkEvents.OnPlayerJoined.Raise();
+    }
+    
+
 
     public void Disconnect()
     {

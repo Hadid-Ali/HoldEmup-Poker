@@ -40,6 +40,5 @@ public class PlayerView : MonoBehaviour
     {
         pocketCard1.sprite = CardsRegistery.Instance.GetCardSprite(card1.type, card1.value);
         pocketCard2.sprite = CardsRegistery.Instance.GetCardSprite(card2.type, card2.value);
-
     }
 }

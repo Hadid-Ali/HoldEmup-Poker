@@ -25,7 +25,7 @@ public class Betting : MonoBehaviour
 
      private int _betsCount;
      private int _raiseCount;
-     public bool TurnsCompleted => _betsCount >= playerSeats.ActivePlayers.Count;
+     public bool TurnsCompleted => _betsCount >= playerSeats.activePlayers.Count;
      private bool IsTurnCallEligible => _callAmount > 0;
      private bool IsTurnCheckEligible => _raiseCount <= 0;
      
@@ -65,7 +65,7 @@ public class Betting : MonoBehaviour
      public void EndStage()
      {
          StopCoroutine(_turnCoroutine);
-         foreach (var v in playerSeats.ActivePlayers)
+         foreach (var v in playerSeats.activePlayers)
          {
             v.EnableTurn(false);
             v.SetBetAction(BetAction.UnSelected); 
@@ -87,7 +87,7 @@ public class Betting : MonoBehaviour
          CurrentPlayer.EnableTurn(false);
          Bet(CurrentPlayer, obj);
          
-         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
                                                       turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          
          StopCoroutine(_turnCoroutine);
@@ -120,7 +120,7 @@ public class Betting : MonoBehaviour
      public void SkipTurn()
      {
          _betsCount++;
-         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
                                                                 turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          StopCoroutine(_turnCoroutine);
          NextTurn(p);
@@ -130,12 +130,12 @@ public class Betting : MonoBehaviour
      {
          turnSequenceHandler.CurrentTurnIndex = roundIndex switch
          {
-             0 => playerSeats.ActivePlayers.Count > 2 ? 2 : 0,
+             0 => playerSeats.activePlayers.Count > 2 ? 2 : 0,
              1 => 0,
              _ => turnSequenceHandler.CurrentTurnIndex
          };
 
-         NetworkPlayer p =  playerSeats.ActivePlayers.Find(x => x.id == 
+         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
                                                       turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
          NextTurn(p);
      }

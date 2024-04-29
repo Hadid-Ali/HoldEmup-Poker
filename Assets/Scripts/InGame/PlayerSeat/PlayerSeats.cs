@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 [Serializable]
@@ -16,20 +17,18 @@ public class PlayerSeats : MonoBehaviour
 {
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     
-     public const int MaxSeats = 4;
+     private const int MaxSeats = 4;
      
      [SerializeField] private Seat[] seats = new Seat[MaxSeats];
-     public List<NetworkPlayer> ActivePlayers = new();
+     public List<NetworkPlayer> activePlayers = new();
 
-     public int LocalPlayerID => ActivePlayers.Find(x=> x.IsLocalPlayer).id;
+     private int LocalPlayerID => activePlayers.Find(x=> x.IsLocalPlayer).id;
      
 
      private void Awake()
      {
-         //Initialize Seats
          for (int i = 0; i < seats.Length; i++)
              seats[i] = new Seat(){IsOccupied = false};
-         
      }
 
      private void Start()
@@ -48,7 +47,7 @@ public class PlayerSeats : MonoBehaviour
          yield return new WaitForSeconds(4.5f);
          
          turnSequenceHandler.TurnViewSequence = RotateOrder(turnSequenceHandler.TurnSequence);
-         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise(turnSequenceHandler.TurnViewSequence);
+         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise();
      }
      
     
@@ -63,8 +62,8 @@ public class PlayerSeats : MonoBehaviour
              seats[i].Player = player;
              seats[i].IsOccupied = true;
              
-             ActivePlayers.Add(player);
-             turnSequenceHandler.TurnSequence.Add(ActivePlayers[i].id);
+             activePlayers.Add(player);
+             turnSequenceHandler.TurnSequence.Add(activePlayers[i].id);
              break;
          }
      }
