@@ -1,11 +1,16 @@
-using System.Linq;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ToggleBehaviorGroup : MonoBehaviour
 {
     [SerializeField] private ToggleBehavior[] toggles;
     [SerializeField] private int selectedToggleIndex;
     [SerializeField] private BetAction[] actions;
+
+    [SerializeField] private Slider raiseSlider;
+    
     
     private void OnValidate()
     {
@@ -55,6 +60,7 @@ public class ToggleBehaviorGroup : MonoBehaviour
 
     private void UpdateView()
     {
+        raiseSlider.gameObject.SetActive(GetSelectedAction() == BetAction.Raise);
         for (int i = 0; i < toggles.Length; i++)
         {
             toggles[i].isOn = i == selectedToggleIndex;

@@ -3,8 +3,9 @@ using System.Collections;
 using Photon.Pun;
 using UnityEngine;
 
-public class Betting : MonoBehaviour 
+public class Betting : MonoBehaviour
 {
+    
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     [SerializeField] private Pot pot;
@@ -100,6 +101,12 @@ public class Betting : MonoBehaviour
      {
          p.EnableAction(BetAction.Call, IsTurnCallEligible);
          p.EnableAction(BetAction.Check, IsTurnCheckEligible);
+
+         bool canAfford = p.totalCredit >= 150;
+         
+         int maxAmount = canAfford ? 150 : p.totalCredit;
+         int minAmount = canAfford ? _lastRaise : maxAmount; 
+         p.OnLocalPlayerRaiseSlideUpdate(minAmount, maxAmount);
          
          turnSequenceHandler.CurrentTurnIndex++;
          
@@ -142,9 +149,12 @@ public class Betting : MonoBehaviour
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)
      {
+         bool canAfford = player.totalCredit >= 150;
          switch (player.lastBetAction)
          {
              case BetAction.Call:
+                 player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
+                 
                  player.SubCredit(_callAmount);
                  pot.AddToPot(_callAmount);
                  break;
@@ -155,6 +165,7 @@ public class Betting : MonoBehaviour
                  player.HasFolded = true;
                  break;
              case BetAction.Raise:
+                 player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
                  _callAmount = _lastRaise + obj.BetAmount;
                  _lastRaise += obj.BetAmount;
                  

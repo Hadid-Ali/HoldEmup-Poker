@@ -5,9 +5,10 @@ using UnityEngine.UI;
 public class GamePlayButtons : MonoBehaviour
 {
     [SerializeField] private ToggleBehaviorGroup group;
+    [SerializeField] private Slider raiseSlider;
     [SerializeField] private Button button;
 
-    public static Action<BetAction> OnPlayerActionSubmit;
+    public static Action<BetAction, int> OnPlayerActionSubmit;
     private void Start()
     {
         button.onClick.AddListener(OnButtonClick);
@@ -30,12 +31,13 @@ public class GamePlayButtons : MonoBehaviour
     {
         group.EnableActionButton(action, val);
     }
-
     
-
     private void OnButtonClick()
     {
-        OnPlayerActionSubmit.Invoke(group.GetSelectedAction());
+        BetAction selectedAction = group.GetSelectedAction();
+        int betAmount = selectedAction == BetAction.Raise ? (int) raiseSlider.value : 0;
+        
+        OnPlayerActionSubmit.Invoke(selectedAction, betAmount);
         button.interactable = false;
     }
 }

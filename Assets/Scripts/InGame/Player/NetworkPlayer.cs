@@ -69,10 +69,12 @@ public class NetworkPlayer : MonoBehaviourPun
     public void ExposeCardsLocally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All);
     public void SyncInformationGlobally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
     public void DealCards(NetworkPlayer player) => player.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard(), player.id);
-    
+
+    public void OnLocalPlayerRaiseSlideUpdate(int min, int max) =>
+        _photonView.RPC(nameof(UpdateRaiseSlider), RpcTarget.All, min, max);
     public void SetBetAction(BetAction betAction)
     {
-        _photonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) betAction, id);
+        _photonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) betAction, id, betAmount);
     } 
     public void SubCredit(int val)
     {
@@ -88,13 +90,13 @@ public class NetworkPlayer : MonoBehaviourPun
         totalCredit += val;  
         _photonView.RPC(nameof(SyncInformation), RpcTarget.All, totalCredit);
     } 
-    private void OnActionSubmit(BetAction obj)
+    private void OnActionSubmit(BetAction obj, int _betAmount)
     {
         if(!IsLocalPlayer)
             return;
             
         lastBetAction = obj;
-        
+        betAmount = _betAmount;
         OnEnableTurn.Invoke(false);
         SetBetAction(obj);
     }
@@ -127,6 +129,13 @@ public class NetworkPlayer : MonoBehaviourPun
     }
     
     #region RPC
+
+    [PunRPC]
+    private void UpdateRaiseSlider(int min, int max)
+    {
+        if(IsLocalPlayer)
+            GameEvents.GameplayEvents.OnLocalPlayerRaise.Raise(min, max);
+    }
 
     [PunRPC]
     private void EnableTurn_RPC(bool b, int _id)
@@ -174,17 +183,18 @@ public class NetworkPlayer : MonoBehaviourPun
     private void SetBetInputFieldValueServerRpc(int value) => betAmount = value;
     
     [PunRPC]
-    private void SetSelectedBetActionServerRpc(int playerAction, int _id)
+    private void SetSelectedBetActionServerRpc(int playerAction, int _id, int _betAmount)
     {
         print($"Checking : {id}");
         lastBetAction = (BetAction) playerAction;
         _hasFolded = lastBetAction == BetAction.Fold;
+        betAmount = _betAmount;
         
         if(!PhotonNetwork.IsMasterClient)
             return;
 
         if (id == _id && (BetAction) playerAction != BetAction.UnSelected)
-            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, 5));
+            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, betAmount));
         
         GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise(); 
     }
