@@ -1,7 +1,7 @@
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-public partial class NetworkManager : MonobehaviourSingleton<NetworkManager>
+public partial class NetworkManager : MonobehaviourSingleton<NetworkManager> 
 {
     [SerializeField] private NetworkSceneManager m_NetworkSceneManager;
     [field: SerializeField] public RegionsRegistry RegionsRegistry { get; private set; }

@@ -33,9 +33,9 @@ public class Game : MonoBehaviour
     
     [SerializeField] private float _roundsIntervalSeconds;
     [SerializeField] private float _showdownEndTimeSeconds;
-    [SerializeField] private float _playerPerformSeatActionTimeoutSeconds;
     
     private int _currentGameStageInt;
+
     private int _boardCardExposeLength = 3;
     private int _unFoldedPlayersCount;
     private List<NetworkDataObject> playerCards = new();
@@ -58,6 +58,9 @@ public class Game : MonoBehaviour
     
     private void OnPlayerCardsReceived(NetworkDataObject obj)
     {
+        if(!PhotonNetwork.IsMasterClient)
+            return;
+        
         playerCards.Add(obj);
         
         if(playerCards.Count < _unFoldedPlayersCount)
@@ -116,6 +119,8 @@ public class Game : MonoBehaviour
 
         NetworkPlayer p = playerSeats.activePlayers.Find(x => pp.UserID == x.id);
         p.AddCredit(pot.GetPotMoney);
+
+        photonView.RPC(nameof(OnPlayerWin), RpcTarget.All, p.id, pot.GetPotMoney);
     }
 
     private IEnumerator Start()
@@ -131,13 +136,12 @@ public class Game : MonoBehaviour
         
         GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
         
-        StartNextStage(GameStage.Flop);
+        StartNextStage(GameStage.PreFlop);
     }
 
 
     private IEnumerator StartPreflop()
     {
-        
         NetworkPlayer player1 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
         NetworkPlayer player2 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
@@ -150,6 +154,9 @@ public class Game : MonoBehaviour
         
         betting.BetBlinds(player1,player2);
     
+        foreach (var v in playerSeats.activePlayers)
+            v.HasFolded = v.IsBroke; //Disable the broke player
+        
         betting.StartTurn(0);
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
@@ -162,7 +169,7 @@ public class Game : MonoBehaviour
         
         yield return new WaitForSeconds(_roundsIntervalSeconds);
 
-        _currentGameStageInt = (int)GameStage.Turn;
+        _currentGameStageInt = (int)GameStage.Flop;
         StartNextStage((GameStage) _currentGameStageInt);
     }
 
@@ -173,7 +180,9 @@ public class Game : MonoBehaviour
         betting.EndStage();
         
         boardCards.ExposeCards(_boardCardExposeLength);
-        _boardCardExposeLength++;
+        
+        if(_boardCardExposeLength < 5)
+            _boardCardExposeLength++;
 
         CheckIfLonePlayer();
         
@@ -201,10 +210,14 @@ public class Game : MonoBehaviour
         
         switch (stage)
         {
-            case GameStage.Flop:
+            case GameStage.PreFlop:
                 _stageCoroutine = StartPreflop();
                 StartCoroutine(_stageCoroutine);
-                
+                break;
+            case GameStage.Flop:
+                StopCoroutine(_stageCoroutine);
+                _stageCoroutine = MidStage();
+                StartCoroutine(_stageCoroutine);
                 break;
             case GameStage.Turn:
                 StopCoroutine(_stageCoroutine);
@@ -244,18 +257,32 @@ public class Game : MonoBehaviour
         }
 
         yield return new WaitForSeconds(_showdownEndTimeSeconds);
-        GameEvents.NetworkGameplayEvents.OnRoundEnd.Raise();
+        photonView.RPC(nameof(ResetGameView), RpcTarget.All);
+        
     }
 
     private void ResetGame()
     {
         _boardCardExposeLength = 3;
         _currentGameStageInt = (int)GameStage.Flop;
+        
+        playerCards.Clear();
 
         foreach (var v in playerSeats.activePlayers)
             v.HasFolded = false;
         
         StartCoroutine(Start());
+    }
+
+    [PunRPC]
+    private void OnPlayerWin(int playerId, int winAmount)
+    {
+        GameEvents.NetworkGameplayEvents.OnPlayerWin.Raise(playerId, pot.GetPotMoney);
+    }
+    [PunRPC]
+    private void ResetGameView()
+    {
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Raise();
     }
     //
     // private IEnumerator Bet(int[] turnSequence)

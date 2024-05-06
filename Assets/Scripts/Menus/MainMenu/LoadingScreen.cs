@@ -21,6 +21,7 @@ public class LoadingScreen : UIMenuBase
         GameEvents.MenuEvents.TimeBasedActionRequested.Register(OnTimeBasedActionRequested);
         
         GameEvents.NetworkEvents.OnRoomJoined.Register(()=> ChangeMenuState(MenuName.InsideRoom));
+        //GameEvents.NetworkEvents.OnServerConnected.Register(OnServerDisconnect);
     }
 
     private void OnDisable()
@@ -28,6 +29,13 @@ public class LoadingScreen : UIMenuBase
         GameEvents.MenuEvents.NetworkStatusUpdated.UnRegister(UpdateLobbyStatus);
         GameEvents.MenuEvents.TimeBasedActionRequested.UnRegister(OnTimeBasedActionRequested);
         GameEvents.NetworkEvents.OnRoomJoined.UnRegister(()=> ChangeMenuState(MenuName.InsideRoom));
+        //GameEvents.NetworkEvents.OnServerConnected.UnRegister(OnServerDisconnect);
+    }
+
+    private void OnServerDisconnect(RegionConfig obj)
+    {
+        ChangeMenuState(MenuName.LoginScreen);
+        print("On Server dc Menu");
     }
 
     private void UpdateLobbyStatus(string status)

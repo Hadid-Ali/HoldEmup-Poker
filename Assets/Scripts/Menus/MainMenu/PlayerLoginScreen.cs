@@ -9,7 +9,6 @@ using UnityEngine.UI;
 public class PlayerLoginScreen : UIMenuBase
 {
     [SerializeField] private TMP_InputField m_InputField;
-
     [SerializeField] private Button m_LoginButton;
     
     private void Start()

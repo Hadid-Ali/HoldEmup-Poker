@@ -28,6 +28,7 @@ public class NetworkPlayer : MonoBehaviourPun
     public BetAction lastBetAction;
     public int betAmount = 2;
     public bool IsLocalPlayer => _photonView.IsMine;
+    public bool IsBroke => totalCredit <= 0;
     
     public CardData pocketCard1;
     public CardData pocketCard2;
@@ -41,10 +42,9 @@ public class NetworkPlayer : MonoBehaviourPun
     private void Start()
     {
         Invoke(nameof(OnNetworkSpawn), 1.5f);
+        GamePlayButtons.OnPlayerActionSubmit += OnActionSubmit;
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Register(ExposeCardsLocally);
         GameEvents.NetworkGameplayEvents.OnShowDown.Register(SubmitCards);
-        GamePlayButtons.OnPlayerActionSubmit += OnActionSubmit;
-        
     }
 
     private void SubmitCards()

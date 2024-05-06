@@ -1,10 +1,11 @@
 using Photon.Pun;
 using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayersViewHandler : MonoBehaviour
 {
     [SerializeField] private PhotonView photonView;
-    [SerializeField] private PlayerView[] playerViews;
+    [SerializeField] private List<PlayerView> playerViews;
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private TurnSequenceHandler sequenceHandler;
 
@@ -16,6 +17,7 @@ public class PlayersViewHandler : MonoBehaviour
         
         GameEvents.NetworkGameplayEvents.OnShowDown.Register(ExposeAllPocketCards);
         GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(ResetView);
+        GameEvents.NetworkGameplayEvents.OnPlayerWin.Register(OnPlayerWin);
         
     }
 
@@ -32,6 +34,7 @@ public class PlayersViewHandler : MonoBehaviour
         
         GameEvents.NetworkGameplayEvents.OnShowDown.UnRegister(ExposeAllPocketCards);
         GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(ResetView);
+        GameEvents.NetworkGameplayEvents.OnPlayerWin.UnRegister(OnPlayerWin);
     }
 
     private void SyncPlayerView()
@@ -40,10 +43,24 @@ public class PlayersViewHandler : MonoBehaviour
             photonView.RPC(nameof(ArrangePlayersView), RpcTarget.All);
     }
 
+    private void OnPlayerWin(int pID, int amount) => photonView.RPC(nameof(UpdatePlayerWin), RpcTarget.All, pID, amount);
+    private PlayerView GetPlayerViewAgainstID(int id) => playerViews.Find(x => x.playerID == id);
+
+    [PunRPC]
+    private void UpdatePlayerWin(int playerID, int amount)
+    {
+        PlayerView p = GetPlayerViewAgainstID(playerID);
+        
+        if(p == null)
+            return;
+        
+        p.UpdateWinnerView(true,amount); 
+    }
+
     [PunRPC]
     private void ResetView()
     {
-        for (int i = 0; i < playerViews.Length; i++)
+        for (int i = 0; i < playerViews.Count; i++)
         {
             if (i >= playerSeats.activePlayers.Count)
                 break;
@@ -60,13 +77,14 @@ public class PlayersViewHandler : MonoBehaviour
             };
             
             playerViews[i].UpdateCardView(card, card);
+            playerViews[i].UpdateWinnerView(false,0);
         }
     }
 
     [PunRPC]
     private void ExposeAllPocketCards()
     {
-        for (int i = 0; i < playerViews.Length; i++)
+        for (int i = 0; i < playerViews.Count; i++)
         {
             if (i >= playerSeats.activePlayers.Count)
                 break;
@@ -83,7 +101,7 @@ public class PlayersViewHandler : MonoBehaviour
     [PunRPC]
     private void ArrangePlayersView()
     {
-        for (int i = 0; i < playerViews.Length; i++)
+        for (int i = 0; i < playerViews.Count; i++)
         {
             if (i >= playerSeats.activePlayers.Count)
             {
@@ -108,3 +126,5 @@ public class PlayersViewHandler : MonoBehaviour
 
     
 }
+
+

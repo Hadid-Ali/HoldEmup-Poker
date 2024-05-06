@@ -99,6 +99,12 @@ public class Betting : MonoBehaviour
 
      public void NextTurn(NetworkPlayer p)
      {
+         if (p.HasFolded)
+         {
+             SkipTurn();
+             return;
+         }
+         
          p.EnableAction(BetAction.Call, IsTurnCallEligible);
          p.EnableAction(BetAction.Check, IsTurnCheckEligible);
 
@@ -106,7 +112,6 @@ public class Betting : MonoBehaviour
          
          int maxAmount = canAfford ? 150 : p.totalCredit;
          int minAmount = canAfford ? _lastRaise : maxAmount; 
-         p.OnLocalPlayerRaiseSlideUpdate(minAmount, maxAmount);
          
          turnSequenceHandler.CurrentTurnIndex++;
          
@@ -120,6 +125,7 @@ public class Betting : MonoBehaviour
              return;
          }
          
+         p.OnLocalPlayerRaiseSlideUpdate(minAmount, maxAmount);
          p.EnableTurn(true);
          
      }

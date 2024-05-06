@@ -8,6 +8,8 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Name;
     [SerializeField] private TextMeshProUGUI credit;
     [SerializeField] private TextMeshProUGUI action;
+    [SerializeField] private TextMeshProUGUI winCredit;
+    [SerializeField] private GameObject winner;
     [SerializeField] private Image pocketCard1;
     [SerializeField] private Image pocketCard2;
     [SerializeField] private Image turn;
@@ -25,6 +27,12 @@ public class PlayerView : MonoBehaviour
         credit.SetText("Credits : " + playerCredit);
         action.SetText( lastAction != BetAction.UnSelected ? lastAction.ToString() : "");
         turn.gameObject.SetActive(isOnTurn);
+    }
+
+    public void UpdateWinnerView(bool val, int amount)
+    {
+        winner.SetActive(val);
+        winCredit.SetText(amount.ToString());
     }
 
     public void UpdateView(int not)
