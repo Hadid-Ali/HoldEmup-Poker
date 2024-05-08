@@ -1,6 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 public class PlayersViewHandler : MonoBehaviour
 {
@@ -101,6 +102,10 @@ public class PlayersViewHandler : MonoBehaviour
     [PunRPC]
     private void ArrangePlayersView()
     {
+        print($"Count : {playerSeats.activePlayers.Count}");
+        if(playerSeats.activePlayers.Count <= 0)
+            return;
+        
         for (int i = 0; i < playerViews.Count; i++)
         {
             if (i >= playerSeats.activePlayers.Count)
@@ -108,8 +113,8 @@ public class PlayersViewHandler : MonoBehaviour
                 playerViews[i].UpdateView(0);
                 continue;
             }
-
-            NetworkPlayer p = playerSeats.activePlayers.Find(x => x.id == sequenceHandler.TurnViewSequence[i]);
+            
+            var p = playerSeats.activePlayers.FirstOrDefault(x => x.id == sequenceHandler.TurnViewSequence[i]);
             
             if (p == null)
                 continue;

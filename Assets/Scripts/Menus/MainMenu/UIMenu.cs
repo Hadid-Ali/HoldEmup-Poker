@@ -12,12 +12,6 @@ public class UIMenu : UIMenuBase
     {
         m_PlayButton.SubscribeAction(LoginBtnEvent);
     }
-
-    private void OnSettingsButton()
-    {
-        ChangeMenuState(MenuName.SettingsMenu);
-    }
-    
     public void LoginBtnEvent()
     {
         ChangeMenuState(MenuName.LoginScreen);

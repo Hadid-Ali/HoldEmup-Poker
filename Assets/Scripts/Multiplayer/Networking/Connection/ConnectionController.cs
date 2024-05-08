@@ -62,24 +62,21 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         if (!m_CanReconnect)
             return;
         
-        Debug.LogError($"{cause}");
         GameEvents.NetworkEvents.NetworkDisconnectedEvent.Raise();
-        
         PhotonNetwork.ReconnectAndRejoin();
     }
 
     private void ConnectToServer()
     {
-        UpdateConnectionStatus("\t\tConnecting");
+        UpdateConnectionStatus("\t\tConnecting...");
         PhotonNetwork.ConnectUsingSettings();
     }
 
     public override void OnConnectedToMaster()
     {
-        Debug.LogError("Connected to Master");
         if (m_IsTestConnection)
         {
-            UpdateConnectionStatus("Finding Best Regions to Connect");
+            UpdateConnectionStatus("Finding Best Regions to Connect...");
             Invoke(nameof(OnRegionsPingCompleted), 1f);
         }
         else
@@ -111,7 +108,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectToRegion(regionCode);
         
         UpdateConnectionStatus(
-            $"Connected To {NetworkManager.Instance.RegionsRegistry.GetRegionName(regionCode)}, Finding Lobby");
+            $"Connected To {NetworkManager.Instance.RegionsRegistry.GetRegionName(regionCode)}, Finding Lobby...");
     }
 
     public void CreateRoom(RoomOptions roomOptions)
@@ -131,10 +128,8 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     
     public override void OnJoinedLobby()
     {
-        UpdateConnectionStatus("\t\tFinding Match");
+        UpdateConnectionStatus("\t\tFinding Match...");
         PhotonNetwork.JoinRandomRoom();
-        
-        print("Joined Lobby");
     }
 
     public override void OnJoinRandomFailed(short returnCode, string message)
@@ -142,16 +137,15 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         base.OnJoinRandomFailed(returnCode, message);
         
         PhotonNetwork.CreateRoom(null, new RoomOptions());
-        UpdateConnectionStatus("\t Setting Up Game");
+        UpdateConnectionStatus("\t Setting Up Game...");
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        UpdateConnectionStatus($"\t Waiting For Others");
+        UpdateConnectionStatus($"\t Waiting For Others...");
         
         GameEvents.NetworkEvents.OnRoomJoined.Raise();
-        print("Joined Room");
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
@@ -174,8 +168,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 
     public void StartMatch()
     {
+        PhotonNetwork.CurrentRoom.IsOpen = false;
         sceneManager.LoadGameplayScene();
-        print("Start Match");
-        //m_MatchStartHandler.StartMatchInternal();
     }
 }

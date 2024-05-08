@@ -15,7 +15,7 @@ public static partial class GameData
         public const int OffsetCards = 2;
 
         public const int MinimumNameLength = 3;
-        public const int MaximumNameLength = 8;
+        public const int MaximumNameLength = 10;
 
         public const int MaxPlayersLimit = 3;
         public const int MinimumRequiredPlayers = 1;
