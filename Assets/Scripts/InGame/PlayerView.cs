@@ -24,7 +24,7 @@ public class PlayerView : MonoBehaviour
     {
         Name.SetText(playerName);
         id.SetText( $" Seat no : {playerID}");
-        credit.SetText("Credits : " + playerCredit);
+        credit.SetText(playerCredit.ToString());
         action.SetText( lastAction != BetAction.UnSelected ? lastAction.ToString() : "");
         turn.gameObject.SetActive(isOnTurn);
     }

@@ -102,7 +102,6 @@ public class PlayersViewHandler : MonoBehaviour
     [PunRPC]
     private void ArrangePlayersView()
     {
-        print($"Count : {playerSeats.activePlayers.Count}");
         if(playerSeats.activePlayers.Count <= 0)
             return;
         

@@ -1,7 +1,5 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class ToggleBehaviorGroup : MonoBehaviour
 {
@@ -9,9 +7,11 @@ public class ToggleBehaviorGroup : MonoBehaviour
     [SerializeField] private int selectedToggleIndex;
     [SerializeField] private BetAction[] actions;
 
-    [SerializeField] private Slider raiseSlider;
-    
-    
+    private Action<BetAction> _onClick;
+    public void SubscribeButtonCalls(Action<BetAction> action)
+    {
+        _onClick += action;
+    }
     private void OnValidate()
     {
         toggles = GetComponentsInChildren<ToggleBehavior>();
@@ -23,7 +23,7 @@ public class ToggleBehaviorGroup : MonoBehaviour
 
         selectedToggleIndex = Mathf.Clamp(selectedToggleIndex,0,toggles.Length - 1);
 
-        UpdateView();
+        //UpdateView();
     }
 
     private void Awake()
@@ -47,10 +47,19 @@ public class ToggleBehaviorGroup : MonoBehaviour
         toggles[togIndex].gameObject.SetActive(val);
     }
 
+    public void EnableAllButtons(bool val)
+    {
+        foreach (var v in toggles)
+            v.gameObject.SetActive(val);
+    }
+
     private void OnClick(int index)
     {
         selectedToggleIndex = index;
-        UpdateView();
+        _onClick?.Invoke(GetSelectedAction());
+        
+        EnableAllButtons(false);
+       // UpdateView();
     }
 
     public BetAction GetSelectedAction()
@@ -60,7 +69,6 @@ public class ToggleBehaviorGroup : MonoBehaviour
 
     private void UpdateView()
     {
-        raiseSlider.gameObject.SetActive(GetSelectedAction() == BetAction.Raise);
         for (int i = 0; i < toggles.Length; i++)
         {
             toggles[i].isOn = i == selectedToggleIndex;

@@ -25,10 +25,11 @@ public class ToggleBehavior : MonoBehaviour
         _button ??= GetComponent<Button>();
         _image ??= GetComponent<Image>();
         _text ??= GetComponentInChildren<TextMeshProUGUI>();
-        OnViewUpdate(isOn);
+       // OnViewUpdate(isOn);
     }
 
     public void OnViewUpdate(bool val) => _image.color = val? selectedColor : normalColor;
+    public void EnableClick(bool val) => _button.interactable = val;
 
     private void Onclick()
     {

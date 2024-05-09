@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,16 +14,17 @@ public class RaiseSlider : MonoBehaviour
         GameEvents.GameplayEvents.OnLocalPlayerRaise.Register(UpdateSlider);
         slider.onValueChanged.AddListener(OnValueChanged);
     }
+    private void OnDestroy() => GameEvents.GameplayEvents.OnLocalPlayerRaise.UnRegister(UpdateSlider);
 
+    private void OnEnable()
+    {
+        Val.SetText(slider.value.ToString());
+    }
     private void OnValueChanged(float arg0)
     {
         int val = (int)arg0; 
         Val.SetText(val.ToString());
     } 
-
-    private void OnDestroy() => GameEvents.GameplayEvents.OnLocalPlayerRaise.UnRegister(UpdateSlider);
-    
-    
     private void UpdateSlider(int arg1, int arg2)
     {
         slider.minValue = arg1;
