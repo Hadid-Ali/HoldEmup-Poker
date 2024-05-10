@@ -16,15 +16,25 @@ public class SlideAnimation : MonoBehaviour
     [Space] 
     [SerializeField] private bool animateOnEnable;
 
+    private RectTransform rect;
     private void Awake()
     {
-        Setup();
+        rect = GetComponent<RectTransform>();
     }
 
     private void OnEnable()
     {
         if (animateOnEnable)
-            Slide();
+        {
+            Setup();
+            PlaySlide();
+        }
+    }
+
+    public void Slide()
+    {
+        Setup();
+        PlaySlide();
     }
 
     public void Setup()
@@ -37,28 +47,28 @@ public class SlideAnimation : MonoBehaviour
         switch (direction)
         {
             case SlideDirection.Top:
-                offsetPosition.y = Screen.height/2;
+                offsetPosition.y = Screen.height/2 + rect.rect.height;
                 transform.localPosition = offsetPosition;
                 break;
             case SlideDirection.Left:
-                offsetPosition.x = -Screen.width * 2;
+                offsetPosition.x = -Screen.width * 2 - rect.rect.width;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Bottom:
-                offsetPosition.y = -Screen.height/2;
+                offsetPosition.y = -Screen.height/2 - rect.rect.height;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Right:
-                offsetPosition.x = Screen.width * 2;
+                offsetPosition.x = Screen.width * 2 + rect.rect.width;
                 transform.localPosition = offsetPosition;
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
         }
     }
-    public void Slide()
+    private void PlaySlide()
     {
         switch (direction)
         {

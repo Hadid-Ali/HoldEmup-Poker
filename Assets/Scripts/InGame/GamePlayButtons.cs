@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class GamePlayButtons : MonoBehaviour
 {
-    [SerializeField] private ToggleBehaviorGroup group;
+    [SerializeField] private ButtonGroup group;
     [SerializeField] private Slider raiseSlider;
     [SerializeField] private Button okButton;
 
@@ -29,21 +29,19 @@ public class GamePlayButtons : MonoBehaviour
         raiseSlider.gameObject.SetActive(false);
         
         int betAmount = (int) raiseSlider.value ;
-        BetAction selectedAction = group.GetSelectedAction();
-        OnPlayerActionSubmit.Invoke(selectedAction, betAmount);
+        OnPlayerActionSubmit.Invoke(_lastAction, betAmount);
     }
 
     private void OnButtonClick(BetAction obj)
     {
+        _lastAction = obj;
         if (obj == BetAction.Raise)
         {
             raiseSlider.gameObject.SetActive(true);
             return;
         }
-        
-        BetAction selectedAction = group.GetSelectedAction();
         int betAmount = 0;
-        OnPlayerActionSubmit.Invoke(selectedAction, betAmount);
+        OnPlayerActionSubmit.Invoke(obj, betAmount);
     }
     
 

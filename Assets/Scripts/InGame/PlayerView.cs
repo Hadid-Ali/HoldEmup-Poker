@@ -13,12 +13,15 @@ public class PlayerView : MonoBehaviour
     [SerializeField] private Image pocketCard1;
     [SerializeField] private Image pocketCard2;
     [SerializeField] private Image turn;
+    [SerializeField] public SlideAnimation animationSlide;
     
     public int playerID;
     public string playerName;
     public BetAction lastAction;
     public int playerCredit;
     public bool isOnTurn;
+
+    private bool _alreadySlide;
     
     public void UpdateView()
     {
@@ -27,6 +30,11 @@ public class PlayerView : MonoBehaviour
         credit.SetText(playerCredit.ToString());
         action.SetText( lastAction != BetAction.UnSelected ? lastAction.ToString() : "");
         turn.gameObject.SetActive(isOnTurn);
+
+        if (_alreadySlide) return;
+        
+        animationSlide.Slide();
+        _alreadySlide = true;
     }
 
     public void UpdateWinnerView(bool val, int amount)

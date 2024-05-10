@@ -10,7 +10,9 @@ public enum BetAction
     Call,
     Raise,
     Check,
-    AllIn
+    AllIn,
+    Blind,
+    BigBlind
 }
 public class NetworkPlayer : MonoBehaviourPun
 {
@@ -185,7 +187,6 @@ public class NetworkPlayer : MonoBehaviourPun
     [PunRPC]
     private void SetSelectedBetActionServerRpc(int playerAction, int _id, int _betAmount)
     {
-        print($"Checking : {id}");
         lastBetAction = (BetAction) playerAction;
         _hasFolded = lastBetAction == BetAction.Fold;
         betAmount = _betAmount;

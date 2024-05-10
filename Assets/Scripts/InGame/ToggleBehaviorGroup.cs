@@ -12,19 +12,17 @@ public class ToggleBehaviorGroup : MonoBehaviour
     {
         _onClick += action;
     }
-    private void OnValidate()
-    {
-        toggles = GetComponentsInChildren<ToggleBehavior>();
-        for (int i = 0; i < toggles.Length; i++)
-        {
-            toggles[i].SetIndex(i);
-            toggles[i].gameObject.name = actions[i].ToString();
-        }
-
-        selectedToggleIndex = Mathf.Clamp(selectedToggleIndex,0,toggles.Length - 1);
-
-        //UpdateView();
-    }
+    // private void OnValidate()
+    // {
+    //     toggles = GetComponentsInChildren<ToggleBehavior>();
+    //     for (int i = 0; i < toggles.Length; i++)
+    //     {
+    //         toggles[i].SetIndex(i);
+    //         toggles[i].gameObject.name = actions[i].ToString();
+    //     }
+    //
+    //     selectedToggleIndex = Mathf.Clamp(selectedToggleIndex,0,toggles.Length - 1);
+    // }
 
     private void Awake()
     {
@@ -34,17 +32,18 @@ public class ToggleBehaviorGroup : MonoBehaviour
 
     public void EnableActionButton(BetAction action, bool val)
     {
-        int togIndex = -1;
-        for (int i = 0; i < actions.Length; i++)
-        {
-            if (actions[i] != action) continue;
-            togIndex = i;
-            break;
-        }
-        if(togIndex == -1)
-            return;
+    //     int togIndex = -1;
+    //     for (int i = 0; i < actions.Length; i++)
+    //     {
+    //         if (actions[i] != action) continue;
+    //         togIndex = i;
+    //         break;
+    //     }
+    //     print($"$Toggle Index is : {togIndex}");
+    //     if(togIndex == -1)
+    //         return;
         
-        toggles[togIndex].gameObject.SetActive(val);
+        toggles[(int ) action].gameObject.SetActive(val);
     }
 
     public void EnableAllButtons(bool val)

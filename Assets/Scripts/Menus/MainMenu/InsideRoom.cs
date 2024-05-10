@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using Photon.Pun;
 using Photon.Realtime;
@@ -17,6 +18,15 @@ public class InsideRoom : UIMenuBase
             
         _button.onClick.AddListener(()=> { GameEvents.NetworkEvents.OnStartMatch.Raise();});
     }
+
+    private void OnValidate()
+    {
+        if(!PhotonNetwork.IsMasterClient)
+            return;
+        
+        _button.interactable = PhotonNetwork.PlayerList.Length > 1;
+    }
+
     private void OnDestroy()
     {
         GameEvents.NetworkEvents.OnRoomJoined.UnRegister(AddPlayer);
@@ -28,5 +38,7 @@ public class InsideRoom : UIMenuBase
         _button.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         Player[] playersA = PhotonNetwork.PlayerList;
         _textMeshPro.text = $"Players Joined : {playersA.Length}";
+
+        _button.interactable = playersA.Length > 1;
     }
 }
