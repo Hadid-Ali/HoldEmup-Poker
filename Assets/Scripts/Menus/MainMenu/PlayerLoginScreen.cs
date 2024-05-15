@@ -53,7 +53,7 @@ public class PlayerLoginScreen : UIMenuBase
 
     private void LoginInternal()
     {
-        GameEvents.MenuEvents.LoginAtMenuEvent.Raise(GameData.RuntimeData.USER_NAME);
+        GameEvents.NetworkEvents.PlayerLogin.Raise(GameData.RuntimeData.USER_NAME);
         ChangeMenuState(MenuName.ConnectionScreen);
     }
 

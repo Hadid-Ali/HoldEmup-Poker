@@ -20,6 +20,9 @@ public class SlideAnimation : MonoBehaviour
     private void Awake()
     {
         rect = GetComponent<RectTransform>();
+        
+        if(!animateOnEnable)
+            Setup();
     }
 
     private void OnEnable()
@@ -33,7 +36,6 @@ public class SlideAnimation : MonoBehaviour
 
     public void Slide()
     {
-        Setup();
         PlaySlide();
     }
 

@@ -22,7 +22,5 @@ public static partial class GameEvents
         public static GameEvent<int, Vector3> PlayerPositionInit = new();
 
         public static GameEvent<int, int> OnPlayerScoreSubmit = new();
-
-        public static GameEvent<int, int> OnLocalPlayerRaise = new();
     }
 }

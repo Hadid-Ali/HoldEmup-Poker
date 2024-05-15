@@ -5,12 +5,12 @@ public enum MenuName
     LoginScreen,
     RegionSelectionScreen,
     ConnectionScreen,
-    //CreateRoom,
     LoadingScreen,
     RoundCompleteMenu,
     ErrorWindow,
     MatchCompleteMenu,
     SettingsMenu,
     GameOverMenu,
-    InsideRoom
+    InsideRoom,
+    RoomSelection
 }

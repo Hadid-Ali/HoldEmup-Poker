@@ -20,12 +20,12 @@ public class ConnectionControllerEditor : Editor
 
         if (GUILayout.Button("Disconnect"))
         {
-            m_ConnectionController.Disconnect();   
+            //m_ConnectionController.Disconnect();   
         } 
         
         if (GUILayout.Button("Start Match"))
         {
-            m_ConnectionController.StartMatch();  
+           // m_ConnectionController.StartMatch();  
         } 
     }
 }

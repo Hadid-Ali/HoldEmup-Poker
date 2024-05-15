@@ -56,9 +56,10 @@ public class Betting : MonoBehaviour
          bigBlind = smallBlind * 2;
 
          _callAmount = bigBlind;
-         
-         smallBlindPlayer.SubCredit(smallBlind);
-         bigBlindPlayer.SubCredit(bigBlind);
+         smallBlindPlayer.SetAction(BetAction.SmallBlind);
+         bigBlindPlayer.SetAction(BetAction.BigBlind);
+         smallBlindPlayer.PlayerCredit.SubCredit(smallBlind);
+         bigBlindPlayer.PlayerCredit.SubCredit(bigBlind);
          
          pot.AddToPot(bigBlind + smallBlind);
      }
@@ -69,7 +70,7 @@ public class Betting : MonoBehaviour
          foreach (var v in playerSeats.activePlayers)
          {
             v.EnableTurn(false);
-            v.SetBetAction(BetAction.UnSelected); 
+           // v.SetAction(BetAction.UnSelected); 
          }
          
          
@@ -84,6 +85,10 @@ public class Betting : MonoBehaviour
      {
          if(!PhotonNetwork.IsMasterClient)
              return;
+
+         foreach (var v in playerSeats.activePlayers)
+             v.EnableTurn(false);
+         
          
          CurrentPlayer.EnableTurn(false);
          Bet(CurrentPlayer, obj);
@@ -99,7 +104,7 @@ public class Betting : MonoBehaviour
 
      public void NextTurn(NetworkPlayer p)
      {
-         if (p.HasFolded)
+         if (p.hasFolded)
          {
              SkipTurn();
              return;
@@ -108,9 +113,9 @@ public class Betting : MonoBehaviour
          p.EnableAction(BetAction.Call, IsTurnCallEligible);
          p.EnableAction(BetAction.Check, IsTurnCheckEligible);
 
-         bool canAfford = p.totalCredit >= 150;
+         bool canAfford = p.PlayerCredit.Credits >= Constants.Player.MaximumRaiseLimit;
          
-         int maxAmount = canAfford ? 150 : p.totalCredit;
+         int maxAmount = canAfford ? Constants.Player.MaximumRaiseLimit : p.PlayerCredit.Credits;
          int minAmount = canAfford ? _lastRaise : maxAmount; 
          
          turnSequenceHandler.CurrentTurnIndex++;
@@ -119,7 +124,7 @@ public class Betting : MonoBehaviour
          
          CurrentPlayer = p;
          
-         if (p.HasFolded || (_raiseCount > 0 && LastBetRaiser == p))
+         if (p.hasFolded || (_raiseCount > 0 && LastBetRaiser == p))
          {
              SkipTurn();
              return;
@@ -155,27 +160,27 @@ public class Betting : MonoBehaviour
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)
      {
-         bool canAfford = player.totalCredit >= 150;
+         bool canAfford = player.PlayerCredit.Credits >= 150;
          switch (player.lastBetAction)
          {
              case BetAction.Call:
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
                  
-                 player.SubCredit(_callAmount);
+                 player.PlayerCredit.SubCredit(_callAmount);
                  pot.AddToPot(_callAmount);
                  break;
              case BetAction.Check:
                  
                  break;
              case BetAction.Fold:
-                 player.HasFolded = true;
+                 player.hasFolded = true;
                  break;
              case BetAction.Raise:
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
                  _callAmount = _lastRaise + obj.BetAmount;
                  _lastRaise += obj.BetAmount;
                  
-                 player.SubCredit(_callAmount);
+                 player.PlayerCredit.SubCredit(_callAmount);
                  pot.AddToPot(_callAmount);
 
                  if (_raiseCount <= 0)

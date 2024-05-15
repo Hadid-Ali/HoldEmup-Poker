@@ -11,10 +11,10 @@ public class RaiseSlider : MonoBehaviour
     [SerializeField] private TextMeshProUGUI Val;
     private void Awake()
     {
-        GameEvents.GameplayEvents.OnLocalPlayerRaise.Register(UpdateSlider);
+        GameEvents.NetworkPlayerEvents.OnSetPlayerRaiseLimits.Register(UpdateSlider);
         slider.onValueChanged.AddListener(OnValueChanged);
     }
-    private void OnDestroy() => GameEvents.GameplayEvents.OnLocalPlayerRaise.UnRegister(UpdateSlider);
+    private void OnDestroy() => GameEvents.NetworkPlayerEvents.OnSetPlayerRaiseLimits.UnRegister(UpdateSlider);
 
     private void OnEnable()
     {

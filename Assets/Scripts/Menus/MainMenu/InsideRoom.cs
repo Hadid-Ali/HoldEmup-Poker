@@ -1,5 +1,5 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Realtime;
 using TMPro;
@@ -10,13 +10,18 @@ public class InsideRoom : UIMenuBase
 {
     [SerializeField] private TextMeshProUGUI _textMeshPro;
     [SerializeField] private Button _button;
-
-    private void Awake()
+    
+    private void OnEnable()
     {
-        GameEvents.NetworkEvents.OnRoomJoined.Register(AddPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.Register(AddPlayer);
-            
-        _button.onClick.AddListener(()=> { GameEvents.NetworkEvents.OnStartMatch.Raise();});
+        _button.onClick.AddListener(()=> { GameEvents.MenuEvents.MatchStartRequested.Raise();});
+        GameEvents.MenuEvents.PlayersListUpdated.Register(UpdatePlayerList);
+        
+        GameEvents.NetworkEvents.PlayerJoinedRoom.Register((bool b)=> _button.gameObject.SetActive(b));
+    }
+    private void OnDisable()
+    {
+        GameEvents.MenuEvents.PlayersListUpdated.UnRegister(UpdatePlayerList);
+        GameEvents.NetworkEvents.PlayerJoinedRoom.UnRegister((bool b)=> _button.gameObject.SetActive(b));
     }
 
     private void OnValidate()
@@ -26,19 +31,21 @@ public class InsideRoom : UIMenuBase
         
         _button.interactable = PhotonNetwork.PlayerList.Length > 1;
     }
-
-    private void OnDestroy()
-    {
-        GameEvents.NetworkEvents.OnRoomJoined.UnRegister(AddPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.UnRegister(AddPlayer);
-    }
     
-    private void AddPlayer()
+    private void UpdatePlayerList(List<string> Players)
     {
-        _button.gameObject.SetActive(PhotonNetwork.IsMasterClient);
-        Player[] playersA = PhotonNetwork.PlayerList;
-        _textMeshPro.text = $"Players Joined : {playersA.Length}";
+        print($"Function working");
+        string players = String.Empty;
 
-        _button.interactable = playersA.Length > 1;
+        foreach (var v in Players)
+        {
+            players += $"\n {v}";
+            print($"{v}");
+        }
+        _textMeshPro.text = $"Players Joined : {players}";
+
+        _button.interactable = Players.Count > 1;
     }
 }
+
+
