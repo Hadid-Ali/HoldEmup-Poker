@@ -15,33 +15,33 @@ public class PlayersViewHandler : MonoBehaviour
     private void Awake()
     {
         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Register(InitializePlayerView);
-        GameEvents.NetworkGameplayEvents.OnPocketCardsView.Register(UpdateLocalCardsView);
         
         GameEvents.NetworkPlayerEvents.OnPlayerTurn.Register(OnPlayerTurn);
         GameEvents.NetworkPlayerEvents.OnPlayerCreditsChanged.Register(OnPlayerCreditsChanged);
         GameEvents.NetworkPlayerEvents.OnPlayerActionPop.Register(OnPlayerAction);
         
         GameEvents.NetworkGameplayEvents.OnShowDown.Register(ExposeAllPocketCards);
+        GameEvents.NetworkPlayerEvents.ExposePocketCardsLocally.Register(ExposeLocalCards);
         GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(ResetView);
         GameEvents.NetworkGameplayEvents.OnPlayerWin.Register(OnPlayerWin);
         
     }
 
-    private void UpdateLocalCardsView(CardData arg1, CardData arg2)
+    private void ExposeLocalCards(List<CardData> obj)
     {
-        playerViews[0].UpdateCardsView(arg1, arg2);
+        playerViews[0].UpdateCardsView(obj[0],obj[1]);
     }
 
     private void OnDestroy()
     {
         GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.UnRegister(InitializePlayerViews_RPC);
-        GameEvents.NetworkGameplayEvents.OnPocketCardsView.UnRegister(UpdateLocalCardsView);
         
         GameEvents.NetworkPlayerEvents.OnPlayerTurn.UnRegister(OnPlayerTurn);
         GameEvents.NetworkPlayerEvents.OnPlayerCreditsChanged.UnRegister(OnPlayerCreditsChanged);
         GameEvents.NetworkPlayerEvents.OnPlayerActionPop.UnRegister(OnPlayerAction);
         
         GameEvents.NetworkGameplayEvents.OnShowDown.UnRegister(ExposeAllPocketCards);
+        GameEvents.NetworkPlayerEvents.ExposePocketCardsLocally.UnRegister(ExposeLocalCards);
         GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(ResetView);
         GameEvents.NetworkGameplayEvents.OnPlayerWin.UnRegister(OnPlayerWin);
     }
@@ -91,8 +91,10 @@ public class PlayersViewHandler : MonoBehaviour
             
             playerViews[i].UpdateCardsView(card, card);
             playerViews[i].UpdateWinnerView(false,0);
+            playerViews[i].animationSlide.Awake();
         }
     }
+    
 
     [PunRPC]
     private void ExposeAllPocketCards()
@@ -111,7 +113,6 @@ public class PlayersViewHandler : MonoBehaviour
     [PunRPC]
     private void SyncPlayerAction(int id, string actionText)
     {
-        print($"View {id} with string {actionText} called ");
         PlayerView view = GetPlayerViewAgainstID(id);
         view.PopDialog(actionText, 2);
     }

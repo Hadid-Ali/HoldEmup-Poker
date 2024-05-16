@@ -17,7 +17,7 @@ public class SlideAnimation : MonoBehaviour
     [SerializeField] private bool animateOnEnable;
 
     private RectTransform rect;
-    private void Awake()
+    public void Awake()
     {
         rect = GetComponent<RectTransform>();
         

@@ -8,8 +8,6 @@ using UnityEngine;
 
 public class Game : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text;
-    
     [SerializeField] private PhotonView photonView;
     [SerializeField] private Betting betting;
     [SerializeField] private PlayerSeats playerSeats;
@@ -136,6 +134,7 @@ public class Game : MonoBehaviour
         if(!PhotonNetwork.IsMasterClient)
             return;
         
+        GameEvents.NetworkGameplayEvents.OnAllPlayersSeated.Raise();
         StartNextStage(GameStage.PreFlop);
     }
 
@@ -146,11 +145,11 @@ public class Game : MonoBehaviour
         NetworkPlayer player2 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
         foreach (var v in playerSeats.activePlayers)
-            player1.DealCards(v);
+        {
+            v.DealCards();
+        }
 
-        NetworkPlayer localPlayer = playerSeats.activePlayers.Find(x => x.IsLocalPlayer);
-        localPlayer.PlayerCards.ExposeCardsLocally();
-        
+
         betting.BetBlinds(player1,player2);
     
         foreach (var v in playerSeats.activePlayers)
@@ -159,7 +158,6 @@ public class Game : MonoBehaviour
         betting.StartTurn(0);
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
-        print("Game Turns Completed");
         betting.EndStage();
         
         boardCards.PopulateCards();
@@ -255,6 +253,9 @@ public class Game : MonoBehaviour
             var p = playerSeats.activePlayers.Find(x => !x.hasFolded);
             p = playerSeats.activePlayers.Find(x => p.id == x.id);
             p.PlayerCredit.AddCredit(pot.GetPotMoney);
+            
+            //GameEvents.NetworkGameplayEvents.OnShowDown.Raise();
+            photonView.RPC(nameof(OnPlayerWin), RpcTarget.All, p.id, pot.GetPotMoney);
         }
         else
         {
@@ -263,14 +264,13 @@ public class Game : MonoBehaviour
 
         yield return new WaitUntil(()=> RoundRestartCondition);
         photonView.RPC(nameof(ResetGameView), RpcTarget.All);
-        
     }
 
     private void ResetGame()
     {
         _boardCardExposeLength = 3;
         _continueConsentCollected = 0;
-        _currentGameStageInt = (int)GameStage.Flop;
+        _currentGameStageInt = (int) GameStage.Flop;
         
         playerCards.Clear();
 

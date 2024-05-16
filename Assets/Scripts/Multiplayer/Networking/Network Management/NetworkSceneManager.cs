@@ -1,15 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
-using Photon.Pun;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class NetworkSceneManager : MonoBehaviour
 {
-    public void LoadGameplayScene(float wait)
+    public void LoadGameplayScene(string sceneName,float wait)
     {
         NetworkManager.Instance.SetStatus("Loading Game...");
-        StartCoroutine(LoadScene("PokerGame", wait));
+        StartCoroutine(LoadScene(sceneName, wait));
+    }
+
+    public void LoadMenuScene(float wait)
+    {
+        
     }
 
     private IEnumerator LoadScene(string sceneName,float wait)

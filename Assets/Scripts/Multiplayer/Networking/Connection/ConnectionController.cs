@@ -75,6 +75,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         base.OnDisconnected(cause);
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Raise();
         Debug.LogError($"{cause}");
     }
 
@@ -198,7 +199,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
             Debug.LogError($" Keys {PhotonNetwork.CurrentRoom.CustomProperties.Keys.ToList()[i]}");
         }
         
-        print("Event broadcasted");
+        UpdateConnectionStatus($"Waiting for host to start the match");
 
         if (!PhotonNetwork.IsMasterClient)
             return;
@@ -262,6 +263,6 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         if (PhotonNetwork.IsMasterClient)
             PhotonNetwork.CurrentRoom.IsOpen = false;
         
-        NetworkManager.Instance.LoadGameplay();
+        NetworkManager.Instance.LoadGameplay("PokerGame");
     }
 }

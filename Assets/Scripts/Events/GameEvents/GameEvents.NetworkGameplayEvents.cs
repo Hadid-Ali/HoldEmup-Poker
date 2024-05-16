@@ -13,7 +13,6 @@ public static partial class GameEvents
         public static readonly GameEvent <PlayerController> PlayerJoinedGame = new();
         public static readonly GameEvent <List<int>,bool> MatchWinnersAnnounced = new();
         
-        public static readonly GameEvent <CardData, CardData> OnPocketCardsView = new();
         public static readonly GameEvent <CardData[]> OnBoardCardsView = new();
         public static readonly GameEvent <int, int> OnPlayerWin = new();
         public static readonly GameEvent  OnBoardCardsViewReset = new();
@@ -32,6 +31,7 @@ public static partial class GameEvents
         public static readonly GameEvent<List<CardData>> ExposePocketCardsLocally = new();
 
         public static GameEvent<int, int> OnSetPlayerRaiseLimits = new();
+        public static GameEvent OnPlayerDisconnected = new();
 
     }
 }

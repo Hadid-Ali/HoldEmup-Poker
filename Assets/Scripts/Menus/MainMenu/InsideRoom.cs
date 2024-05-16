@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class InsideRoom : UIMenuBase
 {
     [SerializeField] private TextMeshProUGUI _textMeshPro;
+    [SerializeField] private TextMeshProUGUI statusText;
     [SerializeField] private Button _button;
     
     private void OnEnable()
@@ -17,11 +18,19 @@ public class InsideRoom : UIMenuBase
         GameEvents.MenuEvents.PlayersListUpdated.Register(UpdatePlayerList);
         
         GameEvents.NetworkEvents.PlayerJoinedRoom.Register((bool b)=> _button.gameObject.SetActive(b));
+        GameEvents.NetworkEvents.NetworkStatus.Register(UpdateLobbyStatus);
     }
+
+    private void UpdateLobbyStatus(string obj)
+    {
+        statusText.SetText(obj);
+    }
+
     private void OnDisable()
     {
         GameEvents.MenuEvents.PlayersListUpdated.UnRegister(UpdatePlayerList);
         GameEvents.NetworkEvents.PlayerJoinedRoom.UnRegister((bool b)=> _button.gameObject.SetActive(b));
+        GameEvents.NetworkEvents.NetworkStatus.UnRegister(UpdateLobbyStatus);
     }
 
     private void OnValidate()
@@ -45,6 +54,8 @@ public class InsideRoom : UIMenuBase
         _textMeshPro.text = $"Players Joined : {players}";
 
         _button.interactable = Players.Count > 1;
+        
+        statusText.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
     }
 }
 

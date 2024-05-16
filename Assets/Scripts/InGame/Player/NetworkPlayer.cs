@@ -17,21 +17,26 @@ public enum BetAction
 }
 public class NetworkPlayer : MonoBehaviourPun
 {
-    [SerializeField] private PhotonView _photonView;
-    [SerializeField] private PlayerCards playerCards;
-    [SerializeField] private PlayerCredit playerCredit;
+    [field: SerializeField] public PhotonView PhotonView {private set; get; }
+    [field: SerializeField] public PlayerCards PlayerCards{ private set; get; }
+    [field: SerializeField] public PlayerCredit PlayerCredit{private set; get; }
 
-    public PlayerCards PlayerCards => playerCards;
-    public PlayerCredit PlayerCredit => playerCredit;
-    
-    public bool isOnTurn;
-    public bool hasFolded;
+    private bool _hasFolded;
+    public bool hasFolded
+    {
+        set
+        {
+            _hasFolded = value;
+            PhotonView.RPC(nameof(HasFolded_RPC), RpcTarget.All, _hasFolded);
+        }
+        get => _hasFolded;
+    }
 
     public string nickName;
     public int id;
     public BetAction lastBetAction;
     public int betAmount = 2;
-    public bool IsLocalPlayer => _photonView.IsMine;
+    public bool IsLocalPlayer => PhotonView.IsMine;
     
     private bool _canMakeTurn;
 
@@ -50,12 +55,20 @@ public class NetworkPlayer : MonoBehaviourPun
 
     private void Start() => Invoke(nameof(OnNetworkSpawn), 1.5f);
     public void OnNetworkSpawn() => OnPlayerSpawn?.Invoke(this);
+    public void SyncInformationGlobally() => 
+        PhotonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
 
-    public void SyncInformationGlobally() => _photonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
-    public void DealCards(NetworkPlayer player) => player.playerCards.SetPocketCards(DecksHandler.GetRandomCard(),DecksHandler.GetRandomCard());
+    public void DealCards()
+    {
+        CardData card1 = DecksHandler.GetRandomCard();
+        CardData card2 = DecksHandler.GetRandomCard();
+        print($"Cards Dealt : {card1} : {card2}");
+        
+        PlayerCards.SetPocketCards(card1,card2);
+    }
 
     public void OnLocalPlayerRaiseSlideUpdate(int min, int max) =>
-        _photonView.RPC(nameof(UpdateRaiseSlider), RpcTarget.All, min, max);
+        PhotonView.RPC(nameof(UpdateRaiseSlider), RpcTarget.All, min, max);
     
     private void OnActionSubmit(BetAction obj, int _betAmount)
     {
@@ -66,26 +79,24 @@ public class NetworkPlayer : MonoBehaviourPun
         betAmount = _betAmount;
         OnEnableTurn.Invoke(false);
         
-        _photonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) obj, id, betAmount);
+        PhotonView.RPC(nameof(SetSelectedBetActionServerRpc), RpcTarget.All, (int) obj, id, betAmount);
     }
     public void EnableTurn(bool val)
     {
-        _photonView.RPC(nameof(EnableTurn_RPC), RpcTarget.All, val, id);
+        PhotonView.RPC(nameof(EnableTurn_RPC), RpcTarget.All, val, id);
     }
 
     public void EnableAction(BetAction action, bool val)
     {
-        _photonView.RPC(nameof(EnableActionRpc), RpcTarget.All, (int)action, val);
+        PhotonView.RPC(nameof(EnableActionRpc), RpcTarget.All, (int)action, val);
     }
 
     public void SetAction(BetAction action)
     {
         lastBetAction = action;
-        _photonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
+        PhotonView.RPC(nameof(OnPlayerAction), RpcTarget.All, lastBetAction.ToString());
     }
 
-
-    
     public override string ToString()
     {
         return $"Nick: '{nickName}', ID: '{id}'";
@@ -105,7 +116,6 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         if (id == _id)
         {
-            isOnTurn = b;
             if(IsLocalPlayer)
                 OnEnableTurn?.Invoke(b);
         } 
@@ -115,7 +125,7 @@ public class NetworkPlayer : MonoBehaviourPun
     [PunRPC]
     private void HasFolded_RPC(bool b)
     {
-        hasFolded = b;
+        _hasFolded = b;
     }
     [PunRPC]
     private void SyncInformation(int id, string nickName)
@@ -129,8 +139,7 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         lastBetAction = (BetAction) playerAction;
         hasFolded = lastBetAction == BetAction.Fold;
-
-        _photonView.RPC(nameof(HasFolded_RPC), RpcTarget.All, hasFolded);
+        
         betAmount = _betAmount;
         
         if(!PhotonNetwork.IsMasterClient)
@@ -140,7 +149,7 @@ public class NetworkPlayer : MonoBehaviourPun
             Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, betAmount));
         
         GameEvents.NetworkPlayerEvents.OnPlayerActionPop.Raise(id,lastBetAction.ToString());
-        _photonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
+        PhotonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
     }
 
     [PunRPC]

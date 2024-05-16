@@ -7,9 +7,9 @@ public partial class NetworkManager : MonobehaviourSingleton<NetworkManager>
     [field: SerializeField] public RegionsRegistry RegionsRegistry { get; private set; }
     
     [ContextMenu("Load Gameplay")]
-    public void LoadGameplay()
+    public void LoadGameplay(string sceneName)
     {
-        m_NetworkSceneManager.LoadGameplayScene(1f);
+        m_NetworkSceneManager.LoadGameplayScene(sceneName,1f);
     }
 
     public void SetStatus(string status)
