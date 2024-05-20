@@ -31,6 +31,8 @@ public class PlayerCards : MonoBehaviour
     [PunRPC]
     private void SyncPocketCards_RPC(int[] binaryCardData1, int[] binaryCardData2)
     {
+        PocketCards.Clear();
+
         PocketCards.Add(CardData.ConvertIntArrayToCardData(binaryCardData1));
         PocketCards.Add(CardData.ConvertIntArrayToCardData(binaryCardData2));
             

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using Photon.Pun;
 using UnityEngine;
 
@@ -56,6 +57,8 @@ public class Betting : MonoBehaviour
          bigBlind = smallBlind * 2;
 
          _callAmount = bigBlind;
+         _lastRaise = _callAmount;
+
          smallBlindPlayer.SetAction(BetAction.SmallBlind);
          bigBlindPlayer.SetAction(BetAction.BigBlind);
          smallBlindPlayer.PlayerCredit.SubCredit(smallBlind);
@@ -93,8 +96,7 @@ public class Betting : MonoBehaviour
          CurrentPlayer.EnableTurn(false);
          Bet(CurrentPlayer, obj);
          
-         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
-                                                      turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         NetworkPlayer p = ValidatePlayerAgainstID();
          
          StopCoroutine(_turnCoroutine);
          
@@ -104,7 +106,8 @@ public class Betting : MonoBehaviour
 
      public void NextTurn(NetworkPlayer p)
      {
-         if (p.hasFolded)
+         if (p.hasFolded && !TurnsCompleted)
+
          {
              SkipTurn();
              return;
@@ -124,7 +127,7 @@ public class Betting : MonoBehaviour
          
          CurrentPlayer = p;
          
-         if (p.hasFolded || (_raiseCount > 0 && LastBetRaiser == p))
+         if (_raiseCount > 0 && LastBetRaiser == p && !TurnsCompleted)
          {
              SkipTurn();
              return;
@@ -138,8 +141,8 @@ public class Betting : MonoBehaviour
      public void SkipTurn()
      {
          _betsCount++;
-         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
-                                                                turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         
+         NetworkPlayer p = ValidatePlayerAgainstID();
          StopCoroutine(_turnCoroutine);
          NextTurn(p);
      }
@@ -153,9 +156,18 @@ public class Betting : MonoBehaviour
              _ => turnSequenceHandler.CurrentTurnIndex
          };
 
-         NetworkPlayer p =  playerSeats.activePlayers.Find(x => x.id == 
-                                                      turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         NetworkPlayer p = ValidatePlayerAgainstID();
          NextTurn(p);
+     }
+
+     private NetworkPlayer ValidatePlayerAgainstID()
+     {
+         NetworkPlayer p =  playerSeats.activePlayers.FirstOrDefault(x => x.id == 
+                                                                turnSequenceHandler.TurnSequence[turnSequenceHandler.CurrentTurnIndex]);
+         if (p != null) return p;
+         
+         GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Raise();
+         return null;
      }
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)

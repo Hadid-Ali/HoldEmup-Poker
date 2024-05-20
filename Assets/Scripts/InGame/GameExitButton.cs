@@ -15,12 +15,15 @@ public class GameExitButton : MonoBehaviour
     private void Awake()
     {
         button.onClick.AddListener(ExitGame);
+
         GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Register(OnPlayerLeaveMatch);
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Register(()=>photonView.RPC(nameof(OnPlayerLeftMatch), RpcTarget.All));
     }
 
     private void OnDestroy()
     {
         GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.UnRegister(OnPlayerLeaveMatch);
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Register(()=>photonView.RPC(nameof(OnPlayerLeftMatch), RpcTarget.All));
     }
 
     public void ExitGame()

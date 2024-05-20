@@ -49,21 +49,21 @@ public class SlideAnimation : MonoBehaviour
         switch (direction)
         {
             case SlideDirection.Top:
-                offsetPosition.y = Screen.height/2 + rect.rect.height;
+                offsetPosition.y = Screen.height + rect.rect.height;
                 transform.localPosition = offsetPosition;
                 break;
             case SlideDirection.Left:
-                offsetPosition.x = -Screen.width * 2 - rect.rect.width;
+                offsetPosition.x = -Screen.width - rect.rect.width;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Bottom:
-                offsetPosition.y = -Screen.height/2 - rect.rect.height;
+                offsetPosition.y = -Screen.height - rect.rect.height;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Right:
-                offsetPosition.x = Screen.width * 2 + rect.rect.width;
+                offsetPosition.x = Screen.width + rect.rect.width;
                 transform.localPosition = offsetPosition;
                 break;
             default:

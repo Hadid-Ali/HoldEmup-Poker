@@ -215,6 +215,7 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     public override void OnPlayerLeftRoom(Player otherPlayer)
     {
         base.OnPlayerLeftRoom(otherPlayer);
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Raise();
         UpdatePlayersList();
     }
 
