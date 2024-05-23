@@ -64,10 +64,9 @@ public class PlayersViewHandler : MonoBehaviour
     {
         PlayerView p = GetPlayerViewAgainstID(playerID);
         
-        if(p == null)
-            return;
-        
-        p.UpdateWinnerView(true,amount); 
+        //if(p == null)
+           // return;
+       // p.UpdateWinnerView(true,amount); 
     }
 
     [PunRPC]
@@ -90,7 +89,6 @@ public class PlayersViewHandler : MonoBehaviour
             };
             
             playerViews[i].UpdateCardsView(card, card);
-            playerViews[i].UpdateWinnerView(false,0);
             playerViews[i].animationSlide.Awake();
         }
     }

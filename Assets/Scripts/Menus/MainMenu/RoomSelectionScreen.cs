@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class RoomSelectionScreen : UIMenuBase
 {
-    [SerializeField] private RoomSelectionObject roomPrefab;
+    [SerializeField] private RoomObject roomPrefab;
     [SerializeField] private Transform roomTParent;
 
-    private List<RoomSelectionObject> instantiatedObj = new();
+    private List<RoomObject> instantiatedObj = new();
     private void Awake()
     {
         GameEvents.MenuEvents.RoomsListUpdated.Register(OnRoomsUpdated);
@@ -27,7 +27,7 @@ public class RoomSelectionScreen : UIMenuBase
 
         for (int i = 0; i < obj.Count; i++)
         {
-            RoomSelectionObject room = Instantiate(roomPrefab.gameObject,roomTParent).GetComponent<RoomSelectionObject>();
+            RoomObject room = Instantiate(roomPrefab.gameObject,roomTParent).GetComponent<RoomObject>();
             
             room.Initialize($"GameRoom-{i + 1}", obj[i], OnRoomButtonClicked);
             instantiatedObj.Add(room);

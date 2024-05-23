@@ -22,7 +22,6 @@ public class LoadingScreen : UIMenuBase
         GameEvents.MenuEvents.TimeBasedActionRequested.Register(OnTimeBasedActionRequested);
         
         GameEvents.NetworkEvents.RoomJoinFailed.Register(OnRoomJoinFailed);
-        
         GameEvents.NetworkEvents.LobbyJoined.Register(OnCreateRoom);
 
     }
@@ -32,7 +31,6 @@ public class LoadingScreen : UIMenuBase
         GameEvents.MenuEvents.TimeBasedActionRequested.UnRegister(OnTimeBasedActionRequested);
         
         GameEvents.NetworkEvents.RoomJoinFailed.UnRegister(OnRoomJoinFailed);
-
         GameEvents.NetworkEvents.LobbyJoined.UnRegister(OnCreateRoom);
     }
 
@@ -56,8 +54,6 @@ public class LoadingScreen : UIMenuBase
     private void OnCreateRoom()
     {
         GameEvents.NetworkEvents.PlayerCharacterSelected.Raise();
-        
-       
     }
 
     private void OnServerDisconnect(RegionConfig obj)
