@@ -159,18 +159,25 @@ public class Betting : MonoBehaviour
          switch (player.lastBetAction)
          {
              case BetAction.Call:
+                 // make call to proc call here 
+
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
                  
                  player.SubCredit(_callAmount);
                  pot.AddToPot(_callAmount);
                  break;
              case BetAction.Check:
-                 
+                 // call proc check here
+
                  break;
              case BetAction.Fold:
+                 // call proc fold here
+
                  player.HasFolded = true;
                  break;
              case BetAction.Raise:
+                 // call proc raise here
+
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
                  _callAmount = _lastRaise + obj.BetAmount;
                  _lastRaise += obj.BetAmount;
@@ -187,6 +194,8 @@ public class Betting : MonoBehaviour
                  _raiseCount++;
                  break;
              case BetAction.AllIn:
+                 // proc all in? 
+                 
                  break;
          }
          

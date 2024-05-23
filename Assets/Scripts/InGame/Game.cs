@@ -130,6 +130,8 @@ public class Game : MonoBehaviour
         if(!PhotonNetwork.IsMasterClient)
             return;
         
+        // create game account /v1/game/create-account here
+        
         GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
         
         StartNextStage(GameStage.PreFlop);
@@ -138,13 +140,19 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
+        // call api to fund player accounts using ids here
+
         NetworkPlayer player1 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
         NetworkPlayer player2 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
+
+        // call api to distribute cards here
 
         foreach (var v in playerSeats.activePlayers)
             player1.DealCards(v);
         
         GameEvents.NetworkGameplayEvents.ExposePocketCardsLocally.Raise();
+        
+        // call proc bet here for small and big blind
         
         betting.BetBlinds(player1,player2);
     
