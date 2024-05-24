@@ -236,10 +236,10 @@ TextureImporter:
       name: PNG'S-05_5
       rect:
         serializedVersion: 2
-        x: 270
-        y: 283
-        width: 746
-        height: 200
+        x: 273
+        y: 291
+        width: 741
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -257,10 +257,10 @@ TextureImporter:
       name: PNG'S-05_6
       rect:
         serializedVersion: 2
-        x: 271
-        y: 31
-        width: 743
-        height: 198
+        x: 273
+        y: 35
+        width: 741
+        height: 186
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -304,7 +304,7 @@ TextureImporter:
         width: 5
         height: 245
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
