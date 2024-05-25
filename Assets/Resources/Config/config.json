@@ -1,0 +1,5 @@
+{
+    "aze_base_url": "http://127.0.0.1:8000",
+    "create_account_route": "/v1/game/create-account",
+    "create_player_route": "/v1/player/create-account"
+}
