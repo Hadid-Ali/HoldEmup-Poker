@@ -164,7 +164,7 @@ public class Game : MonoBehaviour
     private IEnumerator CreateAzeGameAccount(AccountCreationRequest request)
     {
         Debug.Log("Creating game account...");
-        string url = "http://127.0.0.1:8000/v1/game/create-account";
+        string url = Config.Instance.aze_base_url + Config.Instance.create_account_route;
         string jsonData = JsonUtility.ToJson(request);
 
         using (UnityWebRequest webRequest = new UnityWebRequest(url, "POST"))

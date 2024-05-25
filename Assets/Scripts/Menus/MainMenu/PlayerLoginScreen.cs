@@ -80,7 +80,7 @@ public class PlayerLoginScreen : UIMenuBase
     private IEnumerator CreatePlayerAccount(PlayerAccountCreationRequest request)
     {
         Debug.Log("Creating player account...");
-        string url = "http://127.0.0.1:8000/v1/player/create-account";
+        string url = Config.Instance.aze_base_url + Config.Instance.create_player_route;
         string jsonData = JsonUtility.ToJson(request);
 
         using (UnityWebRequest webRequest = new UnityWebRequest(url, "POST"))
