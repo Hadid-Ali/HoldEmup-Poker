@@ -5,6 +5,7 @@ using System.Linq;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class Game : MonoBehaviour
 {
@@ -38,6 +39,21 @@ public class Game : MonoBehaviour
     private int _boardCardExposeLength = 3;
     private int _unFoldedPlayersCount;
     private List<NetworkDataObject> playerCards = new();
+
+    [System.Serializable]
+    public class AccountCreationRequest
+    {
+        public ulong[] game_player_ids;
+        public byte big_blind;
+        public byte small_blind;
+        public byte buy_in;
+    }
+
+    [System.Serializable]
+    public class AccountCreationResponse
+    {
+        public ulong game_id;
+    }
 
     private void Awake()
     {
@@ -131,12 +147,48 @@ public class Game : MonoBehaviour
             return;
         
         // create game account /v1/game/create-account here
+        AccountCreationRequest request = new AccountCreationRequest
+        {
+            game_player_ids = new ulong[] { 273475126759447508 }, // a sample player account id
+            big_blind = 100,  
+            small_blind = 50,  
+            buy_in = 200  
+        };
+        StartCoroutine(CreateAzeGameAccount(request));
         
         GameEvents.NetworkGameplayEvents.OnUpdatePlayersView.Raise();
         
         StartNextStage(GameStage.PreFlop);
     }
 
+    private IEnumerator CreateAzeGameAccount(AccountCreationRequest request)
+    {
+        Debug.Log("Creating game account...");
+        string url = "http://127.0.0.1:8000/v1/game/create-account";
+        string jsonData = JsonUtility.ToJson(request);
+
+        using (UnityWebRequest webRequest = new UnityWebRequest(url, "POST"))
+        {
+            byte[] bodyRaw = System.Text.Encoding.UTF8.GetBytes(jsonData);
+            webRequest.uploadHandler = new UploadHandlerRaw(bodyRaw);
+            webRequest.downloadHandler = new DownloadHandlerBuffer();
+            webRequest.SetRequestHeader("Content-Type", "application/json");
+            Debug.Log("Sending request...");
+
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.result == UnityWebRequest.Result.ConnectionError || webRequest.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("Error: " + webRequest.error);
+            }
+            else
+            {
+                string responseText = webRequest.downloadHandler.text;
+                AccountCreationResponse response = JsonUtility.FromJson<AccountCreationResponse>(responseText);
+                Debug.Log("Game ID: " + response.game_id);
+            }
+        }
+    }
 
     private IEnumerator StartPreflop()
     {
