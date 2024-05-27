@@ -33,12 +33,14 @@ public class Game : MonoBehaviour
     
     private int _currentGameStageInt;
 
+    public GameStage GetCurrentStage() => (GameStage)_currentGameStageInt;
+
     private int _boardCardExposeLength = 3;
     private int _continueConsentCollected = 0;
     private int _unFoldedPlayersCount;
     private List<NetworkDataObject> playerCards = new();
 
-    private bool RoundRestartCondition => _continueConsentCollected >= playerSeats.activePlayers.Count;
+    private bool RoundRestartCondition => _continueConsentCollected >= 1;
 
     private void Awake()
     {
@@ -141,6 +143,8 @@ public class Game : MonoBehaviour
 
     private IEnumerator StartPreflop()
     {
+        _currentGameStageInt = (int)GameStage.PreFlop;
+        
         NetworkPlayer player1 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[0]);
         NetworkPlayer player2 = playerSeats.activePlayers.Find(x=>x.id == turnSequenceHandler.TurnSequence[1]);
 
@@ -165,7 +169,6 @@ public class Game : MonoBehaviour
         _boardCardExposeLength++;
         
         yield return new WaitForSeconds(_roundsIntervalSeconds);
-
         _currentGameStageInt = (int)GameStage.Flop;
         StartNextStage((GameStage) _currentGameStageInt);
     }

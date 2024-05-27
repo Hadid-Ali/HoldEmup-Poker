@@ -135,8 +135,9 @@ public class ConnectionController : MonoBehaviourPunCallbacks
         roomOptions.CustomRoomProperties= new ExitGames.Client.Photon.Hashtable() { { "C0", "1" } };
         roomOptions.CustomRoomPropertiesForLobby = new [] { "C0" };
         roomOptions.CleanupCacheOnLeave = false;
-        
-        PhotonNetwork.JoinOrCreateRoom(Guid.NewGuid().ToString(), roomOptions, TypedLobby.Default);
+
+        string guid = Guid.NewGuid().ToString();
+        PhotonNetwork.JoinOrCreateRoom(guid, roomOptions, TypedLobby.Default);
         UpdateConnectionStatus("Setting Up Room");
     }
 

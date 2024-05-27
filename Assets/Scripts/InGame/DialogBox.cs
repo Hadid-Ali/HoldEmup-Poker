@@ -1,5 +1,6 @@
 using System;
 using DG.Tweening;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,7 @@ public class DialogBox : MonoBehaviour
         button.onClick.AddListener(SomeFunction.Invoke);
         button.onClick.AddListener(OnButtonClick);
         
+        button.gameObject.SetActive(PhotonNetwork.IsMasterClient);
         
         levelWinDialog.SetActive(true);
         _group.DOFade(1, 1);

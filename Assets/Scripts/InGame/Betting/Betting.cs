@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Betting : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Betting : MonoBehaviour
     [SerializeField] private PlayerSeats playerSeats;
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     [SerializeField] private Pot pot;
+    [SerializeField] private Game game;
     
      public static Action<NetworkPlayer> PlayerStartBettingEvent;
      public static Action<BetActionInfo> PlayerEndBettingEvent;
@@ -19,8 +21,11 @@ public class Betting : MonoBehaviour
      [SerializeField] private int _callAmount;
      [SerializeField] private int _lastRaise = 0;
 
-     public int bigBlind;
-     public int smallBlind;
+     private int _bigBlind;
+     private int _smallBlind;
+
+     private NetworkPlayer _smallBlindPlayer;
+     private NetworkPlayer _bigBlindPlayer;
      
      [SerializeField] private float betTime;
      private Coroutine _turnCoroutine;
@@ -28,10 +33,24 @@ public class Betting : MonoBehaviour
      private int _betsCount;
      private int _raiseCount;
      public bool TurnsCompleted => _betsCount >= playerSeats.activePlayers.Count;
-     private bool IsTurnCallEligible => _callAmount > 0;
-     private bool IsTurnCheckEligible => _raiseCount <= 0;
-     
+     private bool isPreflop => game.GetCurrentStage() == GameStage.PreFlop;
 
+     private bool IsTurnCallEligible()
+     {
+         if (isPreflop)
+             return _bigBlindPlayer == CurrentPlayer;
+         
+         return _callAmount > 0;
+     }
+
+     private bool IsTurnCheckEligible()
+     {
+         if (isPreflop)
+             return _smallBlindPlayer != CurrentPlayer;
+         
+         return _raiseCount <= 0;
+     }  
+     
      private void Start()
      {
          PlayerStartBettingEvent += NextTurn;
@@ -52,19 +71,22 @@ public class Betting : MonoBehaviour
      }
 
      public void BetBlinds(NetworkPlayer smallBlindPlayer, NetworkPlayer bigBlindPlayer)
-     { 
-         smallBlind = smallBlindPlayer.betAmount;
-         bigBlind = smallBlind * 2;
+     {
+         _smallBlindPlayer = smallBlindPlayer;
+         _bigBlindPlayer = bigBlindPlayer;
+         
+         _smallBlind = smallBlindPlayer.betAmount;
+         _bigBlind = _smallBlind * 2;
 
-         _callAmount = bigBlind;
+         _callAmount = _bigBlind;
          _lastRaise = _callAmount;
 
          smallBlindPlayer.SetAction(BetAction.SmallBlind);
          bigBlindPlayer.SetAction(BetAction.BigBlind);
-         smallBlindPlayer.PlayerCredit.SubCredit(smallBlind);
-         bigBlindPlayer.PlayerCredit.SubCredit(bigBlind);
+         smallBlindPlayer.PlayerCredit.SubCredit(_smallBlind);
+         bigBlindPlayer.PlayerCredit.SubCredit(_bigBlind);
          
-         pot.AddToPot(bigBlind + smallBlind);
+         pot.AddToPot(_bigBlind + _smallBlind);
      }
 
      public void EndStage()
@@ -113,8 +135,8 @@ public class Betting : MonoBehaviour
              return;
          }
          
-         p.EnableAction(BetAction.Call, IsTurnCallEligible);
-         p.EnableAction(BetAction.Check, IsTurnCheckEligible);
+         p.EnableAction(BetAction.Call, IsTurnCallEligible());
+         p.EnableAction(BetAction.Check, IsTurnCheckEligible());
 
          bool canAfford = p.PlayerCredit.Credits >= Constants.Player.MaximumRaiseLimit;
          

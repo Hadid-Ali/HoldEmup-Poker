@@ -14,10 +14,18 @@ public class InsideRoom : UIMenuBase
     
     private void OnEnable()
     {
-        _button.onClick.AddListener(()=> { GameEvents.MenuEvents.MatchStartRequested.Raise();});
+        _button.onClick.AddListener(() =>
+        {
+            GameEvents.MenuEvents.MatchStartRequested.Raise();
+            _button.interactable = false;
+        });
         GameEvents.MenuEvents.PlayersListUpdated.Register(UpdatePlayerList);
         
-        GameEvents.NetworkEvents.PlayerJoinedRoom.Register((bool b)=> _button.gameObject.SetActive(b));
+        GameEvents.NetworkEvents.PlayerJoinedRoom.Register((bool b)=>
+        {
+            if(_button)
+                _button.gameObject.SetActive(b);
+        });
         GameEvents.NetworkEvents.NetworkStatus.Register(UpdateLobbyStatus);
     }
 
@@ -29,7 +37,11 @@ public class InsideRoom : UIMenuBase
     private void OnDisable()
     {
         GameEvents.MenuEvents.PlayersListUpdated.UnRegister(UpdatePlayerList);
-        GameEvents.NetworkEvents.PlayerJoinedRoom.UnRegister((bool b)=> _button.gameObject.SetActive(b));
+        GameEvents.NetworkEvents.PlayerJoinedRoom.UnRegister((bool b)=>
+        {
+            if(_button)
+                _button.gameObject.SetActive(b);
+        });
         GameEvents.NetworkEvents.NetworkStatus.UnRegister(UpdateLobbyStatus);
     }
 

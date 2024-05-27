@@ -1,8 +1,6 @@
 using System;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public enum BetAction
 {
@@ -20,6 +18,8 @@ public class NetworkPlayer : MonoBehaviourPun
     [field: SerializeField] public PhotonView PhotonView {private set; get; }
     [field: SerializeField] public PlayerCards PlayerCards{ private set; get; }
     [field: SerializeField] public PlayerCredit PlayerCredit{private set; get; }
+
+    private string _guID;
 
     private bool _hasFolded;
     public bool hasFolded
@@ -54,7 +54,12 @@ public class NetworkPlayer : MonoBehaviourPun
     }
 
     private void Start() => Invoke(nameof(OnNetworkSpawn), 1.5f);
-    public void OnNetworkSpawn() => OnPlayerSpawn?.Invoke(this);
+
+    public void OnNetworkSpawn()
+    {
+        _guID = Guid.NewGuid().ToString();
+        OnPlayerSpawn?.Invoke(this);
+    } 
     public void SyncInformationGlobally() => 
         PhotonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
 
@@ -150,6 +155,16 @@ public class NetworkPlayer : MonoBehaviourPun
         
         GameEvents.NetworkPlayerEvents.OnPlayerActionPop.Raise(id,lastBetAction.ToString());
         PhotonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
+
+        ActionReport newActionReport = new ActionReport()
+        {
+            PlayerID = _guID,
+            MatchID = PhotonNetwork.CurrentRoom.Name,
+            BetAction = lastBetAction.ToString(),
+            BetAmount = _betAmount
+        };
+        
+        GameEvents.NetworkEvents.OnPlayerBetAction.Raise(newActionReport);
     }
 
     [PunRPC]
