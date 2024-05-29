@@ -12,6 +12,7 @@ public class TrackableEvents : MonoBehaviour
     private void OnPlayerAction(ActionReport obj)
     {
         OnActionReport?.Invoke(obj);
+        string yo = JsonUtility.ToJson(obj);
         
         print($"Action Report : \n {obj.PlayerID} \n {obj.MatchID} \n {obj.BetAction} \n {obj.BetAmount}");
     }
