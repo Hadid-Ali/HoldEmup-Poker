@@ -8,9 +8,9 @@ public class ActionReport
 
     public override string ToString()
     {
-        return $"Player ID : {PlayerID} \n " +
-               $"Match ID : {MatchID} \n" +
-               $"BetAction ID : {BetAction} \n" +
-               $"BetAmount : {BetAmount} \n";
+        return $"Player ID : {PlayerID}, " +
+               $"Match ID : {MatchID}," +
+               $"BetAction ID : {BetAction}," +
+               $"BetAmount : {BetAmount},";
     }
 }

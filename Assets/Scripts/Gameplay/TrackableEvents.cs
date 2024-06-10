@@ -1,9 +1,11 @@
 using UnityEngine;
 
 public delegate void OnPlayerActionReport(ActionReport actionReport);
+public delegate void OnPlayerActionReportAPICallBack(string actionReport);
 public class TrackableEvents : MonoBehaviour
 {
     public static OnPlayerActionReport OnActionReport;
+    public static OnPlayerActionReportAPICallBack OnActionReportAPICallBack;
     
     private void Awake() => GameEvents.NetworkEvents.OnPlayerBetAction.Register(OnPlayerAction);
 
@@ -11,8 +13,9 @@ public class TrackableEvents : MonoBehaviour
 
     private void OnPlayerAction(ActionReport obj)
     {
-        OnActionReport?.Invoke(obj);
         string yo = JsonUtility.ToJson(obj);
+        OnActionReport?.Invoke(obj);
+        OnActionReportAPICallBack?.Invoke(yo);
         
         print($"Action Report : \n {obj.PlayerID} \n {obj.MatchID} \n {obj.BetAction} \n {obj.BetAmount}");
     }

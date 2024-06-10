@@ -17,3 +17,4 @@ public partial class NetworkManager : MonobehaviourSingleton<NetworkManager>
         GameEvents.NetworkEvents.NetworkStatus.Raise(status);
     }
 }
+
