@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ConnectionControllerView : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI m_MatchStartTimerComponent;
+    //[SerializeField] private TextMeshProUGUI m_MatchStartTimerComponent;
     
     private GameEvent<string> m_OnLogin = new();
     private GameEvent<Region> m_OnRegionSelect = new();

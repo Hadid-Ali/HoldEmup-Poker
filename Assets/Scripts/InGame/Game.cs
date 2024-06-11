@@ -14,6 +14,7 @@ public class Game : MonoBehaviour
     [SerializeField] private Pot pot;
     [SerializeField] private TurnSequenceHandler turnSequenceHandler;
     [SerializeField] private BoardCards boardCards;
+    [SerializeField] private DialogBox box;
     
     public event Action<GameStage> GameStageBeganEvent;
     public event Action<GameStage> GameStageOverEvent;
@@ -29,7 +30,6 @@ public class Game : MonoBehaviour
     private bool StartCondition =>  playerSeats.activePlayers.Count >= 2;
     
     [SerializeField] private float _roundsIntervalSeconds;
-    //[SerializeField] private float _showdownEndTimeSeconds;
     
     private int _currentGameStageInt;
 
@@ -155,10 +155,18 @@ public class Game : MonoBehaviour
 
 
         betting.BetBlinds(player1,player2);
-    
+
+        int bokenPlayers = playerSeats.activePlayers.Count;
         foreach (var v in playerSeats.activePlayers)
+        {
             v.hasFolded = v.PlayerCredit.IsBroke; //Disable the broke player
-        
+            if (v.PlayerCredit.IsBroke)
+                bokenPlayers--;
+        }
+        if(bokenPlayers <= 1)
+            photonView.RPC(nameof(EndGameForAll), RpcTarget.All);
+
+
         betting.StartTurn(0);
         
         yield return new WaitUntil(()=> betting.TurnsCompleted);
@@ -198,8 +206,6 @@ public class Game : MonoBehaviour
     {
         IEnumerable<NetworkPlayer> validPlayers = playerSeats.activePlayers.Where(x => !x.hasFolded);
         var networkPlayers = validPlayers as NetworkPlayer[] ?? validPlayers.ToArray();
-        
-        Debug.Log($"Valid turns : {networkPlayers.Count()}");
 
         return networkPlayers.Count() == 1;
     }
@@ -281,6 +287,12 @@ public class Game : MonoBehaviour
             v.hasFolded = false;
         
         StartCoroutine(Start());
+    }
+
+    [PunRPC]
+    private void EndGameForAll()
+    {
+        box.Initialize("Match can't start, Players are broke", PhotonNetwork.Disconnect);
     }
 
     [PunRPC]

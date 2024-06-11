@@ -19,7 +19,7 @@ public class Betting : MonoBehaviour
      private NetworkPlayer LastBetRaiser { get; set; }
 
      [SerializeField] private int _callAmount;
-     [SerializeField] private int _lastRaise = 0;
+     [SerializeField] private int _totalRaise = 0;
 
      private int _bigBlind;
      private int _smallBlind;
@@ -33,21 +33,22 @@ public class Betting : MonoBehaviour
      private int _betsCount;
      private int _raiseCount;
      public bool TurnsCompleted => _betsCount >= playerSeats.activePlayers.Count;
-     private bool isPreflop => game.GetCurrentStage() == GameStage.PreFlop;
+     private bool IsPreflop => game.GetCurrentStage() == GameStage.PreFlop;
 
      private bool IsTurnCallEligible()
      {
-         if (isPreflop)
-             return _bigBlindPlayer == CurrentPlayer;
+         if (IsPreflop)
+             return _bigBlindPlayer != CurrentPlayer;
          
          return _callAmount > 0;
      }
 
      private bool IsTurnCheckEligible()
      {
-         if (isPreflop)
+         if (IsPreflop)
              return _smallBlindPlayer != CurrentPlayer;
          
+         print($"Check should work : {_raiseCount <= 0}");
          return _raiseCount <= 0;
      }  
      
@@ -75,11 +76,11 @@ public class Betting : MonoBehaviour
          _smallBlindPlayer = smallBlindPlayer;
          _bigBlindPlayer = bigBlindPlayer;
          
-         _smallBlind = smallBlindPlayer.betAmount;
+         _smallBlind = Constants.Player.SmallBlindAmount;
          _bigBlind = _smallBlind * 2;
 
          _callAmount = _bigBlind;
-         _lastRaise = _callAmount;
+         _totalRaise = _callAmount;
 
          smallBlindPlayer.SetAction(BetAction.SmallBlind);
          bigBlindPlayer.SetAction(BetAction.BigBlind);
@@ -101,9 +102,11 @@ public class Betting : MonoBehaviour
          
          turnSequenceHandler.CurrentTurnIndex = 0;
          LastBetRaiser = null;
+         _smallBlind = Constants.Player.SmallBlindAmount;
+         _bigBlind = 0;
          _raiseCount = 0;
          _betsCount = 0;
-         _lastRaise = 0;
+         _totalRaise = 0;
          _callAmount = 0;
      }
      private void OnBetEnd(BetActionInfo obj)
@@ -134,6 +137,7 @@ public class Betting : MonoBehaviour
              SkipTurn();
              return;
          }
+         CurrentPlayer = p;
          
          p.EnableAction(BetAction.Call, IsTurnCallEligible());
          p.EnableAction(BetAction.Check, IsTurnCheckEligible());
@@ -141,13 +145,15 @@ public class Betting : MonoBehaviour
          bool canAfford = p.PlayerCredit.Credits >= Constants.Player.MaximumRaiseLimit;
          
          int maxAmount = canAfford ? Constants.Player.MaximumRaiseLimit : p.PlayerCredit.Credits;
-         int minAmount = canAfford ? _lastRaise : maxAmount; 
+         int minAmount = canAfford ? _callAmount: maxAmount;
+         
+         if (minAmount < Constants.Player.MinimumRaiseLimit)
+             minAmount = Constants.Player.MinimumRaiseLimit;
          
          turnSequenceHandler.CurrentTurnIndex++;
          
          _turnCoroutine = StartCoroutine(TurnWaitCoroutine());
          
-         CurrentPlayer = p;
          
          if (_raiseCount > 0 && LastBetRaiser == p && !TurnsCompleted)
          {
@@ -194,14 +200,14 @@ public class Betting : MonoBehaviour
      
      public void Bet(NetworkPlayer player, BetActionInfo obj)
      {
-         bool canAfford = player.PlayerCredit.Credits >= 150;
+         bool canAfford = player.PlayerCredit.Credits >= Constants.Player.MaximumRaiseLimit;
          switch (player.lastBetAction)
          {
              case BetAction.Call:
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
-                 
-                 player.PlayerCredit.SubCredit(_callAmount);
-                 pot.AddToPot(_callAmount);
+                 int calculatedAmount1 = canAfford ? _callAmount : player.PlayerCredit.Credits;
+                 player.PlayerCredit.SubCredit(calculatedAmount1);
+                 pot.AddToPot(calculatedAmount1);
                  break;
              case BetAction.Check:
                  
@@ -211,11 +217,14 @@ public class Betting : MonoBehaviour
                  break;
              case BetAction.Raise:
                  player.lastBetAction = canAfford? obj.BetAction : BetAction.AllIn;
-                 _callAmount = _lastRaise + obj.BetAmount;
-                 _lastRaise += obj.BetAmount;
+                 int _raiseAmount = obj.BetAmount;
                  
-                 player.PlayerCredit.SubCredit(_callAmount);
-                 pot.AddToPot(_callAmount);
+                 _callAmount = _raiseAmount;
+                 _totalRaise += _raiseAmount;
+
+                 int calculatedAmount2 = canAfford ? _totalRaise : player.PlayerCredit.Credits;
+                 player.PlayerCredit.SubCredit(calculatedAmount2);
+                 pot.AddToPot(calculatedAmount2);
 
                  if (_raiseCount <= 0)
                  {

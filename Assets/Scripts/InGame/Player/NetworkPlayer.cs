@@ -15,9 +15,9 @@ public enum BetAction
 }
 public class NetworkPlayer : MonoBehaviourPun
 {
-    [field: SerializeField] public PhotonView PhotonView {private set; get; }
-    [field: SerializeField] public PlayerCards PlayerCards{ private set; get; }
-    [field: SerializeField] public PlayerCredit PlayerCredit{private set; get; }
+    [field: SerializeField] public PhotonView PhotonView;
+    [field: SerializeField] public PlayerCards PlayerCards;
+    [field: SerializeField] public PlayerCredit PlayerCredit;
 
     private string _guID;
 
@@ -46,6 +46,10 @@ public class NetworkPlayer : MonoBehaviourPun
     private void Awake()
     {
         GamePlayButtons.OnPlayerActionSubmit += OnActionSubmit;
+
+        PhotonView ??= GetComponent<PhotonView>();
+        PlayerCards ??= GetComponent<PlayerCards>();
+        PlayerCredit ??= GetComponent<PlayerCredit>();
     }
 
     private void OnDestroy()

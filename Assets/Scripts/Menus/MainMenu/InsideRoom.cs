@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -54,14 +55,8 @@ public class InsideRoom : UIMenuBase
     
     private void UpdatePlayerList(List<string> Players)
     {
-        print($"Function working");
-        string players = String.Empty;
+        var players = Players.Aggregate(String.Empty, (current, v) => current + $"\n {v}");
 
-        foreach (var v in Players)
-        {
-            players += $"\n {v}";
-            print($"{v}");
-        }
         textMeshPro.text = $"Players Joined : {players}";
 
         button.interactable = Players.Count > 1;

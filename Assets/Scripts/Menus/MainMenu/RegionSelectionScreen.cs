@@ -40,7 +40,6 @@ public class RegionSelectionScreen : UIMenuBase
     private void OnDropDownSelectionEvent(int index)
     {
         m_SelectedRegion = m_Regions[index];
-        Debug.LogError($"Select Region {m_SelectedRegion}");
     }
 
     public void OnRegionsDataReceived(RegionConfig regionConfig)

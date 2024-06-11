@@ -6,6 +6,8 @@ public abstract class Constants
     {
         public const int PocketCardLimit = 2;
         public const int MaximumRaiseLimit = 150;
+        public const int SmallBlindAmount = 2;
+        public const int MinimumRaiseLimit = 2;
     }
     public abstract class SceneNames
     {
