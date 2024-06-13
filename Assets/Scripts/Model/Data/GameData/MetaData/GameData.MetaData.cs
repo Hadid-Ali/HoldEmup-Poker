@@ -27,5 +27,6 @@ public static partial class GameData
 
         public const string PrivacyPolicyLink = "https://triplehandpoker.com/privacy-policy/";
         public const string TermsOfUsageLink = "https://triplehandpoker.com/terms-and-conditions/";
+        public const string Login = "Login";
     }
 }

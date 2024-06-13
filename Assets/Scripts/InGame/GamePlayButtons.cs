@@ -26,7 +26,7 @@ public class GamePlayButtons : MonoBehaviour
 
     private void OnOkButtonClick()
     {
-        raiseSlider.gameObject.SetActive(false);
+        raiseSlider.transform.parent.gameObject.SetActive(false);
         
         int betAmount = (int) raiseSlider.value ;
         OnPlayerActionSubmit.Invoke(_lastAction, betAmount);
@@ -37,7 +37,7 @@ public class GamePlayButtons : MonoBehaviour
         _lastAction = obj;
         if (obj == BetAction.Raise)
         {
-            raiseSlider.gameObject.SetActive(true);
+            raiseSlider.transform.parent.gameObject.SetActive(true);
             return;
         }
         int betAmount = 0;

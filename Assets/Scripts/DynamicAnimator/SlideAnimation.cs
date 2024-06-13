@@ -17,9 +17,12 @@ public class SlideAnimation : MonoBehaviour
     [SerializeField] private bool animateOnEnable;
 
     private RectTransform rect;
-    private void Awake()
+    public void Awake()
     {
         rect = GetComponent<RectTransform>();
+        
+        if(!animateOnEnable)
+            Setup();
     }
 
     private void OnEnable()
@@ -33,7 +36,6 @@ public class SlideAnimation : MonoBehaviour
 
     public void Slide()
     {
-        Setup();
         PlaySlide();
     }
 
@@ -47,21 +49,21 @@ public class SlideAnimation : MonoBehaviour
         switch (direction)
         {
             case SlideDirection.Top:
-                offsetPosition.y = Screen.height/2 + rect.rect.height;
+                offsetPosition.y = Screen.height + rect.rect.height;
                 transform.localPosition = offsetPosition;
                 break;
             case SlideDirection.Left:
-                offsetPosition.x = -Screen.width * 2 - rect.rect.width;
+                offsetPosition.x = -Screen.width - rect.rect.width;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Bottom:
-                offsetPosition.y = -Screen.height/2 - rect.rect.height;
+                offsetPosition.y = -Screen.height - rect.rect.height;
                 transform.localPosition = offsetPosition;
 
                 break;
             case SlideDirection.Right:
-                offsetPosition.x = Screen.width * 2 + rect.rect.width;
+                offsetPosition.x = Screen.width + rect.rect.width;
                 transform.localPosition = offsetPosition;
                 break;
             default:

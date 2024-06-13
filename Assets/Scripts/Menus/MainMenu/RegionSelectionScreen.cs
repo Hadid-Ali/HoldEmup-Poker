@@ -1,10 +1,6 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using Photon.Realtime;
 using TMPro;
-using UnityAtoms;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -33,18 +29,17 @@ public class RegionSelectionScreen : UIMenuBase
 
     private void OnEnable()
     {
-        GameEvents.NetworkEvents.OnServerConnected.Register(OnRegionsDataReceived);
+        GameEvents.NetworkEvents.ConnectionTransition.Register(OnRegionsDataReceived);
     }
 
     private void OnDisable()
     {
-        GameEvents.NetworkEvents.OnServerConnected.UnRegister(OnRegionsDataReceived);
+        GameEvents.NetworkEvents.ConnectionTransition.UnRegister(OnRegionsDataReceived);
     }
 
     private void OnDropDownSelectionEvent(int index)
     {
         m_SelectedRegion = m_Regions[index];
-        Debug.LogError($"Select Region {m_SelectedRegion}");
     }
 
     public void OnRegionsDataReceived(RegionConfig regionConfig)
@@ -83,7 +78,7 @@ public class RegionSelectionScreen : UIMenuBase
             OnDropDownSelectionEvent(0);
         }
 
-        GameEvents.NetworkEvents.OnRegionSelect.Raise(m_SelectedRegion);
+        GameEvents.NetworkEvents.PlayerRegionSelect.Raise(m_SelectedRegion);
         ChangeMenuState(MenuName.ConnectionScreen);
     }
 }

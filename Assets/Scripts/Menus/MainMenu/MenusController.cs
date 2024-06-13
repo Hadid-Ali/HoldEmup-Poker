@@ -17,12 +17,12 @@ public abstract class MenusController : MonoBehaviour
 
     protected virtual void OnEnable()
     {
-        GameEvents.MenuEvents.MenuTransitionEvent.Register(OnMenuTransition);
+        GameEvents.MenuEvents.MenuTransition.Register(OnMenuTransition);
     }
 
     protected virtual  void OnDisable()
     {
-        GameEvents.MenuEvents.MenuTransitionEvent.UnRegister(OnMenuTransition);
+        GameEvents.MenuEvents.MenuTransition.UnRegister(OnMenuTransition);
     }
     
     protected void SetMenuState(MenuName menuName)

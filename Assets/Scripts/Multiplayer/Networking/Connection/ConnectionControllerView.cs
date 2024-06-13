@@ -1,40 +1,72 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Realtime;
-using UnityAtoms.BaseAtoms;
+using TMPro;
 using UnityEngine;
 
 public class ConnectionControllerView : MonoBehaviour
 {
-    [SerializeField] private ConnectionController m_ConnectionController;
+    //[SerializeField] private TextMeshProUGUI m_MatchStartTimerComponent;
+    
+    private GameEvent<string> m_OnLogin = new();
+    private GameEvent<Region> m_OnRegionSelect = new();
+    private GameEvent<RoomOptions> m_OnCreateRoom = new();
+    private GameEvent m_OnCharacterSelected = new();
 
     private void OnEnable()
     {
-        GameEvents.MenuEvents.LoginAtMenuEvent.Register(OnLogin);
-        GameEvents.NetworkEvents.OnRegionSelect.Register(OnRegionSelection);
-        GameEvents.NetworkEvents.OnRoomSelect.Register(OnCreateRoom);
+        GameEvents.NetworkEvents.PlayerLogin.Register(OnLogin);
+        GameEvents.NetworkEvents.PlayerRegionSelect.Register(OnRegionSelection);
+        GameEvents.NetworkEvents.PlayerRoomCreation.Register(OnCreateRoom);
+        GameEvents.NetworkEvents.PlayerCharacterSelected.Register(OnPlayerCharacterSelected);
     }
 
     private void OnDisable()
     {
-        GameEvents.MenuEvents.LoginAtMenuEvent.UnRegister(OnLogin);
-        GameEvents.NetworkEvents.OnRegionSelect.UnRegister(OnRegionSelection);
-        GameEvents.NetworkEvents.OnRoomSelect.UnRegister(OnCreateRoom);
+        GameEvents.NetworkEvents.PlayerLogin.UnRegister(OnLogin);
+        GameEvents.NetworkEvents.PlayerRegionSelect.UnRegister(OnRegionSelection);
+        GameEvents.NetworkEvents.PlayerRoomCreation.UnRegister(OnCreateRoom);
+        GameEvents.NetworkEvents.PlayerCharacterSelected.UnRegister(OnPlayerCharacterSelected);
+    }
+    
+    public void Initialize(Action<string> onLogin, Action<Region> onRegionSelect, Action<RoomOptions> onCreateRoom,
+        Action onCharacterSelect)
+    {
+        m_OnLogin.Register(onLogin);
+        m_OnRegionSelect.Register(onRegionSelect);
+        m_OnCreateRoom.Register(onCreateRoom);
+        m_OnCharacterSelected.Register(onCharacterSelect);
+    }
+
+    public void SetTimerStatus(string timer)
+    {
+        // if (!m_MatchStartTimerComponent.gameObject.activeSelf)
+        //     m_MatchStartTimerComponent.gameObject.SetActive(true);
+        //
+        // m_MatchStartTimerComponent.text = timer;
+    }
+
+    public void HideTimer()
+    {
+      //  m_MatchStartTimerComponent.gameObject.SetActive(false);
     }
 
     private void OnLogin(string userName)
     {
-        m_ConnectionController.StartConnectionWithName(userName);
+        m_OnLogin.Raise(userName);
     }
 
     private void OnRegionSelection(Region region)
     {
-        m_ConnectionController.OnRegionSelect(region);
+        m_OnRegionSelect.Raise(region);
     }
 
     private void OnCreateRoom(RoomOptions roomOptions)
     {
-        m_ConnectionController.CreateRoom(roomOptions);
+        m_OnCreateRoom.Raise(roomOptions);
+    }
+
+    private void OnPlayerCharacterSelected()
+    {
+        m_OnCharacterSelected.Raise();
     }
 }

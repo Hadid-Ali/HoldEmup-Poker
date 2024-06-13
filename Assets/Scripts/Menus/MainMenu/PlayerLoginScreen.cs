@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +32,7 @@ public class PlayerLoginScreen : UIMenuBase
 
     private void CheckForPreviousLogin()
     {
-        if (GameData.RuntimeData.IS_LOGGED_IN)
+        if (PlayerPrefs.HasKey(GameData.MetaData.Login))
         {
             LoginInternal();
         }
@@ -45,15 +41,14 @@ public class PlayerLoginScreen : UIMenuBase
     public void OnLoginBtnEvent()
     {
         string userName = m_InputField.text;
-        
-        GameData.RuntimeData.USER_NAME = userName;
-        GameData.RuntimeData.IS_LOGGED_IN = true;
+
+        PlayerPrefs.SetString(GameData.MetaData.Login, userName);
         LoginInternal();
     }
 
     private void LoginInternal()
     {
-        GameEvents.MenuEvents.LoginAtMenuEvent.Raise(GameData.RuntimeData.USER_NAME);
+        GameEvents.NetworkEvents.PlayerLogin.Raise(PlayerPrefs.GetString(GameData.MetaData.Login));
         ChangeMenuState(MenuName.ConnectionScreen);
     }
 

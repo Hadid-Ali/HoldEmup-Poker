@@ -12,15 +12,26 @@ public static partial class GameEvents
         public static readonly GameEvent <List<NetworkDataObject>, List<PlayerScoreObject>> PlayerScoresReceived = new();
         public static readonly GameEvent <PlayerController> PlayerJoinedGame = new();
         public static readonly GameEvent <List<int>,bool> MatchWinnersAnnounced = new();
- 
-        public static readonly GameEvent ExposePocketCardsLocally = new();
-        public static readonly GameEvent <CardData, CardData> OnPocketCardsView = new();
+        
         public static readonly GameEvent <CardData[]> OnBoardCardsView = new();
         public static readonly GameEvent <int, int> OnPlayerWin = new();
         public static readonly GameEvent  OnBoardCardsViewReset = new();
         public static readonly GameEvent  OnAllPlayersSeated = new();
-        public static readonly GameEvent OnUpdatePlayersView = new();
         public static readonly GameEvent OnRoundEnd = new();
+        public static readonly GameEvent OnContinueConsentCollected = new();
+
+    }
+
+    public static class NetworkPlayerEvents
+    {
+        public static readonly GameEvent<int, bool> OnPlayerTurn = new();
+        public static readonly GameEvent<int, int> OnPlayerCreditsChanged = new();
+        public static readonly GameEvent<int, string> OnPlayerActionPop = new();
         
+        public static readonly GameEvent<List<CardData>> ExposePocketCardsLocally = new();
+
+        public static GameEvent<int, int> OnSetPlayerRaiseLimits = new();
+        public static GameEvent OnPlayerDisconnected = new();
+
     }
 }

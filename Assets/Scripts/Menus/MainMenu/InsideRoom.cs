@@ -1,44 +1,68 @@
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Photon.Pun;
-using Photon.Realtime;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class InsideRoom : UIMenuBase
 {
-    [SerializeField] private TextMeshProUGUI _textMeshPro;
-    [SerializeField] private Button _button;
-
-    private void Awake()
+    [SerializeField] private TextMeshProUGUI textMeshPro;
+    [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private Button button;
+    
+    private void OnEnable()
     {
-        GameEvents.NetworkEvents.OnRoomJoined.Register(AddPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.Register(AddPlayer);
-            
-        _button.onClick.AddListener(()=> { GameEvents.NetworkEvents.OnStartMatch.Raise();});
+        button.onClick.AddListener(OnStartMatchClicked);
+        GameEvents.MenuEvents.PlayersListUpdated.Register(UpdatePlayerList);
+        GameEvents.NetworkEvents.PlayerJoinedRoom.Register(OnPlayerJoinRoom);
+        GameEvents.NetworkEvents.NetworkStatus.Register(UpdateLobbyStatus);
     }
+    private void OnDisable()
+    {
+        GameEvents.MenuEvents.PlayersListUpdated.UnRegister(UpdatePlayerList);
+        GameEvents.NetworkEvents.PlayerJoinedRoom.UnRegister(OnPlayerJoinRoom);
+        GameEvents.NetworkEvents.NetworkStatus.UnRegister(UpdateLobbyStatus);
+    }
+
+    private void UpdateLobbyStatus(string obj)
+    {
+        statusText.SetText(obj);
+    }
+
+    private void OnPlayerJoinRoom(bool val)
+    {
+        if(button)
+            button.gameObject.SetActive(val);
+    }
+
+    private void OnStartMatchClicked()
+    {
+        GameEvents.MenuEvents.MatchStartRequested.Raise();
+        button.interactable = false;
+    }
+
 
     private void OnValidate()
     {
         if(!PhotonNetwork.IsMasterClient)
             return;
         
-        _button.interactable = PhotonNetwork.PlayerList.Length > 1;
-    }
-
-    private void OnDestroy()
-    {
-        GameEvents.NetworkEvents.OnRoomJoined.UnRegister(AddPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.UnRegister(AddPlayer);
+        button.interactable = PhotonNetwork.PlayerList.Length > 1;
     }
     
-    private void AddPlayer()
+    private void UpdatePlayerList(List<string> Players)
     {
-        _button.gameObject.SetActive(PhotonNetwork.IsMasterClient);
-        Player[] playersA = PhotonNetwork.PlayerList;
-        _textMeshPro.text = $"Players Joined : {playersA.Length}";
+        var players = Players.Aggregate(String.Empty, (current, v) => current + $"\n {v}");
 
-        _button.interactable = playersA.Length > 1;
+        textMeshPro.text = $"Players Joined : {players}";
+
+        button.interactable = Players.Count > 1;
+        
+        statusText.gameObject.SetActive(!PhotonNetwork.IsMasterClient);
     }
 }
+
+

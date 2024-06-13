@@ -2,6 +2,13 @@ using System.Collections.Generic;
 
 public abstract class Constants
 {
+    public abstract class Player
+    {
+        public const int PocketCardLimit = 2;
+        public const int MaximumRaiseLimit = 150;
+        public const int SmallBlindAmount = 2;
+        public const int MinimumRaiseLimit = 2;
+    }
     public abstract class SceneNames
     {
         public const string Menu = "Menu";

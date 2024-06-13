@@ -1,47 +1,64 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Photon.Pun;
 using Photon.Realtime;
 using UnityEngine;
 
 public class ConnectionController : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private NetworkSceneManager sceneManager;
+    [SerializeField] private ConnectionControllerView m_ControllerView;
+    [SerializeField] private int m_PlayersCount = 2;
+    [SerializeField] private PhotonView m_PhotonView;
+
+    private TypedLobby customLobby = new("gameLobby", LobbyType.SqlLobby);
+    string sqlLobbyFilter = "C0 = '1'";
+    
     private RegionHandler m_RegionHandler;
+
+    private int m_RequiredPlayersCount = 2;
+    private List<RoomInfo> m_Rooms = new();
     
     private bool m_IsTestConnection = true;
-    private bool m_CanReconnect = false;
+    private bool m_IsJoiningRoom = false;
+
+    private void Start()
+    {
+        m_ControllerView.Initialize(StartConnectionWithName, OnRegionSelect, CreateRoom, OnCheckForRoomJoining);
+    }
 
     public override void OnEnable()
     {
         base.OnEnable();
-        GameEvents.GameFlowEvents.RoundStart.Register(OnRoundStart);
-        GameEvents.GameFlowEvents.MatchOver.Register(OnMatchOver);
+        GameEvents.MenuEvents.MatchStartRequested.Register(StartMatchTimer);
+        GameEvents.MenuEvents.RoomJoinRequested.Register(OnRoomJoinRequested);
     }
 
     public override void OnDisable()
     {
         base.OnDisable();
-        GameEvents.GameFlowEvents.RoundStart.UnRegister(OnRoundStart);
-        GameEvents.GameFlowEvents.MatchOver.UnRegister(OnMatchOver);
+        GameEvents.MenuEvents.MatchStartRequested.UnRegister(StartMatchTimer);
+        GameEvents.MenuEvents.RoomJoinRequested.UnRegister(OnRoomJoinRequested);
     }
 
-    private void OnRoundStart()
+    private void OnCheckForRoomJoining()
     {
-        m_CanReconnect = true;
+        m_IsJoiningRoom = true;
+        
+        TypedLobby typedLobby = new TypedLobby(PhotonNetwork.CurrentLobby.Name, LobbyType.SqlLobby);
+        PhotonNetwork.GetCustomRoomList(typedLobby, sqlLobbyFilter);
     }
-
-    private void OnMatchOver()
+    
+    private void OnRoomJoinRequested(string roomName)
     {
-        m_CanReconnect = false;
-        m_IsTestConnection = true;
-        GameData.SessionData.CurrentRoomPlayersCount = 0;
+        PhotonNetwork.JoinRoom(roomName);
+        UpdateConnectionStatus("Joining Room...");
     }
     
     private void UpdateConnectionStatus(string status)
     {
-        GameEvents.MenuEvents.NetworkStatusUpdated.Raise(status);
+        NetworkManager.Instance.SetStatus(status);
     }
 
     private void OnDestroy()
@@ -58,42 +75,41 @@ public class ConnectionController : MonoBehaviourPunCallbacks
     public override void OnDisconnected(DisconnectCause cause)
     {
         base.OnDisconnected(cause);
-
-        if (!m_CanReconnect)
-            return;
-        
-        GameEvents.NetworkEvents.NetworkDisconnectedEvent.Raise();
-        PhotonNetwork.ReconnectAndRejoin();
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Raise();
+        Debug.LogError($"{cause}");
     }
 
     private void ConnectToServer()
     {
-        UpdateConnectionStatus("\t\tConnecting...");
+        UpdateConnectionStatus("Connecting...");
         PhotonNetwork.ConnectUsingSettings();
+        
+        print("Connected To  Server");
     }
 
     public override void OnConnectedToMaster()
     {
         if (m_IsTestConnection)
         {
-            UpdateConnectionStatus("Finding Best Regions to Connect...");
+            UpdateConnectionStatus("Connected to Server, Finding Best Regions to Connect");
             Invoke(nameof(OnRegionsPingCompleted), 1f);
         }
         else
         {
-            PhotonNetwork.JoinLobby();
+            PhotonNetwork.JoinLobby(customLobby);
         }
+        print("Connected To Master Server");
     }
 
     public override void OnRegionListReceived(RegionHandler regionHandler)
     {
         m_RegionHandler = regionHandler;
     }
-
+    
     private void OnRegionsPingCompleted()
     {
         List<Region> regions = m_RegionHandler.EnabledRegions;
-        GameEvents.NetworkEvents.OnServerConnected.Raise(new RegionConfig()
+        GameEvents.NetworkEvents.ConnectionTransition.Raise(new RegionConfig()
         {
             Availableregions = regions,
             BestRegion = m_RegionHandler.BestRegion
@@ -102,73 +118,153 @@ public class ConnectionController : MonoBehaviourPunCallbacks
 
     public void OnRegionSelect(Region region)
     {
-        Disconnect();
+        PhotonNetwork.Disconnect();
         m_IsTestConnection = false;
+
         string regionCode = region.Code;
         PhotonNetwork.ConnectToRegion(regionCode);
-        
-        UpdateConnectionStatus(
-            $"Connected To {NetworkManager.Instance.RegionsRegistry.GetRegionName(regionCode)}, Finding Lobby...");
-    }
 
+        UpdateConnectionStatus(
+            $"Connected To {NetworkManager.Instance.RegionsRegistry.GetRegionName(regionCode)}, Finding Lobby");
+        print($"Region : {regionCode} Flow");
+    }
+    
     public void CreateRoom(RoomOptions roomOptions)
     {
-        PhotonNetwork.JoinOrCreateRoom(Guid.NewGuid().ToString(), roomOptions, TypedLobby.Default);
-        StartCoroutine(NotifyPlayerJoined_Routine());
+        m_RequiredPlayersCount = roomOptions.MaxPlayers;
+        roomOptions.CustomRoomProperties= new ExitGames.Client.Photon.Hashtable() { { "C0", "1" } };
+        roomOptions.CustomRoomPropertiesForLobby = new [] { "C0" };
+        roomOptions.CleanupCacheOnLeave = false;
+
+        string guid = Guid.NewGuid().ToString();
+        PhotonNetwork.JoinOrCreateRoom(guid, roomOptions, TypedLobby.Default);
+        UpdateConnectionStatus("Setting Up Room");
     }
 
-    IEnumerator NotifyPlayerJoined_Routine()
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        yield return new WaitForSeconds(GameData.MetaData.WaitBeforePlayerJoinNotify);
+        base.OnRoomListUpdate(roomList);
+
+        if (!m_IsJoiningRoom)
+            return;
+        
+        OnRoomsReceivedInternal(roomList);
     }
 
-    public virtual void OnCreateRoomFailed(short returnCode, string message)
+    private void OnRoomsReceivedInternal(List<RoomInfo> roomList)
     {
-    }    
-    
+        Debug.LogError("Rooms Recieved");
+        if (!roomList.Any())
+        {
+            GameEvents.NetworkEvents.RoomJoinFailed.Raise();
+            return;
+        }
+        
+        List<string> rooms = new();
+        
+        foreach (var roomInfo in roomList)
+        {
+            if (roomInfo.IsOpen)
+            {
+                rooms.Add(roomInfo.Name);   
+            }
+        }
+        GameEvents.MenuEvents.RoomsListUpdated.Raise(rooms);
+        GameEvents.MenuEvents.MenuTransition.Raise(MenuName.RoomSelection);
+    }
+
     public override void OnJoinedLobby()
     {
-        UpdateConnectionStatus("\t\tFinding Match...");
-        PhotonNetwork.JoinRandomRoom();
+        GameEvents.NetworkEvents.LobbyJoined.Raise();
+        
     }
 
-    public override void OnJoinRandomFailed(short returnCode, string message)
+    public void RequestRandomRoomJoin()
     {
-        base.OnJoinRandomFailed(returnCode, message);
-        
-        PhotonNetwork.CreateRoom(null, new RoomOptions());
-        UpdateConnectionStatus("\t Setting Up Game...");
+        UpdateConnectionStatus("Joined Lobby, Finding Match");
+        PhotonNetwork.JoinRandomRoom();
     }
 
     public override void OnJoinedRoom()
     {
         base.OnJoinedRoom();
-        UpdateConnectionStatus($"\t Waiting For Others...");
+        UpdateConnectionStatus($"Match Found,Waiting For Others");
+
+        GameEvents.MenuEvents.MenuTransition.Raise(MenuName.InsideRoom);
+        GameEvents.NetworkEvents.PlayerJoinedRoom.Raise(PhotonNetwork.IsMasterClient);
+
+        UpdatePlayersList();
+
+        for (int i = 0; i < PhotonNetwork.CurrentRoom.CustomProperties.Keys.ToList().Count; i++)
+        {
+            Debug.LogError($" Keys {PhotonNetwork.CurrentRoom.CustomProperties.Keys.ToList()[i]}");
+        }
         
-        GameEvents.NetworkEvents.OnRoomJoined.Raise();
+        UpdateConnectionStatus($"Waiting for host to start the match");
+
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
+        GameEvents.NetworkEvents.GameRoomCreated.Raise();
+    }
+
+    private void StartMatchTimer()
+    {
+        NetworkManager.NetworkUtilities.RaiseRPC(m_PhotonView, nameof(StartMatchTimer_RPC), RpcTarget.All, null);
+    }
+
+    public override void OnPlayerLeftRoom(Player otherPlayer)
+    {
+        base.OnPlayerLeftRoom(otherPlayer);
+        GameEvents.NetworkPlayerEvents.OnPlayerDisconnected.Raise();
+        UpdatePlayersList();
     }
 
     public override void OnPlayerEnteredRoom(Player newPlayer)
     {
         base.OnPlayerEnteredRoom(newPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.Raise();
-    }
-    public override void OnPlayerLeftRoom(Player newPlayer)
-    {
-        base.OnPlayerEnteredRoom(newPlayer);
-        GameEvents.NetworkEvents.OnPlayerJoined.Raise();
-    }
-    
-
-
-    public void Disconnect()
-    {
-        PhotonNetwork.Disconnect();
+        UpdatePlayersList();
     }
 
-    public void StartMatch()
+    private void UpdatePlayersList()
     {
-        PhotonNetwork.CurrentRoom.IsOpen = false;
-        sceneManager.LoadGameplayScene();
+        List<string> playerNames = new();
+        Player[] players = PhotonNetwork.PlayerList;
+        
+        for (int i = 0; i < players.Length; i++)
+        {
+            playerNames.Add(players[i].NickName);
+        }
+        
+        GameEvents.MenuEvents.PlayersListUpdated.Raise(playerNames);
+    }
+
+    [PunRPC]
+    private void StartMatchTimer_RPC()
+    {
+        StartMatchInternal();
+        //GameEvents.MenuEvents.MenuTransition.Raise(MenuName.ConnectionScreen);
+        // GameEvents.TimerEvents.ExecuteActionRequest.Raise(new TimerDataObject()
+        // {
+        //     JobID = Guid.NewGuid().GetHashCode(),
+        //     TimeDuration = 7,
+        //     ActionToExecute = StartMatchInternal,
+        //     TickEvent = OnStartMatchTick
+        // });
+    }
+
+    private void OnStartMatchTick(float time)
+    {
+        m_ControllerView.SetTimerStatus($"Starting The Match in {time}");
+    }
+
+    private void StartMatchInternal()
+    {
+        m_ControllerView.HideTimer();
+
+        if (PhotonNetwork.IsMasterClient)
+            PhotonNetwork.CurrentRoom.IsOpen = false;
+        
+        NetworkManager.Instance.LoadGameplay("PokerGame");
     }
 }

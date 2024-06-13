@@ -1,6 +1,6 @@
 using Photon.Pun;
 
-public partial class NetworkManager
+public partial class NetworkManager : MonobehaviourSingleton<NetworkManager>
 {
     public static class NetworkUtilities
     {
