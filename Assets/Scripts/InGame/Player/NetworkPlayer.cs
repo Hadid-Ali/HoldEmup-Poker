@@ -46,23 +46,38 @@ public class NetworkPlayer : MonoBehaviourPun
     private void Awake()
     {
         GamePlayButtons.OnPlayerActionSubmit += OnActionSubmit;
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.Register(OnRoundReset);
 
         PhotonView ??= GetComponent<PhotonView>();
         PlayerCards ??= GetComponent<PlayerCards>();
         PlayerCredit ??= GetComponent<PlayerCredit>();
     }
 
+    private void OnRoundReset()
+    {
+        betAmount = 0;
+        lastBetAction = BetAction.UnSelected;
+    }
+
     private void OnDestroy()
     {
         GamePlayButtons.OnPlayerActionSubmit -= OnActionSubmit;
+        GameEvents.NetworkGameplayEvents.OnRoundEnd.UnRegister(OnRoundReset);
     }
 
     private void Start() => Invoke(nameof(OnNetworkSpawn), 1.5f);
 
     public void OnNetworkSpawn()
     {
-        _guID = Guid.NewGuid().ToString();
+        if (IsLocalPlayer)
+        {
+            string id = Guid.NewGuid().ToString();
+            photonView.RPC(nameof(SetPlayerGuid), RpcTarget.All, id);
+        }
+        
         OnPlayerSpawn?.Invoke(this);
+        
+        PlayerCredit.Credits = 1000;
     } 
     public void SyncInformationGlobally() => 
         PhotonView.RPC(nameof(SyncInformation), RpcTarget.All, id,nickName);
@@ -151,15 +166,6 @@ public class NetworkPlayer : MonoBehaviourPun
         
         betAmount = _betAmount;
         
-        if(!PhotonNetwork.IsMasterClient)
-            return;
-
-        if (id == _id && (BetAction) playerAction != BetAction.UnSelected)
-            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, betAmount));
-        
-        GameEvents.NetworkPlayerEvents.OnPlayerActionPop.Raise(id,lastBetAction.ToString());
-        PhotonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
-
         ActionReport newActionReport = new ActionReport()
         {
             PlayerID = _guID,
@@ -169,6 +175,17 @@ public class NetworkPlayer : MonoBehaviourPun
         };
         
         GameEvents.NetworkEvents.OnPlayerBetAction.Raise(newActionReport);
+        
+        if(!PhotonNetwork.IsMasterClient)
+            return;
+
+        if (id == _id && (BetAction) playerAction != BetAction.UnSelected)
+            Betting.PlayerEndBettingEvent?.Invoke(new BetActionInfo(this, lastBetAction, betAmount));
+        
+        GameEvents.NetworkPlayerEvents.OnPlayerActionPop.Raise(id,lastBetAction.ToString());
+        PhotonView.RPC(nameof(OnPlayerAction), RpcTarget.All,lastBetAction.ToString());
+
+        
     }
 
     [PunRPC]
@@ -182,6 +199,12 @@ public class NetworkPlayer : MonoBehaviourPun
     {
         if(IsLocalPlayer)
             OnEnableAction?.Invoke((BetAction)i, val);
+    }
+
+    [PunRPC]
+    private void SetPlayerGuid(string id)
+    {
+        _guID = id;
     }
     
     #endregion

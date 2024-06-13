@@ -145,7 +145,7 @@ public class Betting : MonoBehaviour
          bool canAfford = p.PlayerCredit.Credits >= Constants.Player.MaximumRaiseLimit;
          
          int maxAmount = canAfford ? Constants.Player.MaximumRaiseLimit : p.PlayerCredit.Credits;
-         int minAmount = canAfford ? _callAmount: maxAmount;
+         int minAmount = canAfford ? _callAmount : maxAmount;
          
          if (minAmount < Constants.Player.MinimumRaiseLimit)
              minAmount = Constants.Player.MinimumRaiseLimit;

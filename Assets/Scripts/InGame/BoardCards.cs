@@ -25,6 +25,7 @@ public class BoardCards : MonoBehaviour
     public void ResetCards()
     {
         _cards.Clear();
+        _intCards.Clear();
         PopulateCards();
         
         photonView.RPC(nameof(ResetCardsView), RpcTarget.All);

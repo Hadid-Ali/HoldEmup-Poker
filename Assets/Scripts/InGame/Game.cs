@@ -20,13 +20,10 @@ public class Game : MonoBehaviour
     public event Action<GameStage> GameStageOverEvent;
     public event Action<WinnerInfo[]> EndDealEvent;
     
-
-
     private IEnumerator _stageCoroutine;
     private IEnumerator _startDealWhenСonditionTrueCoroutine;
     private IEnumerator _startDealAfterRoundsInterval;
-
-
+    
     private bool StartCondition =>  playerSeats.activePlayers.Count >= 2;
     
     [SerializeField] private float _roundsIntervalSeconds;
@@ -50,7 +47,6 @@ public class Game : MonoBehaviour
         GameEvents.GameplayEvents.UserHandsEvaluated.Register(OnHandsEvaluated);
         
         GameEvents.NetworkGameplayEvents.OnContinueConsentCollected.Register(ContinueConsentCollected);
-       
     }
     private void OnDestroy()
     {
@@ -113,15 +109,13 @@ public class Game : MonoBehaviour
     }
     private void OnHandsEvaluated(Dictionary<int, PlayerScoreObject> obj)
     {
-        foreach (var v in obj)
-        {
-            print($"{playerSeats.activePlayers.Find(x=>x.id == v.Key).nickName} : {v.Value.Score}" );
-        }
         PlayerScoreObject pp = obj.First(x => x.Value.Score >= 10).Value;
 
         NetworkPlayer p = playerSeats.activePlayers.Find(x => pp.UserID == x.id);
         p.PlayerCredit.AddCredit(pot.GetPotMoney);
+        print($" Hands Evaluated {p.nickName} : {pot.GetPotMoney}");
 
+        
         photonView.RPC(nameof(OnPlayerWin), RpcTarget.All, p.id, pot.GetPotMoney);
     }
 
@@ -299,6 +293,8 @@ public class Game : MonoBehaviour
     private void OnPlayerWin(int playerId, int winAmount)
     {
         GameEvents.NetworkGameplayEvents.OnPlayerWin.Raise(playerId, winAmount);
+        
+        print("Player Win broadcasted");
     }
     [PunRPC]
     private void ResetGameView()

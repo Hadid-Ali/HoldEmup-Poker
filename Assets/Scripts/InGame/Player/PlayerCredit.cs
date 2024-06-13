@@ -7,31 +7,32 @@ public class PlayerCredit : MonoBehaviour
    [SerializeField] private NetworkPlayer player;
 
    public bool IsBroke => Credits <= 0;
-   public int Credits { get; private set; } = 1000;
+   [field: SerializeField] public int Credits { get; set; }
 
    public void SubCredit(int val)
    {
-      if(val > Credits)
-         return;
-        
-      Credits -= val;  
-      photonView.RPC(nameof(SyncInformation), RpcTarget.All, Credits);
+      Credits = val > Credits? 0 : Credits -= val;
+      photonView.RPC(nameof(SyncInformation), RpcTarget.All, player.id, Credits);
    }
 
    public void AddCredit(int val)
    {
       Credits += val;  
-      photonView.RPC(nameof(SyncInformation), RpcTarget.All, Credits);
+      photonView.RPC(nameof(SyncInformation), RpcTarget.All,player.id, Credits);
    }
 
    #region RPC
 
    [PunRPC]
-   private void SyncInformation(int credits)
+   private void SyncInformation(int id, int credits)
    {
-      Credits = credits;
-        
-      GameEvents.NetworkPlayerEvents.OnPlayerCreditsChanged.Raise(player.id,credits);
+      if (player.id == id)
+      {
+         Credits = credits; 
+         GameEvents.NetworkPlayerEvents.OnPlayerCreditsChanged.Raise(player.id,credits);
+         
+         print($"{player.id}-ID : {Credits} Changed");
+      }
    }
 
    #endregion

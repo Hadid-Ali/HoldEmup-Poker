@@ -14,8 +14,12 @@ public class PlayerCards : MonoBehaviour
         GameEvents.NetworkGameplayEvents.OnShowDown.Register(SubmitCards);
     private void OnDestroy() => 
         GameEvents.NetworkGameplayEvents.OnShowDown.UnRegister(SubmitCards);
-    private void SubmitCards() => 
+
+    private void SubmitCards()
+    {
         GameEvents.NetworkGameplayEvents.NetworkSubmitRequest.Raise(new NetworkDataObject(PocketCards, player.id));
+        print("Cards Submitted Locally");
+    }
     
     public void SetPocketCards(CardData card1, CardData card2)
     {
